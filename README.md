@@ -1,4 +1,4 @@
-# BeeEye-Automation
+# BeeEye-Automation  :fire:
 ## About ##
 Automation code use nightwatch and Chi on top on NodeJS 12 
 
