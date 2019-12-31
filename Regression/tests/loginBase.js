@@ -1,7 +1,7 @@
 const url = 'https://www.lancome-usa.com/';
 // const { assert } = require('chai')
 // const { expect } = require('chai')
-const loginSelectors =require("../selectors/loginSelector");
+
 const loginPage =require("../pages/login");
 
 
