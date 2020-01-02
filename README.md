@@ -4,6 +4,7 @@ Automation code use nightwatch and Chi on top on NodeJS 12
 
 ## Installation instructions ##
 - ` npm install `
+- ` npm run e2e-setup --save-dev `
 - ` npm test `
 
 in case you would use ES6 
