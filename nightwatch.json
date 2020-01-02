@@ -39,14 +39,56 @@
 
     "default" : {
       "desiredCapabilities": {
+        "chromeOptions" : {
+          "args" : ["start-maximized"]
+        },
         "browserName": "chrome"
-      }
+    }
+  },
+
+  "mobile" : {
+    "desiredCapabilities": {
+      "browserName": "chrome",
+      "chromeOptions": {
+       "mobileEmulation": {
+          "deviceName": "iPhone X"
+       }
+    }
+  }
+},
+    "screenshots": {
+    "enabled": true,
+    "path": "./reports",
+    "on_failure": true,
+    "on_error": true
     },
 
     "edge" : {
       "desiredCapabilities": {
         "browserName": "MicrosoftEdge"
       }
+    }
+  },
+
+  "test_runner": {
+    "type": "mocha",
+
+    "options": {
+      "reporter": "mochawesome-screenshots",
+      "reporterOptions": {
+        "overwrite": true,
+        "reportDir": "customReportDir",
+        "reportName": "customReportName",
+        "reportTitle": "customReportTitle",
+        "reportPageTitle": "customReportPageTitle",
+        "takePassedScreenshot": true,
+        "clearOldScreenshots": false,
+        "shortScrFileNames": false,
+        "jsonReport": false,
+        "multiReport": false,
+        "enableCode": true
+      },
+      "timeout": 600000
     }
   }
 }
