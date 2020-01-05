@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch",
-    "e2e-setup": "selenium-standalone install"
+    "test": "nightwatch"
   },
   "keywords": [],
   "author": "",
@@ -21,4 +20,24 @@
     "selenium-standalone": "^6.17.0"
   },
   "dependencies": {}
+    "mochawesome": "^4.1.0",
+    "mochawesome-screenshots": "^1.6.0",
+    "selenium-standalone": "^6.17.0"
+  },
+  "dependencies": {
+    "chromedriver": "^79.0.0",
+    "fs": "0.0.1-security",
+    "globalsjs": "^0.31.0",
+    "handlebars": "^4.5.3",
+    "mocha": "^6.2.2",
+    "nightwatch-html-reporter": "^0.3.1",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  },
+  "screenshots": {
+    "enabled": true,
+    "path": "./screenShots",
+    "on_failure": true,
+    "on_error": true
+  }
 }
