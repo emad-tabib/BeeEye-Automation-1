@@ -5,10 +5,11 @@ const logReport = require("mochawesome-screenshots/logReport");
 const { assert } = require('chai')
 const { expect } = require('chai')
 
-describe('Login', function () {
+describe('Login Suite', function () {
 
    before(function (browser, done) {
     logReport.log(this, "Welcome to ITG default nightwatch template"); 
+    console.log("Welcome to ITG default nightwatch template"); 
     done();
 
    });

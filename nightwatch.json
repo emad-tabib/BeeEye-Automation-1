@@ -85,7 +85,7 @@
         "clearOldScreenshots": false,
         "shortScrFileNames": false,
         "jsonReport": false,
-        "multiReport": false,
+        "multiReport": true,
         "enableCode": true
       },
       "timeout": 600000
