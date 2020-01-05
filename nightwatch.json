@@ -78,9 +78,9 @@
       "reporterOptions": {
         "overwrite": true,
         "reportDir": "customReportDir",
-        "reportName": "customReportName",
-        "reportTitle": "customReportTitle",
-        "reportPageTitle": "customReportPageTitle",
+        "reportName": "BeeEye Automation Report",
+        "reportTitle": "BeeEye Automation",
+        "reportPageTitle": "BeeEye Automation",
         "takePassedScreenshot": true,
         "clearOldScreenshots": false,
         "shortScrFileNames": false,
