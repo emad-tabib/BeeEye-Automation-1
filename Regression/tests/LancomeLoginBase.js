@@ -9,7 +9,7 @@ describe('Login', function () {
 
     before(function (browser, done) {
         //logReport.log(this, "Welcome to ITG default nightwatch template"); 
-        console.log("\n\n\n\n\nWelcome to ITG default nightwatch template\n\n\n\n\n\n\n");
+        console.log("Welcome to ITG default nightwatch template");
         done();
 
     });
@@ -17,7 +17,7 @@ describe('Login', function () {
     after(function (browser, done) {
         //logReport.log(this, "finished case"); 
         browser.end(function () {
-            console.log("\n\n\n\n\nEnd\n\n\n\n\n\n\n");
+            console.log("End");
             done();
         });
     });
