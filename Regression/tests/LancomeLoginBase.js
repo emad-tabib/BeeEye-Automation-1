@@ -5,25 +5,28 @@ const logReport = require("mochawesome-screenshots/logReport");
 const { assert } = require('chai')
 const { expect } = require('chai')
 
-describe('Login', function () {
+describe('Suite Login', function () {
 
    before(function (browser, done) {
     logReport.log(this, "Welcome to ITG default nightwatch template"); 
+    console.log("Welcome to ITG default nightwatch template"); 
     done();
 
    });
 
-   after(function (browser, done) {
-    logReport.log(this, "finished case"); 
-     done();
-   });
-  
+//    after(function (browser, done) {
+//     logReport.log(this, "finished case"); 
+//      done();
+//    });
+
 it('Fill user details', function(browser) {
  
-	logReport.log(this, "this is log");
+    logReport.log(this, "this is log");
+    screenShotUtils.takeScreenShot(this,browser,"before");
     loginPage.fillUserDetails(browser);
 
-    screenShotUtils.takeScreenShot(this,browser,"this is the results");
+    screenShotUtils.takeScreenShot(this,browser,"after");
+    screenShotUtils.takeScreenShot(this,browser,"extra");
     browser.end();
 });
 
