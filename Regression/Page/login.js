@@ -12,5 +12,6 @@ exports.fillUserDetails = (browser) =>{
       })
     .setValue(loginSelectors.email, 'email') // send values
     .setValue(loginSelectors.password, 'password') // send values
-    .click(loginSelectors.signInBtn);
+    .click(loginSelectors.signInBtn)
+    .pause(1000); 
 }
