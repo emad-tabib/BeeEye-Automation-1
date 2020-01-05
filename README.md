@@ -38,10 +38,10 @@ add the following to nightwatch json
           }
 ```
 
-### headless browsing ###
+### Chrome driver Args : headless browsing, disbale GPU, start maximized ###
  Add the following args 
  ```
- args: ["headless", "disable-gpu"]
+ args: ["headless", "disable-gpu" , "start-maximized"]
  ```
  
  ### accept cert. / js enabled ###
