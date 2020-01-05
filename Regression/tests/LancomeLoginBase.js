@@ -6,8 +6,7 @@ const { assert } = require('chai')
 const { expect } = require('chai')
 
 describe('Login Suite', function () {
-
-   before(function (browser, done) {
+ before(function (browser, done) {
     logReport.log(this, "Welcome to ITG default nightwatch template"); 
     console.log("Welcome to ITG default nightwatch template"); 
     done();
@@ -15,8 +14,10 @@ describe('Login Suite', function () {
    });
 
    after(function (browser, done) {
-    logReport.log(this, "finished case"); 
-     done();
+      browser.end(function () {
+            console.log("End");
+            done();
+        });
    });
   
 it('Fill user details', function(browser) {
