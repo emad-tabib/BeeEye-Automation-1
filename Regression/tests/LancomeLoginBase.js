@@ -8,33 +8,29 @@ const { expect } = require('chai')
 describe('Login', function () {
 
     before(function (browser, done) {
-        //logReport.log(this, "Welcome to ITG default nightwatch template"); 
-        console.log("\n\n\n\n\nWelcome to ITG default nightwatch template\n\n\n\n\n\n\n");
-        done();
+        //logReport.log(this, "Welcome to ITG default nightwatch template");
 
+        console.log("Welcome to ITG default nightwatch template");
+        done();
     });
 
     after(function (browser, done) {
-        //logReport.log(this, "finished case"); 
+        //logReport.log(this, "finished case");
+
         browser.end(function () {
-            console.log("\n\n\n\n\nEnd\n\n\n\n\n\n\n");
+            console.log("End");
             done();
         });
     });
-    afterEach(function (browser, done) {
-        browser.end(function () {
-
-            done();
-        });
-
-    });
-
-    beforeEach(function (browser, done) {
-        done();
-    });
+   
+    // afterEach(function(browser, done) {
+    //     browser.end(function () {
+    //         console.log("Close browser");
+    //         done();
+    //     });
+    //     });
 
     it('Fill user details', function (browser) {
-
         logReport.log(this, "this is log");
         loginPage.fillUserDetails(browser);
 
@@ -43,7 +39,6 @@ describe('Login', function () {
     });
 
     it('Fill user details 2', function (browser) {
-
         logReport.log(this, "this is log");
         loginPage.fillUserDetails(browser);
 
