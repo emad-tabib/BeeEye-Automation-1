@@ -8,15 +8,14 @@ const { expect } = require('chai')
 describe('Login', function () {
 
     before(function (browser, done) {
-        //logReport.log(this, "Welcome to ITG default nightwatch template");
-
+        //logReport.log(this, "Welcome to ITG default nightwatch template"); 
         console.log("Welcome to ITG default nightwatch template");
         done();
     });
 
     after(function (browser, done) {
         //logReport.log(this, "finished case");
-
+        
         browser.end(function () {
             console.log("End");
             done();
