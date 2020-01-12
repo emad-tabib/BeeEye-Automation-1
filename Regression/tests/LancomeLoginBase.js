@@ -2,6 +2,7 @@ const url = 'https://www.lancome-usa.com/';
 const loginPage = require("../Page/login");
 const screenShotUtils = require("../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
+const setup = require("../utils/setup");
 const {
     assert
 } = require('chai')
@@ -13,6 +14,7 @@ describe('Login Suite', function () {
     before(function (browser, done) {
         logReport.log(this, "Welcome to ITG default nightwatch template");
         console.log("Welcome to ITG default nightwatch template");
+        setup.lunchBrowser(browser, '/register');
         done();
 
     });
@@ -38,8 +40,8 @@ describe('Login Suite', function () {
     it('Fill user details', function (browser) {
 
         logReport.log(this, "this is log");
+        screenShotUtils.takeScreenShot(this, browser, "this is the results");
         loginPage.fillUserDetails(browser);
-
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
     });
 
@@ -47,7 +49,6 @@ describe('Login Suite', function () {
 
         logReport.log(this, "this is log");
         loginPage.fillUserDetails(browser);
-
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
         // browser.end(); // just enable this when you need to end browser 
     });

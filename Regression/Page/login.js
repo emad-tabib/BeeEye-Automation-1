@@ -1,11 +1,8 @@
 const loginSelectors = require("../Selectors/loginSelectors");
-const setup = require("../utils/setup");
 const { assert } = require('chai').assert
 const { expect } = require('chai')
 
 exports.fillUserDetails = (browser) => {
-
-  setup.lunchBrowser(browser, '/register');
   var login = browser.page.loginSelectors();
   login
     .getTitle(function (title) {
