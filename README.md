@@ -1,29 +1,54 @@
-# README #
+# BeeEye-Automation  :fire:
+## About ##
+Automation code use nightwatch and Chi on top on NodeJS 12 
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Installation instructions ##
+- ` npm install `
+- ` npm run e2e-setup --save-dev `
+- ` npm test `
 
-### What is this repository for? ###
+#### in case you would use ES6 ####
+- ` npm i babel-plugin-add-module-exports babel-preset-es2015 -D --save-dev `
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Nightwatch.json configurations ##
 
-### How do I get set up? ###
+### Enable Mobile emulation ### 
+add the following to nightwatch json
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+```yaml
+"default" : {
+      "desiredCapabilities": {
+        "chromeOptions" : {
+          "args" : ["start-maximized"],
+          "mobileEmulation": {
+            "deviceName": "Nexus 5"
+         }
+        },
+        "browserName": "chrome"
+    }
+  },
+ ```
+ or you can customize any browser  
+ ```yaml 
+ chromeOptions: {mobileEmulation: {
+        deviceMetrics: {width: 360, height: 640, pixelRatio: 3},
+        userAgent:
+          'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like 
+           Gecko) Chrome/60.0.3112.101 Mobile Safari/537.36 profi-autotest',
+          }
+```
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+### Chrome driver Args : headless browsing, disbale GPU, start maximized ###
+ Add the following args 
+ ```
+ args: ["headless", "disable-gpu" , "start-maximized"]
+ ```
+ 
+ ### accept cert. / js enabled ###
+ ```yaml
+ desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled : true,
+        acceptSslCerts : true,
+      }
+ ```

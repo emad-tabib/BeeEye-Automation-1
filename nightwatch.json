@@ -1,0 +1,94 @@
+{
+  "src_folders" : ["Regression/tests"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "Regression/Selectors",
+  "globals_path" : "",
+
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./node_modules/selenium-standalone/.selenium/selenium-server/3.141.5-server.jar",
+    "log_path" : "./reports",
+    "host": "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/selenium-standalone/.selenium/chromedriver/2.43-x64-chromedriver",
+      "webdriver.gecko.driver" : "",
+      "webdriver.edge.driver" : ""
+    }
+  },
+
+  "test_settings" : {
+    "firefox" : {
+      "launch_url" : "http://localhost",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "marionette": true,
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+
+    "default" : {
+      "desiredCapabilities": {
+        "chromeOptions" : {
+          "args" : ["start-maximized"]
+        },
+        "browserName": "chrome"
+    }
+  },
+
+  "mobile" : {
+    "desiredCapabilities": {
+      "browserName": "chrome",
+      "chromeOptions": {
+       "mobileEmulation": {
+          "deviceName": "iPhone X"
+       }
+    }
+  }
+},
+
+    "edge" : {
+      "desiredCapabilities": {
+        "browserName": "MicrosoftEdge"
+      }
+    }
+  },
+
+  "test_runner": {
+    "type": "mocha",
+
+    "options": {
+      "reporter": "mochawesome-screenshots",
+      "reporterOptions": {
+        "overwrite": true,
+        "reportDir": "customReportDir",
+        "reportName": "BeeEye Automation Report",
+        "reportTitle": "BeeEye Automation",
+        "reportPageTitle": "BeeEye Automation",
+        "takePassedScreenshot": true,
+        "clearOldScreenshots": false,
+        "shortScrFileNames": false,
+        "jsonReport": false,
+        "multiReport": true,
+        "enableCode": true
+      },
+      "timeout": 600000
+    }
+  },
+  "screenshots": {
+  "enabled": true,
+  "path": "./reports",
+  "on_failure": true,
+  "on_error": true
+  }
+}
