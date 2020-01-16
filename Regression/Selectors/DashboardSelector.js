@@ -1,33 +1,29 @@
 module.exports = {
   elements: {
-    
-    left : {
+
+    left: {
       selector: '.dashboard-panel-left'
     },
 
-    center : {
+    center: {
       selector: '.dashboard-panel-center'
     },
 
-    right : {
+    right: {
       selector: '.dashboard-panel-right'
     },
 
-    RecentViewedFlows : {
+    RecentViewedFlows: {
       selector: '.app-card-custom.h-100'
     },
 
-    SmallCard : {
+    SmallCard: {
       selector: '.app-card-custom.dashboard-small-card'
     },
 
-    BigCard : {
+    BigCard: {
       selector: '.app-card-custom.dashboard-big-card'
     }
-    
-  } 
+
+  }
 };
-   
-
-
-

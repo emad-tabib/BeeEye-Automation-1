@@ -10,16 +10,8 @@ module.exports = {
       selector: '.app-btn.app-btn-asset.app-btn-medium.outline'
     },
 
-  UserMenu : {
-    selector : '.user-menu-text' 
-     }
-   }
- };
-
-
-
-   
-   
-   
-   
-  
+    UserMenu: {
+      selector: '.user-menu-text'
+    }
+  }
+};
