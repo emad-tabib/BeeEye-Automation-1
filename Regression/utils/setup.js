@@ -1,4 +1,5 @@
 const properties=require('./configrationReader');
+
 exports.lunchBrowser = (browser,branch) =>{
     var url=properties.getUrl();
     url+=branch;

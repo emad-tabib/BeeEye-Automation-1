@@ -19,9 +19,9 @@ exports.LeftSideInDashboardPage = (browser) =>{
 
       .waitForElementVisible(DashboardSelector.elements.BigCard)
       .assert.containsText(DashboardSelector.elements.BigCard, 'Top Flows') 
-  
-    
-    //.pause(1000); 
+      
+      
+      .pause(1000); 
 
 }
 
@@ -44,7 +44,7 @@ exports.CenterSideInDashboardPage = (browser) =>{
 .waitForElementVisible(DashboardSelector.elements.BigCard)
 .assert.containsText(DashboardSelector.elements.center, 'Platform Statistics')
     
-    //.pause(1000); 
+    .pause(1000); 
 
 }
 
@@ -61,11 +61,11 @@ exports.RightSideInDashboardPage = (browser) =>{
       .waitForElementVisible(DashboardSelector.elements.right)
       
       .waitForElementVisible(DashboardSelector.elements.RecentViewedFlows)
-      .assert.containsText(DashboardSelector.elements.RecentViewedFlows, 'Recent Viewed Flows');
+      .assert.containsText(DashboardSelector.elements.RecentViewedFlows, 'Recent Viewed Flows')
   
 
       
     
-    //.pause(1000); 
+    .pause(1000); 
 
 }

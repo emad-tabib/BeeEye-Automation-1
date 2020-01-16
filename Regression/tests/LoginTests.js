@@ -3,7 +3,7 @@ const screenShotUtils = require("../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
 const setup = require("../utils/setup");
 const {
-    assert
+   assert
 } = require('chai')
 const {
     expect
@@ -43,7 +43,7 @@ it('Login Without Password', function(browser) {
     loginPage.LoginWithoutPassword(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 it('Login Without Username', function(browser) {
@@ -52,7 +52,7 @@ it('Login Without Username', function(browser) {
     loginPage.LoginWithoutUsername(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 
@@ -62,7 +62,7 @@ it('Login With Wrong Password', function(browser) {
     loginPage.LoginWithWrongPassword(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 it('Login With Wrong Username', function(browser) {
@@ -71,7 +71,7 @@ it('Login With Wrong Username', function(browser) {
     loginPage.LoginWithWrongUsername(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 it('Login With Valid Information', function(browser) {
@@ -80,7 +80,7 @@ it('Login With Valid Information', function(browser) {
     loginPage.LoginWitValidInformation(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 });

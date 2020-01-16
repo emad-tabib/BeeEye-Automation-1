@@ -1,11 +1,11 @@
 const loginSelectors =require("../Selectors/loginSelectors");
 const { assert } = require('chai').assert
 const { expect } = require('chai')
+const setup = require("../utils/setup");
+const configrationReader = require("../utils/configrationReader");
 
-//login without password
+//Login without password
 exports.LoginWithoutPassword = (browser) =>{
-    //browser 
-    //.url('http://10.20.20.88/') // Go to a url
     var login = browser.page.loginSelectors();
     login
     .waitForElementVisible('body', 2000) // wait till page loads
@@ -13,22 +13,16 @@ exports.LoginWithoutPassword = (browser) =>{
         console.log("Page title is: "+title);
         this.assert.ok(title.includes("EyeOnRisk"));
       })
-    .setValue(loginSelectors.elements.email, 'itg') // send values
-    .setValue(loginSelectors.elements.password, '') // send values
+    .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+    .setValue(loginSelectors.elements.password,'') // send values
     .click(loginSelectors.elements.signInBtn)
-     //.expect.element(loginSelectors.elements.password).text.to.contain('passw0rd123')
-
-  
-    
-    //.pause(1000); 
+    .pause(1000); 
 
 }
 
 
-//login Without username
+//Login Without username
 exports.LoginWithoutUsername = (browser) =>{
-    //browser 
-    //.url('http://10.20.20.88/') // Go to a url
    var login = browser.page.loginSelectors();
     login
     .waitForElementVisible('body', 2000) // wait till page loads
@@ -36,19 +30,15 @@ exports.LoginWithoutUsername = (browser) =>{
         console.log("Page title is: "+title);
         this.assert.ok(title.includes("EyeOnRisk"));
       })
-    .setValue(loginSelectors.elements.email, '') // send values
-    .setValue(loginSelectors.elements.password, 'passw0rd123') // send values
+    .setValue(loginSelectors.elements.email,'') // send values
+    .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
-    //.expect.element(loginSelectors.elements.email).text.to.contain('itg')
-    //.expect.element(loginSelectors.elements.UserMenu).text.to.contain('itg')
-    //.pause(1000); 
+    .pause(1000); 
 
 }
 
-//login With wrong password
+//Login With wrong password
 exports.LoginWithWrongPassword = (browser) =>{
-    //browser 
-    //.url('http://10.20.20.88/') // Go to a url
     var login = browser.page.loginSelectors();
     login
     .waitForElementVisible('body', 2000) // wait till page loads
@@ -56,17 +46,15 @@ exports.LoginWithWrongPassword = (browser) =>{
         console.log("Page title is: "+title);
         this.assert.ok(title.includes("EyeOnRisk"));
       })
-    .setValue(loginSelectors.elements.email, 'itg') // send values
-    .setValue(loginSelectors.elements.password, 'jj') // send values
+    .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+    .setValue(loginSelectors.elements.password,'jj') // send values
     .click(loginSelectors.elements.signInBtn)
-    //.expect.element(loginSelectors.elements.password).text.to.contain('passw0rd123')
-    //.pause(1000); 
+    .pause(1000); 
 
 }
-//login with wrong username
+//Login with wrong username
 exports.LoginWithWrongUsername = (browser) =>{
-    browser 
-    .url('http://10.20.20.88/') // Go to a url
+
     var login = browser.page.loginSelectors();
     login
     .waitForElementVisible('body', 2000) // wait till page loads
@@ -75,17 +63,15 @@ exports.LoginWithWrongUsername = (browser) =>{
         this.assert.ok(title.includes("EyeOnRisk"));
       })
     .setValue(loginSelectors.elements.email, 'user') // send values
-    .setValue(loginSelectors.elements.password, 'passw0rd123') // send values
+    .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
-    //.expect.element(loginSelectors.elements.email).text.to.contain('itg')
-    //.pause(1000); 
+    .pause(1000); 
 
 }
 
-//login with valid information
+
+//Login with valid information
 exports.LoginWitValidInformation = (browser) =>{
-  //browser 
-  //.url('http://10.20.20.88/') // Go to a url
   var login = browser.page.loginSelectors();
   login
   .waitForElementVisible('body', 2000) // wait till page loads
@@ -93,11 +79,12 @@ exports.LoginWitValidInformation = (browser) =>{
       console.log("Page title is: "+title);
       this.assert.ok(title.includes("EyeOnRisk"));
     })
-  .setValue(loginSelectors.elements.email, 'itg') // send values
-  .setValue(loginSelectors.elements.password, 'passw0rd123') // send values
+
+  .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+  .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
   .click(loginSelectors.elements.signInBtn)
   .expect.element(loginSelectors.elements.UserMenu).text.to.contain('itg')
-  //.pause(1000); 
+  
 
 }
 

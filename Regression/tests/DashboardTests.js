@@ -47,7 +47,7 @@ it('Left Side in Dashboard Page', function(browser) {
 	logReport.log(this, "this is log");
     DashboardPage.LeftSideInDashboardPage(browser);
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
-    //browser.end();
+    browser.end();
 });
 
 //center
