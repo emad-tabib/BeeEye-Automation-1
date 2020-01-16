@@ -84,5 +84,3 @@ it('Login With Valid Information', function(browser) {
 });
 
 });
-
-
