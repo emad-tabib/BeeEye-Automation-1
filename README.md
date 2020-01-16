@@ -10,8 +10,6 @@ Automation code use nightwatch and Chi on top on NodeJS 12
 #### in case you would use ES6 ####
 - ` npm i babel-plugin-add-module-exports babel-preset-es2015 -D --save-dev `
 
-## Nightwatch.json configurations ##
-
 ## Run Tests ##
 
 to run all tests 
@@ -22,6 +20,9 @@ to run spesific tests in spesific folder
 
 to run spesific test 
 ` nightwatch Regression/tests/Dashboard/test.js `
+
+## Nightwatch.json configurations ##
+
 
 ### Enable Mobile emulation ### 
 add the following to nightwatch json
