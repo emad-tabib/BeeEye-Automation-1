@@ -1,8 +1,8 @@
-const DashboardPage = require("../Page/Dashboard");
-const login = require("../Page/login");
-const screenShotUtils = require("../utils/screenShotUtils");
+const DashboardPage = require("../../Page/Dashboard");
+const login = require("../../Page/login");
+const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
-const setup = require("../utils/setup");
+const setup = require("../../utils/setup");
 
 const {
     assert

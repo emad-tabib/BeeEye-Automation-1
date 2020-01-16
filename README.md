@@ -12,6 +12,17 @@ Automation code use nightwatch and Chi on top on NodeJS 12
 
 ## Nightwatch.json configurations ##
 
+## Run Tests ##
+
+to run all tests 
+` npm test `
+
+to run spesific tests in spesific folder 
+` nightwatch Regression/tests/Dashboard `
+
+to run spesific test 
+` nightwatch Regression/tests/Dashboard/test.js `
+
 ### Enable Mobile emulation ### 
 add the following to nightwatch json
 

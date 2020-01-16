@@ -1,7 +1,7 @@
-const loginPage = require("../Page/login");
-const screenShotUtils = require("../utils/screenShotUtils");
+const loginPage = require("../../Page/login");
+const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
-const setup = require("../utils/setup");
+const setup = require("../../utils/setup");
 const {
    assert
 } = require('chai')
@@ -36,10 +36,10 @@ afterEach(function (browser, done) {
     console.log("after each");
     done();
 });
-
+/*
 it('Login Without Password', function(browser) {
  
-	logReport.log(this, "this is log");
+	setup.logTestDetails(this,"Try to login without Password")
     loginPage.LoginWithoutPassword(browser);
 
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
@@ -73,7 +73,7 @@ it('Login With Wrong Username', function(browser) {
     screenShotUtils.takeScreenShot(this,browser,"this is the results");
     browser.end();
 });
-
+*/
 it('Login With Valid Information', function(browser) {
  
 	logReport.log(this, "this is log");
