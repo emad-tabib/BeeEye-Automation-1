@@ -12,8 +12,8 @@ const {
 describe('Login in BeeEye', function () {
 
     before(function (browser, done) {
-        logReport.log(this, "Welcome to ITG default nightwatch template");
-        console.log("Welcome to ITG default nightwatch template");
+        logReport.log(this, "Test Cases for Login Page");
+        //console.log("Welcome to ITG default nightwatch template");
         setup.lunchBrowser(browser, '/');
         done();
 
@@ -27,13 +27,9 @@ describe('Login in BeeEye', function () {
     });
 
     beforeEach(function (browser, done) {
+        //console.log("before each test case : open the site ");
+        logReport.log(this, "before each test case : open the site");
         setup.lunchBrowser(browser, '/');
-        console.log("before each");
-        done();
-    });
-
-    afterEach(function (browser, done) {
-        console.log("after each");
         done();
     });
 
@@ -48,7 +44,7 @@ describe('Login in BeeEye', function () {
 
     it('Login Without Username', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login without Username")
         loginPage.LoginWithoutUsername(browser);
 
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
@@ -58,7 +54,7 @@ describe('Login in BeeEye', function () {
 
     it('Login With Wrong Password', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with wrong password")
         loginPage.LoginWithWrongPassword(browser);
 
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
@@ -67,7 +63,7 @@ describe('Login in BeeEye', function () {
 
     it('Login With Wrong Username', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with wrong Username")
         loginPage.LoginWithWrongUsername(browser);
 
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
@@ -76,7 +72,7 @@ describe('Login in BeeEye', function () {
 
     it('Login With Valid Information', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with Valid Information")
         loginPage.LoginWitValidInformation(browser);
 
         screenShotUtils.takeScreenShot(this, browser, "this is the results");

@@ -14,9 +14,7 @@ const {
 describe('Dashboard', function () {
 
     before(function (browser, done) {
-        logReport.log(this, "Welcome to ITG default nightwatch template");
-        console.log("Welcome to ITG default nightwatch template ");
-        setup.lunchBrowser(browser, '/');
+        logReport.log(this, "Test Cases for Dashboard Page");
         done();
 
     });
@@ -29,6 +27,7 @@ describe('Dashboard', function () {
     });
 
     beforeEach(function (browser, done) {
+        logReport.log(this, "before each test case : open the site");
         setup.lunchBrowser(browser, '/');
         login.LoginWitValidInformation(browser);
         setup.lunchBrowser(browser, '/dashboard');
@@ -36,15 +35,11 @@ describe('Dashboard', function () {
         done();
     });
 
-    afterEach(function (browser, done) {
-        console.log("after each");
-        done();
-    });
 
     //left
     it('Left Side in Dashboard Page', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Test the Left side in Dashboard Page if Best Flow(GINI) and Top Flows are display or not")
         DashboardPage.LeftSideInDashboardPage(browser);
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
         browser.end();
@@ -53,7 +48,7 @@ describe('Dashboard', function () {
     //center
     it('Center Side in Dashboard Page', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Test the Center side in Dashboard Page if System Statistics and Platform Statistics are display or not")
         DashboardPage.CenterSideInDashboardPage(browser);
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
         browser.end();
@@ -62,7 +57,7 @@ describe('Dashboard', function () {
     //right
     it('Right Side in Dashboard Page', function (browser) {
 
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Test the Right side in Dashboard Page if Recent Viewed Flows is display or not")
         DashboardPage.RightSideInDashboardPage(browser);
         screenShotUtils.takeScreenShot(this, browser, "this is the results");
         browser.end();
