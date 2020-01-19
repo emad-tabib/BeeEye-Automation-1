@@ -9,11 +9,7 @@ exports.IsUserStatusBarDisplay = (browser) =>{
     var UserStatusBar = browser.page.UserStatusBarSelector();
     UserStatusBar
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
-      .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
       .waitForElementVisible(loginSelectors.elements.UserMenu)
       .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       //to check it itg is display or not
@@ -35,11 +31,7 @@ exports.AboutLink = (browser) =>{
     var About = browser.page.UserStatusBarSelector();
     About
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
-      .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
         .waitForElementVisible(UserStatusBarSelector.elements.About, 10000)
@@ -59,11 +51,7 @@ exports.SystemDiagnosticsLink = (browser) =>{
     var SystemDiagnostics = browser.page.UserStatusBarSelector();
     SystemDiagnostics
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
-      .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
         .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, 10000)
@@ -82,11 +70,7 @@ exports.LogOutLink = (browser) =>{
     var LogOut = browser.page.UserStatusBarSelector();
     LogOut
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
-      .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
         .waitForElementVisible(UserStatusBarSelector.elements.LogOut, 10000)

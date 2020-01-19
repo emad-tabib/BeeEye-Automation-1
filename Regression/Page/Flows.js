@@ -8,11 +8,6 @@ exports.CreateNewFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
-
    //Flows then add flow button then pop up will appear
     .click(FlowsSelector.elements.NavFlows)
     .waitForElementVisible(FlowsSelector.elements.AddFlowBtn)
@@ -36,10 +31,6 @@ exports.EditFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
 .click(FlowsSelector.elements.NavFlows , function(result){
     browser
     .click(FlowsSelector.elements.FlowMenu , function(result){
@@ -60,10 +51,6 @@ exports.DeleteFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
       .click(FlowsSelector.elements.NavFlows , function(result){
         browser
     .assert.visible(FlowsSelector.elements.FlowMenu)
@@ -85,10 +72,6 @@ exports.FlowCard = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function(title) {
-        console.log("Page title is: "+title);
-        this.assert.ok(title.includes("EyeOnRisk"));
-      })
       .click(FlowsSelector.elements.NavFlows , function(result){
           browser 
         .assert.visible(FlowsSelector.elements.FlowCount)
@@ -109,10 +92,6 @@ exports.FlowCard = (browser) =>{
         var Flows = browser.page.FlowsSelector();
         Flows
         .waitForElementVisible('body', 2000) // wait till page loads
-        .getTitle(function(title) {
-            console.log("Page title is: "+title);
-            this.assert.ok(title.includes("EyeOnRisk"));
-          })
           .click(FlowsSelector.elements.NavFlows , function(result){
               
         if(assert.containsText(FlowsSelector.elements.Span,'Name')&& FlowsSelector.elements.Selected){

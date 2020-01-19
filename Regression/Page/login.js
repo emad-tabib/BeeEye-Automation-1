@@ -13,10 +13,6 @@ exports.LoginWithoutPassword = (browser) => {
   var login = browser.page.loginSelectors();
   login
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function (title) {
-      console.log("Page title is: " + title);
-      this.assert.ok(title.includes("EyeOnRisk"));
-    })
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, '') // send values
     .click(loginSelectors.elements.signInBtn)
@@ -30,10 +26,6 @@ exports.LoginWithoutUsername = (browser) => {
   var login = browser.page.loginSelectors();
   login
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function (title) {
-      console.log("Page title is: " + title);
-      this.assert.ok(title.includes("EyeOnRisk"));
-    })
     .setValue(loginSelectors.elements.email, '') // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
@@ -46,10 +38,6 @@ exports.LoginWithWrongPassword = (browser) => {
   var login = browser.page.loginSelectors();
   login
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function (title) {
-      console.log("Page title is: " + title);
-      this.assert.ok(title.includes("EyeOnRisk"));
-    })
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, 'jj') // send values
     .click(loginSelectors.elements.signInBtn)
@@ -62,10 +50,6 @@ exports.LoginWithWrongUsername = (browser) => {
   var login = browser.page.loginSelectors();
   login
     .waitForElementVisible('body', 2000) // wait till page loads
-    .getTitle(function (title) {
-      console.log("Page title is: " + title);
-      this.assert.ok(title.includes("EyeOnRisk"));
-    })
     .setValue(loginSelectors.elements.email, 'user') // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
@@ -79,11 +63,6 @@ exports.LoginWitValidInformation = (browser) => {
   var login = browser.page.loginSelectors();
   login
     .waitForElementVisible('body', 4000) // wait till page loads
-    .getTitle(function (title) {
-      console.log("Page title is: " + title);
-      this.assert.ok(title.includes("EyeOnRisk"));
-    })
-
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
