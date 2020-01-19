@@ -1,9 +1,9 @@
 const DashboardPage = require("../../Page/Dashboard");
 const login = require("../../Page/login");
+const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
 const setup = require("../../utils/setup");
-
 const {
     assert
 } = require('chai')
@@ -29,8 +29,12 @@ describe('Dashboard', function () {
     beforeEach(function (browser, done) {
         logReport.log(this, "before each test case : open the site");
         setup.lunchBrowser(browser, '/');
+        logReport.log(this, "before each test case : Login with valid Information");
         login.LoginWitValidInformation(browser);
+        logReport.log(this, "before each test case : open the site and go to Dashbpard Page");
         setup.lunchBrowser(browser, '/dashboard');
+        logReport.log(this, "before each test case : Check The title of the Page");
+        title.getTitle(browser);
         console.log("before each");
         done();
     });
@@ -41,7 +45,7 @@ describe('Dashboard', function () {
 
         setup.logTestDetails(this, "Test the Left side in Dashboard Page if Best Flow(GINI) and Top Flows are display or not")
         DashboardPage.LeftSideInDashboardPage(browser);
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "This is the results for Left side in Dashboard Page");
         browser.end();
     });
 
@@ -50,7 +54,7 @@ describe('Dashboard', function () {
 
         setup.logTestDetails(this, "Test the Center side in Dashboard Page if System Statistics and Platform Statistics are display or not")
         DashboardPage.CenterSideInDashboardPage(browser);
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "This is the results for Center side in Dashboard Page");
         browser.end();
     });
 
@@ -59,7 +63,7 @@ describe('Dashboard', function () {
 
         setup.logTestDetails(this, "Test the Right side in Dashboard Page if Recent Viewed Flows is display or not")
         DashboardPage.RightSideInDashboardPage(browser);
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "This is the results for Right side in Dashboard Page");
         browser.end();
     });
 
