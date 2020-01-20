@@ -39,6 +39,10 @@ beforeEach(function (browser, done) {
     done();
 });
 
+afterEach(function (browser, done) {
+    done();
+});
+
 //Check Logo and Navigation Bar
 it('Main Navigation Bar', function(browser) {
     setup.logTestDetails(this, "Check if Logo and Navigation Bar are display after the Login successfully")
@@ -86,5 +90,3 @@ it('EXPLAIN', function(browser) {
 
 
 });
-
-

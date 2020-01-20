@@ -37,8 +37,7 @@ describe('Flows Page', function () {
       done();
   });
 
-afterEach(function (browser, done) {
-    console.log("after each");
+  afterEach(function (browser, done) {
     done();
 });
 

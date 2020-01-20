@@ -28,17 +28,19 @@ describe('Dashboard', function () {
 
     beforeEach(function (browser, done) {
         logReport.log(this, "before each test case : open the site");
-        setup.lunchBrowser(browser, '/');
+        setup.lunchBrowser(browser, '');
         logReport.log(this, "before each test case : Login with valid Information");
         login.LoginWitValidInformation(browser);
-        logReport.log(this, "before each test case : open the site and go to Dashbpard Page");
-        setup.lunchBrowser(browser, '/dashboard');
         logReport.log(this, "before each test case : Check The title of the Page");
         title.getTitle(browser);
         console.log("before each");
         done();
     });
 
+    afterEach(function (browser, done) {
+        
+        done();
+    });
 
     //left
     it('Left Side in Dashboard Page', function (browser) {

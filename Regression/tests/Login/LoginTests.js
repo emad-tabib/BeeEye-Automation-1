@@ -35,6 +35,10 @@ describe('Login in BeeEye', function () {
         done();
     });
 
+    afterEach(function (browser, done) {
+        done();
+    });
+
     it('Login Without Password', function (browser) {
         setup.logTestDetails(this, "Try to login without Password")
         loginPage.LoginWithoutPassword(browser);

@@ -12,7 +12,7 @@ exports.IsUserStatusBarDisplay = (browser) =>{
     .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
       .waitForElementVisible(loginSelectors.elements.UserMenu)
       .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
-      //to check it itg is display or not
+      //to check if itg(According to what is the username) is display or not
       .assert.containsText(loginSelectors.elements.UserMenu, configrationReader.getUserName())
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser

@@ -14,8 +14,8 @@ const {
 describe('User Status Bar', function () {
 
    before(function (browser, done) {
-    logReport.log(this, "Test Cases for Main Navigation Bar");
-        console.log("Test Cases for Main Navigation Bar"); 
+    logReport.log(this, "Test Cases for User Status Bar");
+        console.log("Test Cases for User Status Bar"); 
     done();
 
    });
@@ -39,7 +39,6 @@ beforeEach(function (browser, done) {
 });
 
 afterEach(function (browser, done) {
-    console.log("after each");
     done();
 });
 
@@ -81,5 +80,3 @@ it('LogOut Link', function(browser) {
 
 
 });
-
-
