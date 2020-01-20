@@ -6,7 +6,7 @@ exports.lunchBrowser = (browser, branch) => {
     url += branch;
     browser
         .url(url) // Go to a url
-        .waitForElementVisible('body', 2000)
+        .waitForElementVisible('body', 4000)
 }
 
 exports.logTestDetails = (testOBJ, Description) => {
