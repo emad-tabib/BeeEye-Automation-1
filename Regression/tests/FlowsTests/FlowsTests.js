@@ -13,9 +13,8 @@ const {
 } = require('chai')
 
 
-describe('Flows Page', function () {
+describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check if the flow card display correctly', function () {
    before(function (browser, done) {
-    logReport.log(this, "Test Cases for FLOWS Page");
     done();
    });
 

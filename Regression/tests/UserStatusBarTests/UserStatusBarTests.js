@@ -11,7 +11,7 @@ const {
     expect
 } = require('chai')
 
-describe('User Status Bar', function () {
+describe('User Status Bar : Check if username text and avatar display or not and check if each link in the dropdown navigates you to correct page  ', function () {
 
    before(function (browser, done) {
     logReport.log(this, "Test Cases for User Status Bar");

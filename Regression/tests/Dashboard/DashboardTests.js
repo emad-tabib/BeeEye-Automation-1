@@ -11,7 +11,7 @@ const {
     expect
 } = require('chai')
 
-describe('Dashboard', function () {
+describe('Dashboard Page : Test if these section are display or not: Best Flow(GINI) , System Statistics , Top Flows , Platform Staistics , Recent Viewed Flows', function () {
 
     before(function (browser, done) {
         logReport.log(this, "Test Cases for Dashboard Page");

@@ -10,7 +10,7 @@ const {
     expect
 } = require('chai')
 
-describe('Login in BeeEye', function () {
+describe('Login in BeeEye : Try to login without Password , Try to login without username , Try to login with wrong password , Try to login with wrong Username and  Try to login with Valid Information', function () {
 
     before(function (browser, done) {
         logReport.log(this, "Test Cases for Login Page");
@@ -36,6 +36,7 @@ describe('Login in BeeEye', function () {
     });
 
     afterEach(function (browser, done) {
+
         done();
     });
 

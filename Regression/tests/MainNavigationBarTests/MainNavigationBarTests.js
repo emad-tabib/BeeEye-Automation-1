@@ -11,7 +11,7 @@ const {
     expect
 } = require('chai')
 
-describe('Main Navigation Bar', function () {
+describe('Main Navigation Bar : Test if Logo is display or not , and check every Link in this Navigation Bar if navigates you the correct screen  ', function () {
 
    before(function (browser, done) {
     logReport.log(this, "Test Cases for Main Navigation Bar");
