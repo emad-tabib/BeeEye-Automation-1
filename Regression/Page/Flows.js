@@ -7,7 +7,7 @@ const configrationReader = require("../utils/configrationReader");
 exports.CreateNewFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
    //Flows then add flow button then pop up will appear
     .click(FlowsSelector.elements.NavFlows)
     .waitForElementVisible(FlowsSelector.elements.AddFlowBtn)
@@ -30,7 +30,7 @@ exports.CreateNewFlow = (browser) =>{
 exports.EditFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
 .click(FlowsSelector.elements.NavFlows , function(result){
     browser
     .click(FlowsSelector.elements.FlowMenu , function(result){
@@ -50,7 +50,7 @@ exports.EditFlow = (browser) =>{
 exports.DeleteFlow = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
       .click(FlowsSelector.elements.NavFlows , function(result){
         browser
     .assert.visible(FlowsSelector.elements.FlowMenu)
@@ -71,7 +71,7 @@ exports.DeleteFlow = (browser) =>{
 exports.FlowCard = (browser) =>{
     var Flows = browser.page.FlowsSelector();
     Flows
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
       .click(FlowsSelector.elements.NavFlows , function(result){
           browser 
         .assert.visible(FlowsSelector.elements.FlowCount)
@@ -91,7 +91,7 @@ exports.FlowCard = (browser) =>{
     exports.Sort = (browser) =>{
         var Flows = browser.page.FlowsSelector();
         Flows
-        .waitForElementVisible('body', 2000) // wait till page loads
+        .waitForElementVisible('body', 4000) // wait till page loads
           .click(FlowsSelector.elements.NavFlows , function(result){
               
         if(assert.containsText(FlowsSelector.elements.Span,'Name')&& FlowsSelector.elements.Selected){

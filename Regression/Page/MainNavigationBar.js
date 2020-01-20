@@ -10,7 +10,7 @@ const configrationReader = require("../utils/configrationReader");
 exports.MainNavigationBar = (browser) =>{
     var MainNavigationBar = browser.page.MainNavigationBarSelectors();
     MainNavigationBar
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
     //Logo
    .waitForElementVisible(MainNavigationBarSelectors.elements.Logo)
    //Navigation
@@ -22,7 +22,7 @@ exports.MainNavigationBar = (browser) =>{
 exports.DashboardNavigation = (browser) =>{
     var Dashboard = browser.page.MainNavigationBarSelectors();
     Dashboard
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(MainNavigationBarSelectors.elements.Dashboard)
       .click(MainNavigationBarSelectors.elements.Dashboard , function (result) {
         browser.waitForElementVisible(DashboardSelector.elements.SmallCard)
@@ -34,7 +34,7 @@ exports.DashboardNavigation = (browser) =>{
 exports.FlowsNavigation = (browser) =>{
     var Flows = browser.page.MainNavigationBarSelectors();
     Flows
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.NavFlows)
       .click(FlowsSelector.elements.NavFlows , function (result) {
         browser.waitForElementVisible(MainNavigationBarSelectors.elements.FlowTitle)
@@ -46,7 +46,7 @@ exports.FlowsNavigation = (browser) =>{
 exports.ProductionNavigation = (browser) =>{
     var Production = browser.page.MainNavigationBarSelectors();
     Production
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
    .waitForElementVisible(MainNavigationBarSelectors.elements.Production)
       .click(MainNavigationBarSelectors.elements.Production , function (result) {
         browser.waitForElementVisible(MainNavigationBarSelectors.elements.ProductsCount)
@@ -58,7 +58,7 @@ exports.ProductionNavigation = (browser) =>{
 exports.ExplainNavigation = (browser) =>{
     var Explain = browser.page.MainNavigationBarSelectors();
     Explain
-    .waitForElementVisible('body', 2000) // wait till page loads
+    .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(MainNavigationBarSelectors.elements.Explain)
       .click(MainNavigationBarSelectors.elements.Explain , function (result) {
         browser.waitForElementVisible(MainNavigationBarSelectors.elements.ExplainWrapper)
