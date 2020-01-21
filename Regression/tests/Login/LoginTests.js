@@ -43,14 +43,14 @@ describe('Login in BeeEye : Try to login without Password , Try to login without
     it('Login Without Password', function (browser) {
         setup.logTestDetails(this, "Try to login without Password")
         loginPage.LoginWithoutPassword(browser);
-        screenShotUtils.takeScreenShot(this, browser, "This is the results for Login without Password");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Login without Password");
         browser.end();
     });
 
     it('Login Without Username', function (browser) {
         setup.logTestDetails(this, "Try to login without Username")
         loginPage.LoginWithoutUsername(browser);
-        screenShotUtils.takeScreenShot(this, browser, "This is the results for login without Username");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login without Username");
         browser.end();
     });
 
@@ -58,21 +58,21 @@ describe('Login in BeeEye : Try to login without Password , Try to login without
     it('Login With Wrong Password', function (browser) {
         setup.logTestDetails(this, "Try to login with wrong password")
         loginPage.LoginWithWrongPassword(browser);
-        screenShotUtils.takeScreenShot(this, browser, "This is the results for login with wrong password");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with wrong password");
         browser.end();
     });
 
     it('Login With Wrong Username', function (browser) {
         setup.logTestDetails(this, "Try to login with wrong Username")
         loginPage.LoginWithWrongUsername(browser);
-        screenShotUtils.takeScreenShot(this, browser, "This is the results for login with wrong Username");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with wrong Username");
         browser.end();
     });
 
     it('Login With Valid Information', function (browser) {
         setup.logTestDetails(this, "Try to login with Valid Information")
         loginPage.LoginWitValidInformation(browser);
-        screenShotUtils.takeScreenShot(this, browser, "This is the results for login with Valid Information");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with Valid Information");
         browser.end();
     });
 

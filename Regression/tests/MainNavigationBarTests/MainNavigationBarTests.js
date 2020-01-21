@@ -47,7 +47,7 @@ afterEach(function (browser, done) {
 it('Main Navigation Bar', function(browser) {
     setup.logTestDetails(this, "Check if Logo and Navigation Bar are display after the Login successfully")
     MainNavigationBar.MainNavigationBar(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results for Logo and Navigation Bar if are exists");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Logo and Navigation Bar if are exists");
     browser.end();
 });
 
@@ -55,7 +55,7 @@ it('Main Navigation Bar', function(browser) {
 it('DASHBOARD', function(browser) {
     setup.logTestDetails(this, "Try to Click on DASHBOARD Link and check if it takes you to correct screen")
     MainNavigationBar.DashboardNavigation(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on DASHBOARD Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on DASHBOARD Link");
     browser.end();
 });
 
@@ -63,7 +63,7 @@ it('DASHBOARD', function(browser) {
 it('FLOWS', function(browser) {
     setup.logTestDetails(this, "Try to Click on FLOWS Link and check if it takes you to correct screen")
     MainNavigationBar.FlowsNavigation(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on FLOWS Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on FLOWS Link");
     browser.end();
 });
 
@@ -72,7 +72,7 @@ it('FLOWS', function(browser) {
 it('PRODUCTION', function(browser) {
     setup.logTestDetails(this, "Try to Click on PRODUCTION Link and check if it takes you to correct screen")
     MainNavigationBar.ProductionNavigation(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on PRODUCTION Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on PRODUCTION Link");
     browser.end();
 });
 
@@ -81,7 +81,7 @@ it('PRODUCTION', function(browser) {
 it('EXPLAIN', function(browser) {
     setup.logTestDetails(this, "Try to Click on EXPLAIN Link and check if it takes you to correct screen")
     MainNavigationBar.ExplainNavigation(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on EXPLAIN Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on EXPLAIN Link");
     browser.end();
 });
 

@@ -45,7 +45,7 @@ it('Create New Flow', function(browser) {
  
   setup.logTestDetails(this, "Try to Create New Flow")
     Flows.CreateNewFlow(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results for Create New Flow");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Create New Flow");
     browser.end();
 });
 
@@ -53,7 +53,7 @@ it('Create New Flow', function(browser) {
 it('Edit Flow', function(browser) {
   setup.logTestDetails(this, "Try to Edit the Flow ")
   Flows.EditFlow(browser);
-  screenShotUtils.takeScreenShot(this,browser,"This is the results for Edit the Flow");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Edit the Flow");
   browser.end();
 	
 });
@@ -61,7 +61,7 @@ it('Edit Flow', function(browser) {
 it('Delete Flow' , function(browser){
   setup.logTestDetails(this, "Try to Delete the flow")
   Flows.DeleteFlow(browser);
-  screenShotUtils.takeScreenShot(this,browser,"This is the results for Delete the flow");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Delete the flow");
   browser.end();
 
 
@@ -72,7 +72,7 @@ it('Delete Flow' , function(browser){
 it('Card in Flows Page ' , function(browser){
   setup.logTestDetails(this, "Try to test if the flow card display correctly or not")
   Flows.FlowCard(browser);
-  screenShotUtils.takeScreenShot(this,browser,"This is the results for the flow card display in FLOWS Page");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the flow card display in FLOWS Page");
   browser.end();
 
 

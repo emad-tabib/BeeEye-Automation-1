@@ -18,9 +18,7 @@ exports.getPassword = () => {
     return password;
 }
 
-
 //For Create New Flow in FLOWS Page
-
 exports.getThenameOfTheNewFlow = () => {
     var nameOfTheNewFlow = config.nameOfTheNewFlow;
     return nameOfTheNewFlow;

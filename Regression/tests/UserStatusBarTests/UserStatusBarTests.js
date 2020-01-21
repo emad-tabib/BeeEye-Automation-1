@@ -47,7 +47,7 @@ it('Is User Status Bar Display', function(browser) {
  
     setup.logTestDetails(this, "Check if User Sattus Bar is display or not after you login Successfully")
     UserStatusBar.IsUserStatusBarDisplay(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results for checking if User Status Bar is display or not");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for checking if User Status Bar is display or not");
     browser.end();
 });
 
@@ -55,7 +55,7 @@ it('Is User Status Bar Display', function(browser) {
 it('About Link', function(browser) {
     setup.logTestDetails(this, "Try to Click on About Link and check if it takes you to correct screen ")
     UserStatusBar.AboutLink(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on About Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on About Link");
     browser.end();
 });
 
@@ -64,7 +64,7 @@ it('System diagnostics Link', function(browser) {
  
     setup.logTestDetails(this, "Try to Click on System diagnostics Link and check if it takes you to correct screen ")
     UserStatusBar.SystemDiagnosticsLink(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on System diagnostics Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on System diagnostics Link");
     browser.end();
 });
 
@@ -73,7 +73,7 @@ it('LogOut Link', function(browser) {
  
 	logReport.log(this, "Try to Click on LogOut Link and check if it takes you to correct screen ");
     UserStatusBar.LogOutLink(browser);
-    screenShotUtils.takeScreenShot(this,browser,"This is the results after you click on LogOut Link");
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on LogOut Link");
     browser.end();
 });
 
