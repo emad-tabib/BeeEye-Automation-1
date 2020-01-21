@@ -87,26 +87,40 @@ exports.FlowCard = (browser) =>{
    .pause(1000); 
     }
     
-    //sort
-    exports.Sort = (browser) =>{
+  //Sort By anme
+    exports.SortByName = (browser) =>{
         var Flows = browser.page.FlowsSelector();
         Flows
         .waitForElementVisible('body', 4000) // wait till page loads
           .click(FlowsSelector.elements.NavFlows , function(result){
-              
-        if(assert.containsText(FlowsSelector.elements.Span,'Name')&& FlowsSelector.elements.Selected){
-
-        }
-        if(assert.containsText(FlowsSelector.elements.Span,'Gini')&& FlowsSelector.elements.Selected){
-
-        }
-        else if(assert.containsText(FlowsSelector.elements.Span,'Date created')&& FlowsSelector.elements.Selected){
-
-        }
+            browser
+           .click(FlowsSelector.elements.SpanForName)
           })
-          
-
-    
        .pause(1000); 
         }
         
+//Sort by Gini
+        exports.SortByGini = (browser) =>{
+          var Flows = browser.page.FlowsSelector();
+          Flows
+          .waitForElementVisible('body', 4000) // wait till page loads
+            .click(FlowsSelector.elements.NavFlows , function(result){
+              browser
+             .click(FlowsSelector.elements.SpanForGini)
+            })
+         .pause(1000); 
+          }
+          
+//Sort by Date Created
+          exports.SortByDateCreated = (browser) =>{
+            var Flows = browser.page.FlowsSelector();
+            Flows
+            .waitForElementVisible('body', 4000) // wait till page loads
+              .click(FlowsSelector.elements.NavFlows , function(result){
+                browser
+              .click(FlowsSelector.elements.SpanForDatecreated)
+            
+              })
+           .pause(1000); 
+            }
+            

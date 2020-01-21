@@ -77,4 +77,35 @@ it('Card in Flows Page ' , function(browser){
 
 
 });
+//Sort by Name
+it('Sort by Name' , function(browser){
+  setup.logTestDetails(this, " Try to test if sort Sort by Name process works well ")
+  Flows.SortByName(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Name sort Descending");
+  Flows.SortByName(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Name sort Ascending");
+  browser.end();
 });
+
+//sort by Gini
+it('Sort by Gini' , function(browser){
+  setup.logTestDetails(this, " Try to test if Sort by Gini process works well ")
+  Flows.SortByGini(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Gini sort Ascending");
+  Flows.SortByGini(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Gini sort Descending");
+  browser.end();
+});
+
+//Sort by Date created
+it('Sort by Date created' , function(browser){
+  setup.logTestDetails(this, " Try to test if Sort by Date created process works well ")
+  Flows.SortByDateCreated(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Date create sort Ascending");
+  Flows.SortByDateCreated(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Date create sort Descending");
+  browser.end();
+}); 
+
+});
+
