@@ -107,5 +107,14 @@ it('Sort by Date created' , function(browser){
   browser.end();
 }); 
 
+//Upload File to new Flow
+it('Upload File' , function(browser){
+  setup.logTestDetails(this, " Try to test if Upload file is successfully ")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
+  browser.end();
+}); 
+
 });
 
