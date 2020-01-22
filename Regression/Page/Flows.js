@@ -124,7 +124,27 @@ exports.FlowCard = (browser) =>{
            .pause(1000); 
             }
             
+//no file chosen
+exports.NoFileChosen = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.UploadBtn)
+    .assert.containsText(FlowsSelector.elements.EmptyInput, 'No file chosen')
+ .pause(1000); 
+}
 
+//extension of the file not csv
+exports.ExtensionOfTheFileUploaded = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.UploadBtn)
+.click(FlowsSelector.elements.UploadBtn, function(result){
+  browser
+        .setValue('input[type="file"]', require('path').resolve(__dirname + '/NotCorrectExtensionOfTheFileUploaded.txt'))
+        .assert.containsText(FlowsSelector.elements.ErrorInput, 'Selected file type not allowed')
+})
+ .pause(1000); 
+}
 
 //Upload File
 exports.UploadFile = (browser) =>{
