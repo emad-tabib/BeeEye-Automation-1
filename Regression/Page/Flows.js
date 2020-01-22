@@ -158,3 +158,17 @@ exports.UploadFile = (browser) =>{
  .pause(1000); 
 }
 
+//Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
+exports.CheckDataAfterYouUploadFile = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.FileInformation)
+    .waitForElementVisible(FlowsSelector.elements.Name)
+    .waitForElementVisible(FlowsSelector.elements.Type)
+    .waitForElementVisible(FlowsSelector.elements.Columns)
+    .assert.containsText(FlowsSelector.elements.NameOfThefile,configrationReader.getTheFileInformation_Name())
+    .assert.containsText(FlowsSelector.elements.NumberOfColumns,configrationReader.getTheFileInformation_Columns())
+    .assert.containsText(FlowsSelector.elements.TypeOfTheFile,configrationReader.getTheFileInformation_Type())
+
+ .pause(1000); 
+}

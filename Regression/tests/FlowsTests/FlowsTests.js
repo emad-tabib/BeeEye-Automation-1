@@ -136,6 +136,16 @@ it('Upload File : Uploading File is successfully' , function(browser){
   browser.end();
 });
 
+//Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
+it('Upload File : Check The data after you upload the file' , function(browser){
+  setup.logTestDetails(this, " Try to heck The data after you upload the file")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  Flows.CheckDataAfterYouUploadFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the File Information Section after you upload the file");
+  browser.end();
+});
+
 });
 
 

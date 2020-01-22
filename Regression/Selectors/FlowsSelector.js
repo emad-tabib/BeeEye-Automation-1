@@ -98,8 +98,41 @@ selector : '.input-empty',
 
 ErrorInput : {
     selector : '.input-error',
-}
+},
 
+FileInformation : {
+    selector : '.source-info',
+},
+
+Name : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/strong',
+    locateStrategy: 'xpath'
+},
+
+Type : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/strong',
+    locateStrategy: 'xpath'
+},
+
+Columns : {
+   selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/strong',
+   locateStrategy: 'xpath'
+},
+
+NameOfThefile : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/span',
+    locateStrategy: 'xpath'
+},
+
+TypeOfTheFile : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/span',
+    locateStrategy: 'xpath'
+},
+
+NumberOfColumns : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/span',
+    locateStrategy: 'xpath'
+}
 
  }
 };
