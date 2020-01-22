@@ -169,6 +169,10 @@ exports.CheckDataAfterYouUploadFile = (browser) =>{
     .assert.containsText(FlowsSelector.elements.NameOfThefile,configrationReader.getTheFileInformation_Name())
     .assert.containsText(FlowsSelector.elements.NumberOfColumns,configrationReader.getTheFileInformation_Columns())
     .assert.containsText(FlowsSelector.elements.TypeOfTheFile,configrationReader.getTheFileInformation_Type())
+    
+    .waitForElementVisible(FlowsSelector.elements.PreviewData)
+    .waitForElementVisible(FlowsSelector.elements.Table)
+    .waitForElementVisible(FlowsSelector.elements.TableRowItem)
 
  .pause(1000); 
 }

@@ -132,6 +132,14 @@ TypeOfTheFile : {
 NumberOfColumns : {
     selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/span',
     locateStrategy: 'xpath'
+},
+
+PreviewData : {
+    selector : '#data-preview-button',
+},
+
+Table : {
+    selector : '.custom-table',
 }
 
  }
