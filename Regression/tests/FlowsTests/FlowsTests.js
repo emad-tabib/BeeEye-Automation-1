@@ -40,6 +40,7 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     done();
 });
 
+
 //New flow
 it('Create New Flow', function(browser) {
  
@@ -107,14 +108,34 @@ it('Sort by Date created' , function(browser){
   browser.end();
 }); 
 
+//No File Chosen
+it('Upload File : No File Chosen' , function(browser){
+  setup.logTestDetails(this, "When No file was chosen ")
+  Flows.CreateNewFlow(browser);
+  Flows.NoFileChosen(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot When No file was chosen");
+
+  browser.end();
+});
+ 
+//Upload File extension is not CSV
+it('Upload File : The upload file extension is not CSV' , function(browser){
+  setup.logTestDetails(this, " Try to test When The upload file extension is not CSV")
+  Flows.CreateNewFlow(browser);
+  Flows.ExtensionOfTheFileUploaded(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot When The upload file extension is not CSV");
+  browser.end();
+});
+
 //Upload File to new Flow
-it('Upload File' , function(browser){
+it('Upload File : Uploading File is successfully' , function(browser){
   setup.logTestDetails(this, " Try to test if Upload file is successfully ")
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
   browser.end();
-}); 
+});
 
 });
+
 
