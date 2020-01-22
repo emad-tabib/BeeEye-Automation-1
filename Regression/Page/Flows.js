@@ -124,3 +124,17 @@ exports.FlowCard = (browser) =>{
            .pause(1000); 
             }
             
+
+
+//Upload File
+exports.UploadFile = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.UploadBtn)
+.click(FlowsSelector.elements.UploadBtn, function(result){
+  browser
+        .setValue('input[type="file"]', require('path').resolve(__dirname + '/UCI_Credit_Card.csv'))  
+})
+ .pause(1000); 
+}
+
