@@ -93,7 +93,11 @@ FileId : {
 },
 
 EmptyInput : {
-selector : 'input-empty',
+selector : '.input-empty',
+},
+
+ErrorInput : {
+    selector : '.input-error',
 }
 
 
