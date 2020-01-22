@@ -82,7 +82,21 @@ SpanForDatecreated : {
     selector : '/html/body/div/div/div/div[2]/div/div[1]/div[5]/div/span',
     locateStrategy: 'xpath'
 
+},
+
+UploadBtn : {
+    selector : '#uploadButton',
+},
+
+FileId : {
+    selector : '#inputFileId',
+},
+
+EmptyInput : {
+selector : 'input-empty',
 }
+
+
  }
 };
 
