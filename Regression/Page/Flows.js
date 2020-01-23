@@ -218,3 +218,13 @@ exports.RunDataSources = (browser) =>{
  .pause(1000); 
 }
 
+//Verify No error displayed in the log file
+exports.VerifyTheLogFile = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+  .waitForElementVisible(FlowsSelector.elements.FlowLogButton)
+  .click(FlowsSelector.elements.FlowLogButton)
+  .waitForElementNotPresent(FlowsSelector.elements.LogError)
+  //.waitForElementNotVisible(FlowsSelector.elements.LogError)
+ .pause(1000); 
+}

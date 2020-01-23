@@ -172,8 +172,19 @@ PieChart : {
 
 DataSourcesButton : {
     selector : '#datasources-header-button-run',
-}
+},
 
+TransformationButton : {
+    selector : '#transformations-header-button',
+},
+
+FlowLogButton : {
+   selector : '.d-flex.notifications-button',
+},
+
+LogError : {
+  selector :'.pre-log.error-log'
  }
+}
 };
 

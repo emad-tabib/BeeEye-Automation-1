@@ -151,7 +151,7 @@ it('Valid Label : Check  when you select valid label ' , function(browser){
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
   Flows.SelectValidLabel(browser);
-  screenShotUtils.takeScreenShot(this,browser,"valid");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you select valid label");
   browser.end();
 });
 
@@ -161,7 +161,7 @@ it('Not Valid Label : Check when you  select not valid label' , function(browser
   Flows.UploadFile(browser);
 
   Flows.SelectNotValidLabel(browser);
-  screenShotUtils.takeScreenShot(this,browser,"not valid");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you select not valid label");
 
   browser.end();
 });
@@ -172,11 +172,25 @@ it('Run DataSources' , function(browser){
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
   Flows.SelectValidLabel(browser);
-  Flows.RunDataSources(browser)
-  screenShotUtils.takeScreenShot(this,browser,"not valid");
+  Flows.RunDataSources(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Click on DataSources butto to run it ");
+
+  browser.end();
+});
+
+//Log File
+it('Log File ' , function(browser){
+  setup.logTestDetails(this, " Try to verify no errors display in the log file")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  Flows.SelectValidLabel(browser);
+  Flows.RunDataSources(browser);
+  Flows.VerifyTheLogFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Run DataSources");
 
   browser.end();
 });
 });
+
 
 
