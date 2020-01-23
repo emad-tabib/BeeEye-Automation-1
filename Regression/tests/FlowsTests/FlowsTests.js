@@ -166,6 +166,17 @@ it('Not Valid Label : Check when you  select not valid label' , function(browser
   browser.end();
 });
 
+//Run DataSources
+it('Run DataSources' , function(browser){
+  setup.logTestDetails(this, " Try to Run DataSources after you upload correct file and select valid label")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  Flows.SelectValidLabel(browser);
+  Flows.RunDataSources(browser)
+  screenShotUtils.takeScreenShot(this,browser,"not valid");
+
+  browser.end();
+});
 });
 
 

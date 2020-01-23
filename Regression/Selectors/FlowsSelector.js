@@ -168,7 +168,12 @@ CorrectLabel : {
 
 PieChart : {
     selector : '#pie-chart'
+},
+
+DataSourcesButton : {
+    selector : '#datasources-header-button-run',
 }
+
  }
 };
 

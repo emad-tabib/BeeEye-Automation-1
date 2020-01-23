@@ -208,3 +208,13 @@ exports.SelectValidLabel = (browser) =>{
   })
  .pause(1000); 
 }
+
+//Run DataSources
+exports.RunDataSources = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+  .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
+  .click(FlowsSelector.elements.DataSourcesButton)
+ .pause(1000); 
+}
+
