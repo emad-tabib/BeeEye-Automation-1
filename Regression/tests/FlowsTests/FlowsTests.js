@@ -40,27 +40,6 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     done();
 });
 
-//Check two cases once when you select valid label and another one select not valid label
-it('Upload File : Check  when you select valid label ' , function(browser){
-  setup.logTestDetails(this, " Try to heck The data after you upload the file")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
-  Flows.SelectValidLabel(browser);
-  screenShotUtils.takeScreenShot(this,browser,"valid");
-  browser.end();
-});
-
-it('Upload File : Check when you  select not valid label' , function(browser){
-  setup.logTestDetails(this, " Try to heck The data after you upload the file")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
-
-  Flows.SelectNotValidLabel(browser);
-  screenShotUtils.takeScreenShot(this,browser,"not valid");
-
-  browser.end();
-});
-
 //New flow
 it('Create New Flow', function(browser) {
  
@@ -166,6 +145,26 @@ it('Upload File : Check The data after you upload the file' , function(browser){
   browser.end();
 });
 
+//Check two cases once when you select valid label and another one select not valid label
+it('Valid Label : Check  when you select valid label ' , function(browser){
+  setup.logTestDetails(this, " Try to Check when you select valid label")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  Flows.SelectValidLabel(browser);
+  screenShotUtils.takeScreenShot(this,browser,"valid");
+  browser.end();
+});
+
+it('Not Valid Label : Check when you  select not valid label' , function(browser){
+  setup.logTestDetails(this, " Try to Check when you select valid label")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+
+  Flows.SelectNotValidLabel(browser);
+  screenShotUtils.takeScreenShot(this,browser,"not valid");
+
+  browser.end();
+});
 
 });
 
