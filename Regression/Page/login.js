@@ -10,8 +10,7 @@ const configrationReader = require("../utils/configrationReader");
 
 //Login without password
 exports.LoginWithoutPassword = (browser) => {
-  var login = browser.page.loginSelectors();
-  login
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, '') // send values
@@ -23,8 +22,7 @@ exports.LoginWithoutPassword = (browser) => {
 
 //Login Without username
 exports.LoginWithoutUsername = (browser) => {
-  var login = browser.page.loginSelectors();
-  login
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .setValue(loginSelectors.elements.email, '') // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
@@ -35,8 +33,7 @@ exports.LoginWithoutUsername = (browser) => {
 
 //Login With wrong password
 exports.LoginWithWrongPassword = (browser) => {
-  var login = browser.page.loginSelectors();
-  login
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, 'jj') // send values
@@ -46,9 +43,7 @@ exports.LoginWithWrongPassword = (browser) => {
 }
 //Login with wrong username
 exports.LoginWithWrongUsername = (browser) => {
-
-  var login = browser.page.loginSelectors();
-  login
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .setValue(loginSelectors.elements.email, 'user') // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
@@ -60,8 +55,7 @@ exports.LoginWithWrongUsername = (browser) => {
 
 //Login with valid information
 exports.LoginWitValidInformation = (browser) => {
-  var login = browser.page.loginSelectors();
-  login
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values

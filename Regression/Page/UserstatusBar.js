@@ -6,8 +6,7 @@ const { expect } = require('chai')
 
 //Check if the UserStatusBar is display or not
 exports.IsUserStatusBarDisplay = (browser) =>{
-    var UserStatusBar = browser.page.UserStatusBarSelector();
-    UserStatusBar
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
       .waitForElementVisible(loginSelectors.elements.UserMenu)
@@ -28,8 +27,7 @@ exports.IsUserStatusBarDisplay = (browser) =>{
 
 //Check if "About" Link takes you to correct page
 exports.AboutLink = (browser) =>{
-    var About = browser.page.UserStatusBarSelector();
-    About
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
@@ -48,8 +46,7 @@ exports.AboutLink = (browser) =>{
 
 //Check if "system diagnostics" Link takes you to correct page
 exports.SystemDiagnosticsLink = (browser) =>{
-    var SystemDiagnostics = browser.page.UserStatusBarSelector();
-    SystemDiagnostics
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
@@ -67,8 +64,7 @@ exports.SystemDiagnosticsLink = (browser) =>{
 }
 //Check if "Log Out" Link takes you to correct page
 exports.LogOutLink = (browser) =>{
-    var LogOut = browser.page.UserStatusBarSelector();
-    LogOut
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){

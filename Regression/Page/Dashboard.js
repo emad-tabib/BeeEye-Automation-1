@@ -9,8 +9,7 @@ const {
 
 //Left
 exports.LeftSideInDashboardPage = (browser) =>{
-    var Dashboard = browser.page.DashboardSelector();
-    Dashboard
+    browser
     .waitForElementVisible('body', 4000) // wait till page loads
       .waitForElementVisible(DashboardSelector.elements.left)
       .waitForElementVisible(DashboardSelector.elements.SmallCard)
@@ -24,8 +23,7 @@ exports.LeftSideInDashboardPage = (browser) =>{
 
 //Center
 exports.CenterSideInDashboardPage = (browser) =>{
-    var Dashboard = browser.page.DashboardSelector();
-    Dashboard
+    browser
     .waitForElementVisible('body', 4000) // wait till page loads
 .waitForElementVisible(DashboardSelector.elements.center)
 
@@ -39,8 +37,7 @@ exports.CenterSideInDashboardPage = (browser) =>{
 
 //Right
 exports.RightSideInDashboardPage = (browser) =>{
-    var Dashboard = browser.page.DashboardSelector();
-    Dashboard
+    browser
     .waitForElementVisible('body', 4000) // wait till page loads
       .waitForElementVisible(DashboardSelector.elements.right)
       .waitForElementVisible(DashboardSelector.elements.RecentViewedFlows)

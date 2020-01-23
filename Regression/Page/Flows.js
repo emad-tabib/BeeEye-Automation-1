@@ -5,8 +5,7 @@ const configrationReader = require("../utils/configrationReader");
 
 //create new flow
 exports.CreateNewFlow = (browser) =>{
-    var Flows = browser.page.FlowsSelector();
-    Flows
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
    //Flows then add flow button then pop up will appear
     .click(FlowsSelector.elements.NavFlows)
@@ -28,8 +27,7 @@ exports.CreateNewFlow = (browser) =>{
 
 //Edit flow
 exports.EditFlow = (browser) =>{
-    var Flows = browser.page.FlowsSelector();
-    Flows
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
 .click(FlowsSelector.elements.NavFlows , function(result){
     browser
@@ -48,8 +46,7 @@ exports.EditFlow = (browser) =>{
 
 //Delete Flow
 exports.DeleteFlow = (browser) =>{
-    var Flows = browser.page.FlowsSelector();
-    Flows
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
       .click(FlowsSelector.elements.NavFlows , function(result){
         browser
@@ -69,8 +66,7 @@ exports.DeleteFlow = (browser) =>{
 
 // Card in Flows Page
 exports.FlowCard = (browser) =>{
-    var Flows = browser.page.FlowsSelector();
-    Flows
+  browser
     .waitForElementVisible('body', 4000) // wait till page loads
       .click(FlowsSelector.elements.NavFlows , function(result){
           browser 
@@ -89,8 +85,7 @@ exports.FlowCard = (browser) =>{
     
   //Sort By anme
     exports.SortByName = (browser) =>{
-        var Flows = browser.page.FlowsSelector();
-        Flows
+      browser
         .waitForElementVisible('body', 4000) // wait till page loads
           .click(FlowsSelector.elements.NavFlows , function(result){
             browser
@@ -101,8 +96,7 @@ exports.FlowCard = (browser) =>{
         
 //Sort by Gini
         exports.SortByGini = (browser) =>{
-          var Flows = browser.page.FlowsSelector();
-          Flows
+          browser
           .waitForElementVisible('body', 4000) // wait till page loads
             .click(FlowsSelector.elements.NavFlows , function(result){
               browser
@@ -113,8 +107,7 @@ exports.FlowCard = (browser) =>{
           
 //Sort by Date Created
           exports.SortByDateCreated = (browser) =>{
-            var Flows = browser.page.FlowsSelector();
-            Flows
+            browser
             .waitForElementVisible('body', 4000) // wait till page loads
               .click(FlowsSelector.elements.NavFlows , function(result){
                 browser
@@ -215,6 +208,12 @@ exports.RunDataSources = (browser) =>{
   .waitForElementVisible('body', 4000) // wait till page loads
   .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
   .click(FlowsSelector.elements.DataSourcesButton)
+    //,function(result){
+    //browser
+    //.click(FlowsSelector.elements.TransformationButton)
+    //.waitForElementVisible(FlowsSelector.elements.MsgInTransformation,4000,false)
+  
+
  .pause(1000); 
 }
 
@@ -222,9 +221,19 @@ exports.RunDataSources = (browser) =>{
 exports.VerifyTheLogFile = (browser) =>{
   browser 
   .waitForElementVisible('body', 4000) // wait till page loads
-  .waitForElementVisible(FlowsSelector.elements.FlowLogButton)
+  .waitForElementVisible(FlowsSelector.elements.FlowLogButton,4000)
   .click(FlowsSelector.elements.FlowLogButton)
-  .waitForElementNotPresent(FlowsSelector.elements.LogError)
-  //.waitForElementNotVisible(FlowsSelector.elements.LogError)
+  .waitForElementNotPresent(FlowsSelector.elements.LogError,4000)
+ .pause(1000); 
+}
+
+//Error in log file Whem you select Not valid label
+exports.LogFileWithError = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+  .waitForElementVisible(FlowsSelector.elements.FlowLogButton,4000)
+  .click(FlowsSelector.elements.FlowLogButton)
+  .waitForElementVisible(FlowsSelector.elements.LogError,4000)
+
  .pause(1000); 
 }
