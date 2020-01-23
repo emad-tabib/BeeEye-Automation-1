@@ -176,3 +176,35 @@ exports.CheckDataAfterYouUploadFile = (browser) =>{
 
  .pause(1000); 
 }
+
+//Not valid Label
+exports.SelectNotValidLabel = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+  .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
+  .click(FlowsSelector.elements.SelectLabelInput , function(result){
+    browser
+    .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
+    .click(FlowsSelector.elements.NotCorrectLabel,function(result){
+      browser
+      .waitForElementVisible(FlowsSelector.elements.LabelWarning)
+    })
+  })
+ .pause(1000); 
+}
+
+//Valid Label
+exports.SelectValidLabel = (browser) =>{
+  browser 
+  .waitForElementVisible('body', 4000) // wait till page loads
+  .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
+  .click(FlowsSelector.elements.SelectLabelInput , function(result){
+    browser
+    .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
+    .click(FlowsSelector.elements.CorrectLabel,function(result){
+      browser
+      .waitForElementVisible(FlowsSelector.elements.PieChart)
+    })
+  })
+ .pause(1000); 
+}

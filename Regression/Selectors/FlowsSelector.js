@@ -140,8 +140,35 @@ PreviewData : {
 
 Table : {
     selector : '.custom-table',
-}
+},
 
+TableRowItem : {
+    selector : '.table-row-item'
+},
+
+SelectLabelInput : {
+    selector : '#model-select-label',
+},
+
+LabelWarning : {
+    selector : '#label-warning'
+},
+
+LabelMenuVisible : {
+    selector : '.menu.visible'
+},
+
+NotCorrectLabel : {
+    selector : '.item:nth-child(3)'
+},
+
+CorrectLabel : {
+    selector : '.item:nth-child(2)',
+},
+
+PieChart : {
+    selector : '#pie-chart'
+}
  }
 };
 
