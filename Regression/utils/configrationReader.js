@@ -39,3 +39,16 @@ exports.getTheFileInformation_Type = () => {
     var typeOfFileUploaded = config.typeOfFileUploaded;
     return typeOfFileUploaded;
 }
+
+
+//Period for WaitForElementVisible
+exports.getPeriod = () => {
+    var waitPeriodToBeVisible = config.waitPeriodToBeVisible;
+    return waitPeriodToBeVisible;
+}
+
+//Pause Value
+exports.getPauseValue = () => {
+    var pauseValue = config.pauseValue;
+    return pauseValue;
+}
