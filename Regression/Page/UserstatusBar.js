@@ -7,7 +7,7 @@ const { expect } = require('chai')
 //Check if the UserStatusBar is display or not
 exports.IsUserStatusBarDisplay = (browser) =>{
   browser
-    .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
       .waitForElementVisible(loginSelectors.elements.UserMenu)
       .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
@@ -15,68 +15,68 @@ exports.IsUserStatusBarDisplay = (browser) =>{
       .assert.containsText(loginSelectors.elements.UserMenu, configrationReader.getUserName())
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
-        .waitForElementVisible(UserStatusBarSelector.elements.About, 4000)
-        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, 4000)
-        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, 4000)
+        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod())
+        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod())
+        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod())
       })
 
 
-    .pause(1000); 
+    .pause(configrationReader.getPauseValue()); 
 
 }
 
 //Check if "About" Link takes you to correct page
 exports.AboutLink = (browser) =>{
   browser
-    .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
-        .waitForElementVisible(UserStatusBarSelector.elements.About, 4000)
+        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod())
         .click(UserStatusBarSelector.elements.About,function(result){
             browser
-            .waitForElementVisible(UserStatusBarSelector.elements.AboutPage, 4000)
+            .waitForElementVisible(UserStatusBarSelector.elements.AboutPage, configrationReader.getPeriod())
         })
       })
 
 
-    .pause(1000); 
+    .pause(configrationReader.getPauseValue()); 
 
 }
 
 //Check if "system diagnostics" Link takes you to correct page
 exports.SystemDiagnosticsLink = (browser) =>{
   browser
-    .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
-        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, 4000)
+        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod())
         .click(UserStatusBarSelector.elements.SystemDiagnostics,function(result){
             browser
-            .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnosticsPage, 4000)
+            .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnosticsPage, configrationReader.getPeriod())
         })
       })
 
 
-    .pause(1000); 
+    .pause(configrationReader.getPauseValue()); 
 
 }
 //Check if "Log Out" Link takes you to correct page
 exports.LogOutLink = (browser) =>{
   browser
-    .waitForElementVisible('body', 4000) // wait till page loads
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
       .click(UserStatusBarSelector.elements.UserMenuDropdown,function(result){
           browser
-        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, 4000)
+        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod())
         .click(UserStatusBarSelector.elements.LogOut,function(result){
             browser
-            .waitForElementVisible(UserStatusBarSelector.elements.SignInTitle, 4000)
+            .waitForElementVisible(UserStatusBarSelector.elements.SignInTitle, configrationReader.getPeriod())
         })
       })
 
 
-    .pause(1000); 
+    .pause(configrationReader.getPauseValue()); 
 
 }
