@@ -5,6 +5,7 @@ const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
 const setup = require("../../utils/setup");
 
+
 const {
     assert
 } = require('chai')
@@ -39,6 +40,7 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
 });
+
 
 //New flow
 it('Create New Flow', function(browser) {
@@ -174,23 +176,23 @@ it('Run DataSources' , function(browser){
   Flows.SelectValidLabel(browser);
   Flows.RunDataSources(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Click on DataSources butto to run it ");
-
   browser.end();
 });
 
-//Log File
-it('Log File ' , function(browser){
+
+
+//Log File without error
+it('Log File without error' , function(browser){
   setup.logTestDetails(this, " Try to verify no errors display in the log file")
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
   Flows.SelectValidLabel(browser);
   Flows.RunDataSources(browser);
   Flows.VerifyTheLogFile(browser);
-  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Run DataSources");
-
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Run DataSources and no errors are display in Log File");
   browser.end();
 });
+
+
 });
-
-
 
