@@ -1,4 +1,5 @@
 const loginPage = require("../../Page/login");
+const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
 const setup = require("../../utils/setup");
@@ -9,12 +10,12 @@ const {
     expect
 } = require('chai')
 
-describe('Login in BeeEye', function () {
+describe('Login in BeeEye : Try to login without Password , Try to login without username , Try to login with wrong password , Try to login with wrong Username and  Try to login with Valid Information', function () {
 
     before(function (browser, done) {
-        logReport.log(this, "Welcome to ITG default nightwatch template");
-        console.log("Welcome to ITG default nightwatch template");
-        setup.lunchBrowser(browser, '/');
+        logReport.log(this, "Test Cases for Login Page");
+        console.log("Test Cases for Login Page");
+        setup.lunchBrowser(browser, '');
         done();
 
     });
@@ -27,59 +28,51 @@ describe('Login in BeeEye', function () {
     });
 
     beforeEach(function (browser, done) {
-        setup.lunchBrowser(browser, '/');
-        console.log("before each");
+        logReport.log(this, "before each test case : open the site");
+        setup.lunchBrowser(browser, '');
+        logReport.log(this, "before each test case : Check The title of the Page");
+        title.getTitle(browser);
         done();
     });
 
     afterEach(function (browser, done) {
-        console.log("after each");
+
         done();
     });
 
     it('Login Without Password', function (browser) {
-
         setup.logTestDetails(this, "Try to login without Password")
         loginPage.LoginWithoutPassword(browser);
-
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Login without Password");
         browser.end();
     });
 
     it('Login Without Username', function (browser) {
-
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login without Username")
         loginPage.LoginWithoutUsername(browser);
-
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login without Username");
         browser.end();
     });
 
 
     it('Login With Wrong Password', function (browser) {
-
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with wrong password")
         loginPage.LoginWithWrongPassword(browser);
-
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with wrong password");
         browser.end();
     });
 
     it('Login With Wrong Username', function (browser) {
-
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with wrong Username")
         loginPage.LoginWithWrongUsername(browser);
-
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with wrong Username");
         browser.end();
     });
 
     it('Login With Valid Information', function (browser) {
-
-        logReport.log(this, "this is log");
+        setup.logTestDetails(this, "Try to login with Valid Information")
         loginPage.LoginWitValidInformation(browser);
-
-        screenShotUtils.takeScreenShot(this, browser, "this is the results");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for login with Valid Information");
         browser.end();
     });
 
