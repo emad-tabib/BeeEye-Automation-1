@@ -27,11 +27,11 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     });
 
     beforeEach(function (browser, done) {
-        logReport.log(this, "before each test case : open the site");
+        logReport.log(this, "Open the site");
         setup.lunchBrowser(browser, '');
-        logReport.log(this, "before each test case : Login with valid Information");
+        logReport.log(this, "Login with valid Information");
         login.LoginWitValidInformation(browser);
-        logReport.log(this, "before each test case : Check The title of the Page");
+        logReport.log(this, "Check The title of the Page");
         title.getTitle(browser);
         console.log("before each");
         done();

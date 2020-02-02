@@ -27,11 +27,11 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     });
 
     beforeEach(function (browser, done) {
-      logReport.log(this, "before each test case : open the site");
+      logReport.log(this, "Open the site");
       setup.lunchBrowser(browser,'');
-      logReport.log(this, "before each test case : Login with valid Information");
+      logReport.log(this, "Login with valid Information");
       loginPage.LoginWitValidInformation(browser);
-      logReport.log(this, "before each test case : Check The title of the Page");
+      logReport.log(this, "Check The title of the Page");
       title.getTitle(browser);
       console.log("before each");
       done();
@@ -41,6 +41,14 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     done();
 });
 
+//Upload File to new Flow
+it('Upload File : Uploading File is successfully' , function(browser){
+  setup.logTestDetails(this, " Try to test if Upload file is successfully ")
+  Flows.CreateNewFlow(browser);
+  Flows.UploadFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
+  browser.end();
+});
 
 //New flow
 it('Create New Flow', function(browser) {

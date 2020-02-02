@@ -28,12 +28,12 @@ describe('Main Navigation Bar : Test if Logo is display or not , and check every
 });
   
 beforeEach(function (browser, done) {
-    logReport.log(this, "before each test case : open the site");
+    logReport.log(this, "Open the site");
     setup.lunchBrowser(browser,'');
-    logReport.log(this, "before each test case : Login with valid Information");
+    logReport.log(this, "Login with valid Information");
     loginPage.LoginWitValidInformation(browser);
     setup.lunchBrowser(browser, '/dashboard');
-    logReport.log(this, "before each test case : Check The title of the Page");
+    logReport.log(this, "Check The title of the Page");
     title.getTitle(browser);
     console.log("before each");
     done();
@@ -84,9 +84,4 @@ it('EXPLAIN', function(browser) {
     screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on EXPLAIN Link");
     browser.end();
 });
-
-
-
-
-
 });
