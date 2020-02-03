@@ -31,7 +31,7 @@ beforeEach(function (browser, done) {
     logReport.log(this, "Open the site");
     setup.lunchBrowser(browser,'');
     logReport.log(this, "Login with valid Information");
-    loginPage.LoginWitValidInformation(browser);
+    loginPage.LoginWithValidInformation(browser);
     logReport.log(this, "Check The title of the Page");
     title.getTitle(browser);
     console.log("before each");

@@ -30,7 +30,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         logReport.log(this, "Open the site");
         setup.lunchBrowser(browser, '');
         logReport.log(this, "Login with valid Information");
-        login.LoginWitValidInformation(browser);
+        login.LoginWithValidInformation(browser);
         logReport.log(this, "Check The title of the Page");
         title.getTitle(browser);
         console.log("before each");
