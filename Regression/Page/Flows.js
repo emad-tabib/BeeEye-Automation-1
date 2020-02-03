@@ -1,229 +1,235 @@
-const FlowsSelector =require("../Selectors/FlowsSelector");
-const { assert } = require('chai').assert
-const { expect } = require('chai')
+const FlowsSelector = require("../Selectors/FlowsSelector");
+const {
+  assert
+} = require('chai').assert
+const {
+  expect
+} = require('chai')
 const configrationReader = require("../utils/configrationReader");
 
 //create new flow
-exports.CreateNewFlow = (browser) =>{
+exports.CreateNewFlow = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-   //Flows then add flow button then pop up will appear
+    //Click on Flows Link in Navigation Bar
     .click(FlowsSelector.elements.NavFlows)
     .waitForElementVisible(FlowsSelector.elements.AddFlowBtn)
-    .click(FlowsSelector.elements.AddFlowBtn , function(result) {
-        browser
-       .waitForElementVisible(FlowsSelector.elements.PopUp) 
-       .waitForElementVisible(FlowsSelector.elements.FlowNameInput)
-       .setValue(FlowsSelector.elements.FlowNameInput, configrationReader.getThenameOfTheNewFlow())
-       .keys(browser.Keys.ENTER)
+    //Click on "+" Add flow button
+    .click(FlowsSelector.elements.AddFlowBtn, function (result) {
+      browser
+        //pop up will appear to write the name of the new flow
+        .waitForElementVisible(FlowsSelector.elements.PopUp)
+        .waitForElementVisible(FlowsSelector.elements.FlowNameInput)
+        .setValue(FlowsSelector.elements.FlowNameInput, configrationReader.getThenameOfTheNewFlow())
+        .keys(browser.Keys.ENTER)
     })
-    .waitForElementVisible(FlowsSelector.elements.BackButton)
+    //Check if back button is display with the name of the new flow To check if creating Flow is done successfully
+    .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod())
+    //Check if the back button with the name of the new flow is display
     .assert.containsText(FlowsSelector.elements.BackButton, configrationReader.getThenameOfTheNewFlow())
     .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
-    .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 
 
 //Edit flow
-exports.EditFlow = (browser) =>{
+exports.EditFlow = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-.click(FlowsSelector.elements.NavFlows , function(result){
-    browser
-    .click(FlowsSelector.elements.FlowMenu , function(result){
-        browser 
-        .click(FlowsSelector.elements.Edit , function(result){
-            browser
-            .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
+    //Click on Flows Link in Navigation Bar
+    .click(FlowsSelector.elements.NavFlows, function (result) {
+      browser
+        //In flow card click on ":" to see the menu
+        .click(FlowsSelector.elements.FlowMenu, function (result) {
+          browser
+            //click on Edit Link
+            .click(FlowsSelector.elements.Edit, function (result) {
+              browser
+                //after you click on "edit" link , the flow should open and thats test by check if DataSorce button is display or not
+                .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
+            })
         })
-   })
-})
-   
-   .pause(configrationReader.getPauseValue()); 
+    })
+
+    .pause(configrationReader.getPauseValue());
 }
 
 
 //Delete Flow
-exports.DeleteFlow = (browser) =>{
+exports.DeleteFlow = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-      .click(FlowsSelector.elements.NavFlows , function(result){
-        browser
-    .assert.visible(FlowsSelector.elements.FlowMenu)
-    .click(FlowsSelector.elements.FlowMenu , function(result){ 
-            browser
+    //Click on Flows Link in Navigation Bar
+    .click(FlowsSelector.elements.NavFlows, function (result) {
+      browser
+        .assert.visible(FlowsSelector.elements.FlowMenu)
+        .click(FlowsSelector.elements.FlowMenu, function (result) {
+          browser
             .assert.visible(FlowsSelector.elements.Edit)
             .assert.visible(FlowsSelector.elements.Delete)
             .assert.visible(FlowsSelector.elements.Copy)
             .click(FlowsSelector.elements.Delete)
         })
     })
-      
-   .pause(configrationReader.getPauseValue()); 
+
+    .pause(configrationReader.getPauseValue());
 }
 
 
 // Card in Flows Page
-exports.FlowCard = (browser) =>{
+exports.FlowCard = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-      .click(FlowsSelector.elements.NavFlows , function(result){
-          browser 
+    .click(FlowsSelector.elements.NavFlows, function (result) {
+      browser
         .assert.visible(FlowsSelector.elements.FlowCount)
         .assert.visible(FlowsSelector.elements.CardBodyChart)
         .assert.visible(FlowsSelector.elements.CardBodyInfo)
         .assert.visible(FlowsSelector.elements.Author)
         .assert.visible(FlowsSelector.elements.FlowName)
-        .assert.containsText(FlowsSelector.elements.CardBodyChart , 'GINI')
-        
-      })
-      
+        .assert.containsText(FlowsSelector.elements.CardBodyChart, 'GINI')
 
-   .pause(configrationReader.getPauseValue()); 
-    }
-    
-  //Sort By anme
-    exports.SortByName = (browser) =>{
+    })
+
+
+    .pause(configrationReader.getPauseValue());
+}
+
+//Sort By anme
+exports.SortByName = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .click(FlowsSelector.elements.NavFlows, function (result) {
       browser
-        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-          .click(FlowsSelector.elements.NavFlows , function(result){
-            browser
-           .click(FlowsSelector.elements.SpanForName)
-          })
-       .pause(configrationReader.getPauseValue()); 
-        }
-        
+        .click(FlowsSelector.elements.SpanForName)
+    })
+    .pause(configrationReader.getPauseValue());
+}
+
 //Sort by Gini
-        exports.SortByGini = (browser) =>{
-          browser
-          .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-            .click(FlowsSelector.elements.NavFlows , function(result){
-              browser
-             .click(FlowsSelector.elements.SpanForGini)
-            })
-         .pause(configrationReader.getPauseValue()); 
-          }
-          
+exports.SortByGini = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .click(FlowsSelector.elements.NavFlows, function (result) {
+      browser
+        .click(FlowsSelector.elements.SpanForGini)
+    })
+    .pause(configrationReader.getPauseValue());
+}
+
 //Sort by Date Created
-          exports.SortByDateCreated = (browser) =>{
-            browser
-            .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-              .click(FlowsSelector.elements.NavFlows , function(result){
-                browser
-              .click(FlowsSelector.elements.SpanForDatecreated)
-            
-              })
-           .pause(configrationReader.getPauseValue()); 
-            }
-            
+exports.SortByDateCreated = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .click(FlowsSelector.elements.NavFlows, function (result) {
+      browser
+        .click(FlowsSelector.elements.SpanForDatecreated)
+
+    })
+    .pause(configrationReader.getPauseValue());
+}
+
 //no file chosen
-exports.NoFileChosen = (browser) =>{
-  browser 
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+exports.NoFileChosen = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.UploadBtn)
     .assert.containsText(FlowsSelector.elements.EmptyInput, 'No file chosen')
- .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 //extension of the file not csv
-exports.ExtensionOfTheFileUploaded = (browser) =>{
+exports.ExtensionOfTheFileUploaded = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.UploadBtn)
-.click(FlowsSelector.elements.UploadBtn, function(result){
-  browser
-        .setValue('input[type="file"]', require('path').resolve(__dirname + '/NotCorrectExtensionOfTheFileUploaded.txt'))
+        .setValue('input[type="file"]', require('path').resolve(__dirname + '/Data/NotCorrectExtensionOfTheFileUploaded.txt'))
         .assert.containsText(FlowsSelector.elements.ErrorInput, 'Selected file type not allowed')
-})
- .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 //Upload File
-exports.UploadFile = (browser) =>{
-  browser 
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(FlowsSelector.elements.UploadBtn)
-.click(FlowsSelector.elements.UploadBtn, function(result){
+exports.UploadFile = (browser) => {
   browser
-        .setValue('input[type="file"]', require('path').resolve(__dirname + '/UCI_Credit_Card.csv'))  
-})
- .pause(configrationReader.getPauseValue()); 
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.UploadBtn)
+        .setValue('input[type="file"]', require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
+    .pause(configrationReader.getPauseValue());
 }
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
-exports.CheckDataAfterYouUploadFile = (browser) =>{
-  browser 
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+exports.CheckDataAfterYouUploadFile = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.FileInformation)
     .waitForElementVisible(FlowsSelector.elements.Name)
     .waitForElementVisible(FlowsSelector.elements.Type)
     .waitForElementVisible(FlowsSelector.elements.Columns)
-    .assert.containsText(FlowsSelector.elements.NameOfThefile,configrationReader.getTheFileInformation_Name())
-    .assert.containsText(FlowsSelector.elements.NumberOfColumns,configrationReader.getTheFileInformation_Columns())
-    .assert.containsText(FlowsSelector.elements.TypeOfTheFile,configrationReader.getTheFileInformation_Type())
-    
+    .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_Name())
+    .assert.containsText(FlowsSelector.elements.NumberOfColumns, configrationReader.getTheFileInformation_Columns())
+    .assert.containsText(FlowsSelector.elements.TypeOfTheFile, configrationReader.getTheFileInformation_Type())
+
     .waitForElementVisible(FlowsSelector.elements.PreviewData)
     .waitForElementVisible(FlowsSelector.elements.Table)
     .waitForElementVisible(FlowsSelector.elements.TableRowItem)
 
- .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 //Not valid Label
-exports.SelectNotValidLabel = (browser) =>{
-  browser 
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
-  .click(FlowsSelector.elements.SelectLabelInput , function(result){
-    browser
-    .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
-    .click(FlowsSelector.elements.NotCorrectLabel,function(result){
+exports.SelectNotValidLabel = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
+    .click(FlowsSelector.elements.SelectLabelInput, function (result) {
       browser
-      .waitForElementVisible(FlowsSelector.elements.LabelWarning)
+        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
+        .click(FlowsSelector.elements.NotCorrectLabel, function (result) {
+          browser
+            .waitForElementVisible(FlowsSelector.elements.LabelWarning)
+        })
     })
-  })
- .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 //Valid Label
-exports.SelectValidLabel = (browser) =>{
+exports.SelectValidLabel = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
-  .click(FlowsSelector.elements.SelectLabelInput , function(result){
-    browser
-    .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
-    .click(FlowsSelector.elements.CorrectLabel,function(result){
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
+    .click(FlowsSelector.elements.SelectLabelInput, function (result) {
       browser
-      .waitForElementVisible(FlowsSelector.elements.PieChart)
+        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
+        .click(FlowsSelector.elements.CorrectLabel, function (result) {
+          browser
+            .waitForElementVisible(FlowsSelector.elements.PieChart)
+        })
     })
-  })
- .pause(configrationReader.getPauseValue()); 
+    .pause(configrationReader.getPauseValue());
 }
 
 //Run DataSources
-exports.RunDataSources = (browser) =>{
+exports.RunDataSources = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
-  .click(FlowsSelector.elements.DataSourcesButton)
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
+    .click(FlowsSelector.elements.DataSourcesButton)
     //,function(result){
     //browser
     //.click(FlowsSelector.elements.TransformationButton)
     //.waitForElementVisible(FlowsSelector.elements.MsgInTransformation,configrationReader.getPeriod(),false)
-  
 
- .pause(configrationReader.getPauseValue()); 
+
+    .pause(configrationReader.getPauseValue());
 }
 
 //Verify No error displayed in the log file
-exports.VerifyTheLogFile = (browser) =>{
+exports.VerifyTheLogFile = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .waitForElementVisible(FlowsSelector.elements.FlowLogButton,configrationReader.getPeriod())
-  .click(FlowsSelector.elements.FlowLogButton)
-  .waitForElementNotPresent(FlowsSelector.elements.LogError,configrationReader.getPeriod())
- .pause(configrationReader.getPauseValue()); 
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.FlowLogButton, configrationReader.getPeriod())
+    .click(FlowsSelector.elements.FlowLogButton)
+    .waitForElementNotPresent(FlowsSelector.elements.LogError, configrationReader.getPeriod())
+    .pause(configrationReader.getPauseValue());
 }
-
