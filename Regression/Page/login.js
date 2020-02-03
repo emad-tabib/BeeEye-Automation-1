@@ -55,13 +55,13 @@ exports.LoginWithWrongUsername = (browser) => {
 
 
 //Login with valid information
-exports.LoginWitValidInformation = (browser) => {
+exports.LoginWithValidInformation = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
     .click(loginSelectors.elements.signInBtn)
-    .expect.element(loginSelectors.elements.UserMenu).text.to.contain('itg')
+    .expect.element(loginSelectors.elements.UserMenu).text.to.contain(configrationReader.getUserName())
 
 
 }
