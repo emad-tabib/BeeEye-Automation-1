@@ -28,9 +28,9 @@ describe('Login in BeeEye : Try to login without Password , Try to login without
     });
 
     beforeEach(function (browser, done) {
-        logReport.log(this, "before each test case : open the site");
+        logReport.log(this, "Open the site");
         setup.lunchBrowser(browser, '');
-        logReport.log(this, "before each test case : Check The title of the Page");
+        logReport.log(this, "Check The title of the Page");
         title.getTitle(browser);
         done();
     });
