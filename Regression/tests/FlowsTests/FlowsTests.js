@@ -136,14 +136,7 @@ it('Upload File : The upload file extension is not CSV' , function(browser){
   browser.end();
 });
 
-//Upload File to new Flow
-it('Upload File : Uploading File is successfully' , function(browser){
-  setup.logTestDetails(this, " Try to test if Upload file is successfully ")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
-  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
-  browser.end();
-});
+
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
 it('Upload File : Check The data after you upload the file' , function(browser){
@@ -156,7 +149,7 @@ it('Upload File : Check The data after you upload the file' , function(browser){
 });
 
 //Check two cases once when you select valid label and another one select not valid label
-it('Valid Label : Check  when you select valid label ' , function(browser){
+it('Valid Label : Check when you select valid label ' , function(browser){
   setup.logTestDetails(this, " Try to Check when you select valid label")
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
@@ -165,8 +158,8 @@ it('Valid Label : Check  when you select valid label ' , function(browser){
   browser.end();
 });
 
-it('Not Valid Label : Check when you  select not valid label' , function(browser){
-  setup.logTestDetails(this, " Try to Check when you select valid label")
+it('Not Valid Label : Check when you select not valid label' , function(browser){
+  setup.logTestDetails(this, " Try to Check when you select not valid label")
   Flows.CreateNewFlow(browser);
   Flows.UploadFile(browser);
 
