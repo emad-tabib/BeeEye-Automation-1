@@ -40,6 +40,15 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
 });
+//New flow
+it('Create New Flow', function(browser) {
+ 
+  setup.logTestDetails(this, "Try to Create New Flow")
+    Flows.CreateNewFlow(browser);
+    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Create New Flow");
+    browser.end();
+});
+
 
 //Upload File to new Flow
 it('Upload File : Uploading File is successfully' , function(browser){
@@ -50,14 +59,9 @@ it('Upload File : Uploading File is successfully' , function(browser){
   browser.end();
 });
 
-//New flow
-it('Create New Flow', function(browser) {
- 
-  setup.logTestDetails(this, "Try to Create New Flow")
-    Flows.CreateNewFlow(browser);
-    screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Create New Flow");
-    browser.end();
-});
+
+
+
 
 //Edit Flow
 it('Edit Flow', function(browser) {

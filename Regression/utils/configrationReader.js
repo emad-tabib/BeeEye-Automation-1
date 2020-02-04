@@ -18,12 +18,6 @@ exports.getPassword = () => {
     return password;
 }
 
-//For Create New Flow in FLOWS Page
-exports.getThenameOfTheNewFlow = () => {
-    var nameOfTheNewFlow = config.nameOfTheNewFlow;
-    return nameOfTheNewFlow;
-}
-
 //For Data display after You Uploaded File
 exports.getTheFileInformation_Name = () => {
     var nameOfTheUploadedFile = config.nameOfTheUploadedFile;
