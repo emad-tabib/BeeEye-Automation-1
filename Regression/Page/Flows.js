@@ -6,7 +6,7 @@ const {
   expect
 } = require('chai')
 const configrationReader = require("../utils/configrationReader");
-
+const FlowName = require("../utils/FlowName");
 //create new flow
 exports.CreateNewFlow = (browser) => {
   browser
@@ -20,13 +20,13 @@ exports.CreateNewFlow = (browser) => {
         //pop up will appear to write the name of the new flow
         .waitForElementVisible(FlowsSelector.elements.PopUp)
         .waitForElementVisible(FlowsSelector.elements.FlowNameInput)
-        .setValue(FlowsSelector.elements.FlowNameInput, configrationReader.getThenameOfTheNewFlow())
+         //Add random number to the name of the new flow
+        .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
         .keys(browser.Keys.ENTER)
     })
-    //Check if back button is display with the name of the new flow To check if creating Flow is done successfully
+    //Check if back button is display To check if creating Flow is done successfully
     .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod())
-    //Check if the back button with the name of the new flow is display
-    .assert.containsText(FlowsSelector.elements.BackButton, configrationReader.getThenameOfTheNewFlow())
+    .waitForElementVisible(FlowsSelector.elements.FlowNameonBackButton)
     .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
     .pause(configrationReader.getPauseValue());
 }

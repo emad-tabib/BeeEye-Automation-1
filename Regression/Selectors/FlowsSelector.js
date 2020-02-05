@@ -21,6 +21,10 @@ elements:{
      selector: '.flow-header-back'
  },
 
+ FlowNameonBackButton : {
+     selector: '.flow-name.text-slicer'
+ },
+
  DataSourcesButton : {
      selector: '#datasources-header-button'
  },
@@ -183,7 +187,12 @@ FlowLogButton : {
 },
 
 LogError : {
-  selector :'.pre-log.error-log'
+  selector : '.pre-log.error-log'
+ },
+
+ MsgInTransformation : {
+     selector : '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
+     locateStrategy: 'xpath'
  }
 }
 };
