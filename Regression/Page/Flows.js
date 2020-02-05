@@ -233,3 +233,31 @@ exports.VerifyTheLogFile = (browser) => {
     .waitForElementNotPresent(FlowsSelector.elements.LogError, configrationReader.getPeriod())
     .pause(configrationReader.getPauseValue());
 }
+
+//general method  to reduce the duplicate code 
+exports.CreateNewFlowAndUploadFile = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    //Click on Flows Link in Navigation Bar
+    .click(FlowsSelector.elements.NavFlows)
+    .waitForElementVisible(FlowsSelector.elements.AddFlowBtn)
+    //Click on "+" Add flow button
+    .click(FlowsSelector.elements.AddFlowBtn, function (result) {
+      browser
+        //pop up will appear to write the name of the new flow
+        .waitForElementVisible(FlowsSelector.elements.PopUp)
+        .waitForElementVisible(FlowsSelector.elements.FlowNameInput)
+         //Add random number to the name of the new flow
+        .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
+        .keys(browser.Keys.ENTER)
+    })
+    //Check if back button is display To check if creating Flow is done successfully
+    .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod())
+    .waitForElementVisible(FlowsSelector.elements.FlowNameonBackButton)
+    .waitForElementVisible(FlowsSelector.elements.DataSourcesButton)
+    .pause(configrationReader.getPauseValue())
+.waitForElementVisible(FlowsSelector.elements.UploadBtn)
+        .setValue('input[type="file"]', require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
+        .pause(configrationReader.getPauseValue());
+    }
+
