@@ -46,3 +46,21 @@ exports.getPauseValue = () => {
     var pauseValue = config.pauseValue;
     return pauseValue;
 }
+
+//Error  msg
+exports.DisplayError = () => {
+    var err = config.err;
+    return err;
+}
+
+//Valid Label
+exports.getValidLabel = () => {
+    var validLabel = config.validLabel;
+    return validLabel;
+}
+
+//not Valid Label
+exports.getNotValidLabel = () => {
+    var notValidLabel = config.notValidLabel;
+    return notValidLabel;
+}

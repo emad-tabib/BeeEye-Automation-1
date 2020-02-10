@@ -162,14 +162,6 @@ LabelMenuVisible : {
     selector : '.menu.visible'
 },
 
-NotCorrectLabel : {
-    selector : '.item:nth-child(3)'
-},
-
-CorrectLabel : {
-    selector : '.item:nth-child(2)',
-},
-
 PieChart : {
     selector : '#pie-chart'
 },

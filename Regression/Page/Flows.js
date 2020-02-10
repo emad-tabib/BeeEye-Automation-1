@@ -184,11 +184,10 @@ exports.SelectNotValidLabel = (browser) => {
     .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
     .click(FlowsSelector.elements.SelectLabelInput, function (result) {
       browser
-        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
-        .click(FlowsSelector.elements.NotCorrectLabel, function (result) {
-          browser
-            .waitForElementVisible(FlowsSelector.elements.LabelWarning)
-        })
+        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible,configrationReader.getPeriod())
+        .setValue(FlowsSelector.elements.SelectLabelInput ,configrationReader.getNotValidLabel())
+        .keys(browser.Keys.ENTER)
+        .waitForElementVisible(FlowsSelector.elements.LabelWarning)
     })
     .pause(configrationReader.getPauseValue());
 }
@@ -200,11 +199,10 @@ exports.SelectValidLabel = (browser) => {
     .waitForElementVisible(FlowsSelector.elements.SelectLabelInput)
     .click(FlowsSelector.elements.SelectLabelInput, function (result) {
       browser
-        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible)
-        .click(FlowsSelector.elements.CorrectLabel, function (result) {
-          browser
-            .waitForElementVisible(FlowsSelector.elements.PieChart)
-        })
+        .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible,configrationReader.getPeriod())
+        .setValue(FlowsSelector.elements.SelectLabelInput ,configrationReader.getValidLabel())
+        .keys(browser.Keys.ENTER)
+        .waitForElementVisible(FlowsSelector.elements.PieChart)
     })
     .pause(configrationReader.getPauseValue());
 }
@@ -260,4 +258,3 @@ exports.CreateNewFlowAndUploadFile = (browser) => {
         .setValue('input[type="file"]', require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
         .pause(configrationReader.getPauseValue());
     }
-
