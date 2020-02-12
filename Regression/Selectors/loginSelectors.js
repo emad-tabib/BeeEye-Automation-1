@@ -12,6 +12,14 @@ module.exports = {
 
     UserMenu: {
       selector: '.user-menu-text'
+    },
+
+    SignInError: {
+      selector: '.sign-in-form-error'
+    },
+
+    SignInTitle: {
+      selector: '.sign-in-title'
     }
-  }
+    }
 };

@@ -13,11 +13,15 @@ const setup = require("../utils/setup");
 exports.LoginWithoutPassword = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(loginSelectors.elements.email)
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+    .assert.elementPresent(loginSelectors.elements.password)
     .setValue(loginSelectors.elements.password, '') // send values
+    .assert.elementPresent(loginSelectors.elements.signInBtn)
     .click(loginSelectors.elements.signInBtn)
+    .assert.elementPresent(loginSelectors.elements.SignInTitle)
+    .assert.elementPresent(loginSelectors.elements.SignInError)
     .pause(configrationReader.getPauseValue());
-
 }
 
 
@@ -25,9 +29,14 @@ exports.LoginWithoutPassword = (browser) => {
 exports.LoginWithoutUsername = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(loginSelectors.elements.email)
     .setValue(loginSelectors.elements.email, '') // send values
+    .assert.elementPresent(loginSelectors.elements.password)
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
+    .assert.elementPresent(loginSelectors.elements.signInBtn)
     .click(loginSelectors.elements.signInBtn)
+    .assert.elementPresent(loginSelectors.elements.SignInTitle)
+    .assert.elementPresent(loginSelectors.elements.SignInError)
     .pause(configrationReader.getPauseValue());
 
 }
@@ -36,9 +45,14 @@ exports.LoginWithoutUsername = (browser) => {
 exports.LoginWithWrongPassword = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(loginSelectors.elements.email)
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+    .assert.elementPresent(loginSelectors.elements.password)
     .setValue(loginSelectors.elements.password, 'jj') // send values
+    .assert.elementPresent(loginSelectors.elements.signInBtn)
     .click(loginSelectors.elements.signInBtn)
+    .assert.elementPresent(loginSelectors.elements.SignInTitle)
+    .assert.elementPresent(loginSelectors.elements.SignInError)
     .pause(configrationReader.getPauseValue());
 
 }
@@ -46,9 +60,14 @@ exports.LoginWithWrongPassword = (browser) => {
 exports.LoginWithWrongUsername = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(loginSelectors.elements.email)
     .setValue(loginSelectors.elements.email, 'user') // send values
+    .assert.elementPresent(loginSelectors.elements.password)
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
+    .assert.elementPresent(loginSelectors.elements.signInBtn)
     .click(loginSelectors.elements.signInBtn)
+    .assert.elementPresent(loginSelectors.elements.SignInTitle)
+    .assert.elementPresent(loginSelectors.elements.SignInError)
     .pause(configrationReader.getPauseValue());
 
 }
@@ -58,8 +77,11 @@ exports.LoginWithWrongUsername = (browser) => {
 exports.LoginWithValidInformation = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(loginSelectors.elements.email)
     .setValue(loginSelectors.elements.email, configrationReader.getUserName()) // send values
+    .assert.elementPresent(loginSelectors.elements.password)
     .setValue(loginSelectors.elements.password, configrationReader.getPassword()) // send values
+    .assert.elementPresent(loginSelectors.elements.signInBtn)
     .click(loginSelectors.elements.signInBtn)
     .expect.element(loginSelectors.elements.UserMenu).text.to.contain(configrationReader.getUserName())
 
