@@ -24,6 +24,6 @@ module.exports = {
     BigCard: {
       selector: '.app-card-custom.dashboard-big-card'
     }
-
+    
   }
 };

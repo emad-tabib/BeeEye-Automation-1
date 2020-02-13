@@ -14,10 +14,16 @@ exports.LeftSideInDashboardPage = (browser) => {
     Dashboard
         .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
         .waitForElementVisible(DashboardSelector.elements.left)
+        .assert.elementPresent(DashboardSelector.elements.left)
+
         .waitForElementVisible(DashboardSelector.elements.SmallCard)
+        .assert.elementPresent(DashboardSelector.elements.SmallCard)
+
         .assert.containsText(DashboardSelector.elements.SmallCard, 'Best Flow(GINI)')
 
         .waitForElementVisible(DashboardSelector.elements.BigCard)
+        .assert.elementPresent(DashboardSelector.elements.BigCard)
+
         .assert.containsText(DashboardSelector.elements.BigCard, 'Top Flows')
         .pause(configrationReader.getPauseValue());
 }
@@ -29,11 +35,16 @@ exports.CenterSideInDashboardPage = (browser) => {
     Dashboard
         .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
         .waitForElementVisible(DashboardSelector.elements.center)
+        .assert.elementPresent(DashboardSelector.elements.center)
 
         .waitForElementVisible(DashboardSelector.elements.SmallCard)
+        .assert.elementPresent(DashboardSelector.elements.SmallCard)
+
         .assert.containsText(DashboardSelector.elements.center, 'System Statistics')
 
         .waitForElementVisible(DashboardSelector.elements.BigCard)
+        .assert.elementPresent(DashboardSelector.elements.BigCard)
+
         .assert.containsText(DashboardSelector.elements.center, 'Platform Statistics')
         .pause(configrationReader.getPauseValue());
 }
@@ -44,7 +55,11 @@ exports.RightSideInDashboardPage = (browser) => {
     Dashboard
         .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
         .waitForElementVisible(DashboardSelector.elements.right)
+        .assert.elementPresent(DashboardSelector.elements.right)
+
         .waitForElementVisible(DashboardSelector.elements.RecentViewedFlows)
+        .assert.elementPresent(DashboardSelector.elements.RecentViewedFlows)
+
         .assert.containsText(DashboardSelector.elements.RecentViewedFlows, 'Recent Viewed Flows')
         .pause(configrationReader.getPauseValue());
 }
