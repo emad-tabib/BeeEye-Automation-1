@@ -12,55 +12,70 @@ exports.MainNavigationBar = (browser) =>{
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     //Logo
    .waitForElementVisible(MainNavigationBarSelectors.elements.Logo)
+   .assert.elementPresent(MainNavigationBarSelectors.elements.Logo)
+   
    //Navigation
    .waitForElementVisible(MainNavigationBarSelectors.elements.NavigationBar)
+   .assert.elementPresent(MainNavigationBarSelectors.elements.NavigationBar)
     .pause(configrationReader.getPauseValue());
     }
 
 //DASHBOARD
 exports.DashboardNavigation = (browser) =>{
-    var Dashboard = browser.page.MainNavigationBarSelectors();
-    Dashboard
+  browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(MainNavigationBarSelectors.elements.Dashboard)
+    .assert.elementPresent(MainNavigationBarSelectors.elements.Dashboard)
+
       .click(MainNavigationBarSelectors.elements.Dashboard , function (result) {
-        browser.waitForElementVisible(DashboardSelector.elements.SmallCard)
+        browser
+        .waitForElementVisible(DashboardSelector.elements.SmallCard)
+        .assert.elementPresent(DashboardSelector.elements.SmallCard)
       })
     .pause(configrationReader.getPauseValue());
     }
 
 //FLOWS
 exports.FlowsNavigation = (browser) =>{
-    var Flows = browser.page.MainNavigationBarSelectors();
-    Flows
+  browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.NavFlows)
+    .assert.elementPresent(FlowsSelector.elements.NavFlows)
+
       .click(FlowsSelector.elements.NavFlows , function (result) {
-        browser.waitForElementVisible(MainNavigationBarSelectors.elements.FlowTitle)
+        browser
+        .waitForElementVisible(MainNavigationBarSelectors.elements.FlowTitle)
+        .assert.elementPresent(MainNavigationBarSelectors.elements.FlowTitle)
       })
     .pause(configrationReader.getPauseValue());
     }
 
 //PRODUCTION
 exports.ProductionNavigation = (browser) =>{
-    var Production = browser.page.MainNavigationBarSelectors();
-    Production
+  browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
    .waitForElementVisible(MainNavigationBarSelectors.elements.Production)
+   .assert.elementPresent(MainNavigationBarSelectors.elements.Production)
+
       .click(MainNavigationBarSelectors.elements.Production , function (result) {
-        browser.waitForElementVisible(MainNavigationBarSelectors.elements.ProductsCount)
+        browser
+        .waitForElementVisible(MainNavigationBarSelectors.elements.ProductsCount)
+        .assert.elementPresent(MainNavigationBarSelectors.elements.ProductsCount)
       })
     .pause(configrationReader.getPauseValue());
     }
 
 //EXPLAIN
 exports.ExplainNavigation = (browser) =>{
-    var Explain = browser.page.MainNavigationBarSelectors();
-    Explain
+  browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(MainNavigationBarSelectors.elements.Explain)
+    .assert.elementPresent(MainNavigationBarSelectors.elements.Explain)
+
       .click(MainNavigationBarSelectors.elements.Explain , function (result) {
-        browser.waitForElementVisible(MainNavigationBarSelectors.elements.ExplainWrapper)
+        browser
+        .waitForElementVisible(MainNavigationBarSelectors.elements.ExplainWrapper)
+        .assert.elementPresent(MainNavigationBarSelectors.elements.ExplainWrapper)
       })
     .pause(configrationReader.getPauseValue());
     }
