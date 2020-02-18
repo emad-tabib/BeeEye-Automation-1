@@ -12,27 +12,27 @@ const {
 exports.IsUserStatusBarDisplay = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu)
-    .assert.elementPresent(UserStatusBarSelector.elements.UserLoggedInMenu)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserLoggedInMenu, 'Test was failed because the User Status Bar was not found in the site')
+    .assert.elementPresent(UserStatusBarSelector.elements.UserLoggedInMenu, 'Test was failed because the User Status Bar was not found in the site')
 
-    .waitForElementVisible(loginSelectors.elements.UserMenu)
-    .assert.elementPresent(loginSelectors.elements.UserMenu)
+    .waitForElementVisible(loginSelectors.elements.UserMenu, 'Test was failed because the Username text was not found in User Status Bar')
+    .assert.elementPresent(loginSelectors.elements.UserMenu, 'Test was failed because the Username text was not found in User Status Bar')
 
-    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
-    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
+    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
 
     //to check if itg(According to what is the username) is display or not
-    .assert.containsText(loginSelectors.elements.UserMenu, configrationReader.getUserName())
+    .assert.containsText(loginSelectors.elements.UserMenu, configrationReader.getUserName(), 'Test was failed because the Username was not displayed in Username text')
     .click(UserStatusBarSelector.elements.UserMenuDropdown, function (result) {
       browser
-        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.About)
+        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod(), 'Test was failed beacuse About Link was not found in the dropdown for User Status Bar')
+        .assert.elementPresent(UserStatusBarSelector.elements.About, 'Test was failed beacuse About Link was not found in the dropdown for User Status Bar')
 
-        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.LogOut)
+        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod(), 'Test was failed beacuse LogOut Link was not found in the dropdown for User Status Bar')
+        .assert.elementPresent(UserStatusBarSelector.elements.LogOut, 'Test was failed beacuse LogOut Link was not found in the dropdown for User Status Bar')
 
-        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnostics)
+        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod(), 'Test was failed beacuse System Diagnostics Link was not found in the dropdown for User Status Bar')
+        .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnostics, 'Test was failed beacuse System Diagnostics Link was not found in the dropdown for User Status Bar')
     })
 
 
@@ -44,17 +44,17 @@ exports.IsUserStatusBarDisplay = (browser) => {
 exports.AboutLink = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
-    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
+    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
 
     .click(UserStatusBarSelector.elements.UserMenuDropdown, function (result) {
       browser
-        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.About)
+        .waitForElementVisible(UserStatusBarSelector.elements.About, configrationReader.getPeriod(), 'Test was failed beacuse About Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
+        .assert.elementPresent(UserStatusBarSelector.elements.About, 'Test was failed beacuse About Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
         .click(UserStatusBarSelector.elements.About, function (result) {
           browser
-            .waitForElementVisible(UserStatusBarSelector.elements.AboutPage, configrationReader.getPeriod())
-            .assert.elementPresent(UserStatusBarSelector.elements.AboutPage)
+            .waitForElementVisible(UserStatusBarSelector.elements.AboutPage, configrationReader.getPeriod(), 'Test was failed After you click on About Link because the link does not take you to About Page')
+            .assert.elementPresent(UserStatusBarSelector.elements.AboutPage, 'Test was failed After you click on About Link because the link does not take you to About Page')
         })
     })
 
@@ -67,17 +67,17 @@ exports.AboutLink = (browser) => {
 exports.SystemDiagnosticsLink = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
-    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
+    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
 
     .click(UserStatusBarSelector.elements.UserMenuDropdown, function (result) {
       browser
-        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnostics)
+        .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnostics, configrationReader.getPeriod(), 'Test was failed beacuse System Diagnostics Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
+        .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnostics, 'Test was failed beacuse System Diagnostics Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
         .click(UserStatusBarSelector.elements.SystemDiagnostics, function (result) {
           browser
-            .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnosticsPage, configrationReader.getPeriod())
-            .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnosticsPage)
+            .waitForElementVisible(UserStatusBarSelector.elements.SystemDiagnosticsPage, configrationReader.getPeriod(), 'Test was failed After you click on System Diagnostics Link because the link does not take you to System Diagnostics Page')
+            .assert.elementPresent(UserStatusBarSelector.elements.SystemDiagnosticsPage, 'Test was failed After you click on System Diagnostics Link because the link does not take you to System Diagnostics Page')
         })
     })
 
@@ -89,16 +89,16 @@ exports.SystemDiagnosticsLink = (browser) => {
 exports.LogOutLink = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown)
-    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown)
+    .waitForElementVisible(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
+    .assert.elementPresent(UserStatusBarSelector.elements.UserMenuDropdown, 'Test was failed because the User Menu Avatar was not found in User Status Bar')
     .click(UserStatusBarSelector.elements.UserMenuDropdown, function (result) {
       browser
-        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod())
-        .assert.elementPresent(UserStatusBarSelector.elements.LogOut)
+        .waitForElementVisible(UserStatusBarSelector.elements.LogOut, configrationReader.getPeriod(), 'Test was failed beacuse LogOut Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
+        .assert.elementPresent(UserStatusBarSelector.elements.LogOut, 'Test was failed beacuse LogOut Link was not found in the dropdown for User Status Bar when you click on user menu avatar')
         .click(UserStatusBarSelector.elements.LogOut, function (result) {
           browser
-            .waitForElementVisible(UserStatusBarSelector.elements.SignInTitle, configrationReader.getPeriod())
-            .assert.elementPresent(UserStatusBarSelector.elements.SignInTitle)
+            .waitForElementVisible(UserStatusBarSelector.elements.SignInTitle, configrationReader.getPeriod(), 'Test was failed After you click on LogOut Link because the link does not take you to LogOut Page')
+            .assert.elementPresent(UserStatusBarSelector.elements.SignInTitle, 'Test was failed After you click on LogOut Link because the link does not take you to LogOut Page')
         })
     })
 
