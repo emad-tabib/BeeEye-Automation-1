@@ -68,5 +68,4 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "This is the results for Right side in Dashboard Page");
         browser.end();
     });
-
 });
