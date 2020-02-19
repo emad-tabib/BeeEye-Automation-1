@@ -18,12 +18,6 @@ exports.getPassword = () => {
     return password;
 }
 
-//For Create New Flow in FLOWS Page
-exports.getThenameOfTheNewFlow = () => {
-    var nameOfTheNewFlow = config.nameOfTheNewFlow;
-    return nameOfTheNewFlow;
-}
-
 //For Data display after You Uploaded File
 exports.getTheFileInformation_Name = () => {
     var nameOfTheUploadedFile = config.nameOfTheUploadedFile;
@@ -51,4 +45,22 @@ exports.getPeriod = () => {
 exports.getPauseValue = () => {
     var pauseValue = config.pauseValue;
     return pauseValue;
+}
+
+//Error  msg
+exports.DisplayError = () => {
+    var err = config.err;
+    return err;
+}
+
+//Valid Label
+exports.getValidLabel = () => {
+    var validLabel = config.validLabel;
+    return validLabel;
+}
+
+//not Valid Label
+exports.getNotValidLabel = () => {
+    var notValidLabel = config.notValidLabel;
+    return notValidLabel;
 }

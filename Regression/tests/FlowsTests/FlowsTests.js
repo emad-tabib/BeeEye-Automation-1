@@ -27,11 +27,11 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     });
 
     beforeEach(function (browser, done) {
-      logReport.log(this, "before each test case : open the site");
+      logReport.log(this, "Open the site");
       setup.lunchBrowser(browser,'');
-      logReport.log(this, "before each test case : Login with valid Information");
-      loginPage.LoginWitValidInformation(browser);
-      logReport.log(this, "before each test case : Check The title of the Page");
+      logReport.log(this, "Login with valid Information");
+      loginPage.LoginWithValidInformation(browser);
+      logReport.log(this, "Check The title of the Page");
       title.getTitle(browser);
       console.log("before each");
       done();
@@ -40,8 +40,6 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
 });
-
-
 //New flow
 it('Create New Flow', function(browser) {
  
@@ -50,6 +48,19 @@ it('Create New Flow', function(browser) {
     screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Create New Flow");
     browser.end();
 });
+
+
+//Upload File to new Flow
+it('Upload File : Uploading File is successfully' , function(browser){
+  setup.logTestDetails(this, " Try to test if Upload file is successfully ")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
+  browser.end();
+});
+
+
+
+
 
 //Edit Flow
 it('Edit Flow', function(browser) {
@@ -128,39 +139,29 @@ it('Upload File : The upload file extension is not CSV' , function(browser){
   browser.end();
 });
 
-//Upload File to new Flow
-it('Upload File : Uploading File is successfully' , function(browser){
-  setup.logTestDetails(this, " Try to test if Upload file is successfully ")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
-  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after uploading File is successfully");
-  browser.end();
-});
+
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
 it('Upload File : Check The data after you upload the file' , function(browser){
   setup.logTestDetails(this, " Try to heck The data after you upload the file")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
+  Flows.CreateNewFlowAndUploadFile(browser);
   Flows.CheckDataAfterYouUploadFile(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the File Information Section after you upload the file");
   browser.end();
 });
 
 //Check two cases once when you select valid label and another one select not valid label
-it('Valid Label : Check  when you select valid label ' , function(browser){
+it('Valid Label : Check when you select valid label ' , function(browser){
   setup.logTestDetails(this, " Try to Check when you select valid label")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
+  Flows.CreateNewFlowAndUploadFile(browser);
   Flows.SelectValidLabel(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you select valid label");
   browser.end();
 });
 
-it('Not Valid Label : Check when you  select not valid label' , function(browser){
-  setup.logTestDetails(this, " Try to Check when you select valid label")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
+it('Not Valid Label : Check when you select not valid label' , function(browser){
+  setup.logTestDetails(this, " Try to Check when you select not valid label")
+  Flows.CreateNewFlowAndUploadFile(browser);
 
   Flows.SelectNotValidLabel(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you select not valid label");
@@ -171,8 +172,7 @@ it('Not Valid Label : Check when you  select not valid label' , function(browser
 //Run DataSources
 it('Run DataSources' , function(browser){
   setup.logTestDetails(this, " Try to Run DataSources after you upload correct file and select valid label")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
+  Flows.CreateNewFlowAndUploadFile(browser);
   Flows.SelectValidLabel(browser);
   Flows.RunDataSources(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you Click on DataSources butto to run it ");
@@ -184,8 +184,7 @@ it('Run DataSources' , function(browser){
 //Log File without error
 it('Log File without error' , function(browser){
   setup.logTestDetails(this, " Try to verify no errors display in the log file")
-  Flows.CreateNewFlow(browser);
-  Flows.UploadFile(browser);
+  Flows.CreateNewFlowAndUploadFile(browser);
   Flows.SelectValidLabel(browser);
   Flows.RunDataSources(browser);
   Flows.VerifyTheLogFile(browser);
@@ -195,4 +194,3 @@ it('Log File without error' , function(browser){
 
 
 });
-

@@ -27,11 +27,11 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     });
 
     beforeEach(function (browser, done) {
-        logReport.log(this, "before each test case : open the site");
+        logReport.log(this, "Open the site");
         setup.lunchBrowser(browser, '');
-        logReport.log(this, "before each test case : Login with valid Information");
-        login.LoginWitValidInformation(browser);
-        logReport.log(this, "before each test case : Check The title of the Page");
+        logReport.log(this, "Login with valid Information");
+        login.LoginWithValidInformation(browser);
+        logReport.log(this, "Check The title of the Page");
         title.getTitle(browser);
         console.log("before each");
         done();
@@ -42,31 +42,35 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         done();
     });
 
-    //left
+    //Check the Left side in Dashboard Page
     it('Left Side in Dashboard Page', function (browser) {
-
         setup.logTestDetails(this, "Test the Left side in Dashboard Page if Best Flow(GINI) and Top Flows are display or not")
+        //Call LeftSideInDashboardPage function to check if Best Flow(GINI) section and Top Flows section are display or not
         DashboardPage.LeftSideInDashboardPage(browser);
+        //Take screenshot for the result by call takeScreenShot function
         screenShotUtils.takeScreenShot(this, browser, "This is the results for Left side in Dashboard Page");
         browser.end();
     });
 
-    //center
+    //Check the Center side in Dashboard Page
     it('Center Side in Dashboard Page', function (browser) {
 
         setup.logTestDetails(this, "Test the Center side in Dashboard Page if System Statistics and Platform Statistics are display or not")
+                //Call CenterSideInDashboardPage function to check if System Statistics section and Platform Statistics section are display or not
         DashboardPage.CenterSideInDashboardPage(browser);
+        //Take screenshot for the result by call takeScreenShot function
         screenShotUtils.takeScreenShot(this, browser, "This is the results for Center side in Dashboard Page");
         browser.end();
     });
 
-    //right
+    //Check the Right side in Dashboard Page
     it('Right Side in Dashboard Page', function (browser) {
 
         setup.logTestDetails(this, "Test the Right side in Dashboard Page if Recent Viewed Flows is display or not")
+        //Call RightSideInDashboardPage function to check if Recent Viewed Flows section are display or not
         DashboardPage.RightSideInDashboardPage(browser);
+        //Take screenshot for the result by call takeScreenShot function
         screenShotUtils.takeScreenShot(this, browser, "This is the results for Right side in Dashboard Page");
         browser.end();
     });
-
 });

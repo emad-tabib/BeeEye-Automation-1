@@ -21,6 +21,10 @@ elements:{
      selector: '.flow-header-back'
  },
 
+ FlowNameonBackButton : {
+     selector: '.flow-name.text-slicer'
+ },
+
  DataSourcesButton : {
      selector: '#datasources-header-button'
  },
@@ -88,7 +92,7 @@ UploadBtn : {
     selector : '#uploadButton',
 },
 
-FileId : {
+InputFileId : {
     selector : '#inputFileId',
 },
 
@@ -158,14 +162,6 @@ LabelMenuVisible : {
     selector : '.menu.visible'
 },
 
-NotCorrectLabel : {
-    selector : '.item:nth-child(3)'
-},
-
-CorrectLabel : {
-    selector : '.item:nth-child(2)',
-},
-
 PieChart : {
     selector : '#pie-chart'
 },
@@ -183,7 +179,34 @@ FlowLogButton : {
 },
 
 LogError : {
-  selector :'.pre-log.error-log'
+  selector : '.pre-log.error-log'
+ },
+
+ Log : {
+ selector : '.pre-log'
+ },
+
+ MsgInTransformation : {
+     selector : '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
+     locateStrategy: 'xpath'
+ },
+
+ FirstFlow : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div[1]/div[1]/div/div[1]',
+    locateStrategy: 'xpath'
+ },
+
+ SecondFlow : {
+    selector : '/html/body/div/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[1]',
+    locateStrategy: 'xpath'
+ },
+
+ FlowList : {
+     selector : '.app-card-custom.flow-card.select-none.flow-list-item'
+    //selector : '.flow-list-wrapper'
+ },
+ Date :{
+     selector : '.text-center'
  }
 }
 };

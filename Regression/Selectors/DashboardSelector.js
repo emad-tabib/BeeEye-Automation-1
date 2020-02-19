@@ -13,17 +13,34 @@ module.exports = {
       selector: '.dashboard-panel-right'
     },
 
-    RecentViewedFlows: {
+    RecentViewedFlowsCard: {
       selector: '.app-card-custom.h-100'
     },
 
-    SmallCard: {
+    BestFlowCard: {
+      selector: '.d-flex.best-flow-card'
+    },
+
+    SystemStatisticsCard: {
+      selector: '.system-statistic-card'
+    },
+
+    PlatformStatisticsCard: {
+      selector: '.platform-statistics-wrapper'
+    },
+
+    TopFlowsCard: {
+      selector: '.d-flex.flex-column.h-100'
+    },
+
+    SmallCardForBestFlow: {
       selector: '.app-card-custom.dashboard-small-card'
     },
 
-    BigCard: {
+    BigCardForTopFlows: {
       selector: '.app-card-custom.dashboard-big-card'
     }
 
+    
   }
 };

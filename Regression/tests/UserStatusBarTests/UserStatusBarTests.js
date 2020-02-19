@@ -28,11 +28,11 @@ describe('User Status Bar : Check if username text and avatar display or not and
 });
   
 beforeEach(function (browser, done) {
-    logReport.log(this, "before each test case : open the site");
+    logReport.log(this, "Open the site");
     setup.lunchBrowser(browser,'');
-    logReport.log(this, "before each test case : Login with valid Information");
-    loginPage.LoginWitValidInformation(browser);
-    logReport.log(this, "before each test case : Check The title of the Page");
+    logReport.log(this, "Login with valid Information");
+    loginPage.LoginWithValidInformation(browser);
+    logReport.log(this, "Check The title of the Page");
     title.getTitle(browser);
     console.log("before each");
     done();
