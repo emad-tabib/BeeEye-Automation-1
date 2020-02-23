@@ -4,7 +4,8 @@ const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
 const setup = require("../../utils/setup");
-
+const configrationReader = require("../../utils/configrationReader");
+const FlowsSelector = require("../../Selectors/FlowsSelector");
 
 const {
     assert
@@ -16,21 +17,25 @@ const {
 
 describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check if the flow card display correctly', function () {
    before(function (browser, done) {
+    browser.waitForElementVisible('body', configrationReader.getPeriod()) 
     done();
    });
 
      after(function (browser, done) {
         browser.end(function () {
+          browser.waitForElementVisible('body', configrationReader.getPeriod()) 
             console.log("End Browser");
             done();
         });
     });
 
     beforeEach(function (browser, done) {
+      browser.waitForElementVisible('body', configrationReader.getPeriod()) 
       logReport.log(this, "Open the site");
       setup.lunchBrowser(browser,'');
       logReport.log(this, "Login with valid Information");
       loginPage.LoginWithValidInformation(browser);
+      browser.click(FlowsSelector.elements.SubmitButton);
       logReport.log(this, "Check The title of the Page");
       title.getTitle(browser);
       console.log("before each");
@@ -38,12 +43,14 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   });
 
   afterEach(function (browser, done) {
+    browser.waitForElementVisible('body', configrationReader.getPeriod()) 
     done();
 });
+
 //New flow
 it('Create New Flow', function(browser) {
  
-  setup.logTestDetails(this, "Try to Create New Flow")
+  //setup.logTestDetails(this, "Try to Create New Flow")
     Flows.CreateNewFlow(browser);
     screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Create New Flow");
     browser.end();
@@ -70,6 +77,7 @@ it('Edit Flow', function(browser) {
   browser.end();
 	
 });
+
 //Delete Flow 
 it('Delete Flow' , function(browser){
   setup.logTestDetails(this, "Try to Delete the flow")
@@ -90,13 +98,17 @@ it('Card in Flows Page ' , function(browser){
 
 
 });
+
+
 //Sort by Name
 it('Sort by Name' , function(browser){
   setup.logTestDetails(this, " Try to test if sort Sort by Name process works well ")
   Flows.SortByName(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Name sort Descending");
+
   Flows.SortByName(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Name sort Ascending");
+ 
   browser.end();
 });
 
@@ -192,5 +204,13 @@ it('Log File without error' , function(browser){
   browser.end();
 });
 
+//Verify Data Sources section is display as expected
+it('Verify Data Sources section in Flow Page' , function(browser){
+  setup.logTestDetails(this, " Try to verify the Data Sources section is display as expected After you Upload File for the New Flow")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.VerifyDatasourceSection(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Data Sources section after you Upload File to the new Flow");
+  browser.end();
+});
 
 });

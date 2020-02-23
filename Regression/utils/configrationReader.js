@@ -64,3 +64,20 @@ exports.getNotValidLabel = () => {
     var notValidLabel = config.notValidLabel;
     return notValidLabel;
 }
+//Number of Rows in Uploaded file
+exports.getNumberOfCombinedRows = () => {
+    var numberOfRowsinFileUploaded = config.numberOfRowsinFileUploaded;
+    return numberOfRowsinFileUploaded;
+}
+
+//Number of Rows After Filtering
+exports.getNumberOfRowsAfterFiltering = () => {
+    var numberOfRowsafterfiltering = config.numberOfRowsafterfiltering;
+    return numberOfRowsafterfiltering;
+}
+
+//Number of Columns in Data Sources section
+exports.getNumberOfColumns = () => {
+    var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
+    return numberOfcolumnsinFileUploaded;
+}

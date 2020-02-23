@@ -29,7 +29,7 @@ exports.CreateNewFlow = (browser) => {
 
         .waitForElementVisible(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
         .assert.elementPresent(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
-         //Add random number to the name of the new flow
+        //Add random number to the name of the new flow
         .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
         .keys(browser.Keys.ENTER)
     })
@@ -62,7 +62,7 @@ exports.EditFlow = (browser) => {
               browser
                 //after you click on "edit" link , the flow should open and thats test by check if DataSorce button is display or not
                 .waitForElementVisible(FlowsSelector.elements.DataSourcesButton, 'Test was failed After you click on Edit Link because the link does not take you to correct Page')
-                .assert.elementPresent(FlowsSelector.elements.DataSourcesButton,'Test was failed After you click on Edit Link because the link does not take you to correct Page')
+                .assert.elementPresent(FlowsSelector.elements.DataSourcesButton, 'Test was failed After you click on Edit Link because the link does not take you to correct Page')
             })
         })
     })
@@ -118,7 +118,7 @@ exports.SortByName = (browser) => {
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .click(FlowsSelector.elements.NavFlows, function (result) {
       browser
-      .waitForElementVisible(FlowsSelector.elements.SpanForName, 'Test was failed because the sort by Name was not displayed in Flows Page')
+        .waitForElementVisible(FlowsSelector.elements.SpanForName, 'Test was failed because the sort by Name was not displayed in Flows Page')
         .click(FlowsSelector.elements.SpanForName)
     })
     .pause(configrationReader.getPauseValue());
@@ -144,7 +144,7 @@ exports.SortByDateCreated = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.NavFlows, 'Test was failed because the Flows Link was not found in the Main Navigation Bar')
     .click(FlowsSelector.elements.NavFlows, function (result) {
       browser
-      .assert.elementPresent(FlowsSelector.elements.SpanForDatecreated, 'Test was failed because the sort by Date created was not displayed in Flows Page')
+        .assert.elementPresent(FlowsSelector.elements.SpanForDatecreated, 'Test was failed because the sort by Date created was not displayed in Flows Page')
         .click(FlowsSelector.elements.SpanForDatecreated)
 
     })
@@ -180,7 +180,7 @@ exports.UploadFile = (browser) => {
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.UploadBtn, 'Test was failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'Test was failed because select file button was not displayed in the new flow page')
-     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'Test was failed because the Input field for the file was not displayed in the new flow page')
+    .assert.elementPresent(FlowsSelector.elements.InputFileId, 'Test was failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
     .pause(configrationReader.getPauseValue());
 }
@@ -189,8 +189,8 @@ exports.UploadFile = (browser) => {
 exports.CheckDataAfterYouUploadFile = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(FlowsSelector.elements.FileInformation,'Test was failed because File Information was not displayed after you Upload File')
-    .assert.elementPresent(FlowsSelector.elements.FileInformation,'Test was failed because File Information was not displayed after you Upload File')
+    .waitForElementVisible(FlowsSelector.elements.FileInformation, 'Test was failed because File Information was not displayed after you Upload File')
+    .assert.elementPresent(FlowsSelector.elements.FileInformation, 'Test was failed because File Information was not displayed after you Upload File')
     .waitForElementVisible(FlowsSelector.elements.Name, 'Test was failed because the File Name in File Information section was not displayed after you Upload File')
     .assert.elementPresent(FlowsSelector.elements.Name, 'Test was failed because the File Name in File Information section was not displayed after you Upload File')
     .waitForElementVisible(FlowsSelector.elements.Type, 'Test was failed because the Type of the Upladed file in File Information section was not displayed after you Upload File')
@@ -262,7 +262,7 @@ exports.RunDataSources = (browser) => {
 exports.VerifyTheLogFile = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    .waitForElementVisible(FlowsSelector.elements.FlowLogButton, configrationReader.getPeriod(),false,'Test was failed because the Flow log icon was not found in flow Page')
+    .waitForElementVisible(FlowsSelector.elements.FlowLogButton, configrationReader.getPeriod(), false, 'Test was failed because the Flow log icon was not found in flow Page')
     .assert.elementPresent(FlowsSelector.elements.FlowLogButton, 'Test was failed because the Flow log icon was not found in flow Page')
     .click(FlowsSelector.elements.FlowLogButton)
     //.waitForElementNotPresent(FlowsSelector.elements.LogError, configrationReader.getPeriod())
@@ -305,3 +305,27 @@ exports.CreateNewFlowAndUploadFile = (browser) => {
     .pause(configrationReader.getPauseValue());
 }
 
+//Verify Data Sources section is displayed as wxpected
+exports.VerifyDatasourceSection = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .waitForElementVisible(FlowsSelector.elements.HeaderOfDataSourceSection, configrationReader.getPeriod(), 'Test was failed because the Header of the Data Source section was not exists')
+    .assert.elementPresent(FlowsSelector.elements.HeaderOfDataSourceSection,'Test was failed because the Header of the Data Source section was not exists')
+    .assert.containsText(FlowsSelector.elements.HeaderOfDataSourceSection, 'Data Sources','Test was failed because The Title of Data Source section was not displayed as Data Sources')
+    .waitForElementVisible(FlowsSelector.elements.RemoveAllButton, configrationReader.getPeriod(),'Test was failed because Remove All Button was not displayed in the Header')
+    .assert.elementPresent(FlowsSelector.elements.RemoveAllButton,'Test was failed because Remove All Button was not displayed in the Header')
+    .assert.containsText(FlowsSelector.elements.RemoveAllButton, 'Remove all','Test was failed because the Button in the header was not contained Remove All word')
+    .waitForElementVisible(FlowsSelector.elements.FileNameButton, configrationReader.getPeriod(),'Test was failed because File Name Button was not displayed')
+    .assert.elementPresent(FlowsSelector.elements.FileNameButton,'Test was failed because File Name Button was not displayed')
+    .assert.containsText(FlowsSelector.elements.FileNameButton, configrationReader.getTheFileInformation_Name(),'Test was failed because the File Name Button was not contained the name of the File Uploaded')
+    .waitForElementVisible(FlowsSelector.elements.AddDataSourceButton, 'Test was failed because Add Data Source Button was not displayed')
+    .assert.elementPresent(FlowsSelector.elements.AddDataSourceButton, 'Test was failed because Add Data Source Button was not displayed')
+    .assert.containsText(FlowsSelector.elements.AddDataSourceButton, 'Add Data Source', 'Test was failed because Add Data Source Button was not contained Add Data Source word')
+    .assert.elementPresent(FlowsSelector.elements.CombinedRows,'Test was failed because Combined Rows value was not displayed')
+    .assert.containsText(FlowsSelector.elements.CombinedRows, configrationReader.getNumberOfCombinedRows(),'Test was failed because Combined Rows value was not displayed correctly as the Combined Rows value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.RowsAfterFiltering,'Test was failed because the Rows After Filtering value was not displayed')
+    .assert.containsText(FlowsSelector.elements.RowsAfterFiltering, configrationReader.getNumberOfRowsAfterFiltering(),'Test was failed because the Rows After Filtering value was not displayed correctly as the Rows After Filtering value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection,'Test was failed because the Columns value was not displayed')
+    .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(),'Test was failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+
+}

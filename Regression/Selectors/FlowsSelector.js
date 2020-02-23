@@ -1,213 +1,242 @@
 module.exports = {
-elements:{
-    NavFlows : {
-        selector: '#nav-menu-flows'
-    },
+    elements: {
+        NavFlows: {
+            selector: '#nav-menu-flows'
+        },
 
- AddFlowBtn : {
-    selector: '#add-flow-button'
- },
-
-
- PopUp : {
-     selector: '.modal-background.d-flex'
- },
-
- FlowNameInput : {
-     selector: '#enter-new-flow-name'
- },
-
- BackButton : {
-     selector: '.flow-header-back'
- },
-
- FlowNameonBackButton : {
-     selector: '.flow-name.text-slicer'
- },
-
- DataSourcesButton : {
-     selector: '#datasources-header-button'
- },
-
- FlowMenu : {
-     selector: '.flow-status' 
- },
-
- Edit : {
-     selector: '#edit'
- },
-
- Delete : {
-     selector: '#delete'
- },
- 
- Copy : {
-     selector: '#copy'
- },
+        AddFlowBtn: {
+            selector: '#add-flow-button'
+        },
 
 
-FlowCount : {
-    selector: '.flow-count.fw-bold'
-},
+        PopUp: {
+            selector: '.modal-background.d-flex'
+        },
 
-CardBodyChart : {
-    selector: '.card-body-chart'
-},
+        FlowNameInput: {
+            selector: '#enter-new-flow-name'
+        },
 
-CardBodyInfo : {
-    selector: '.card-body-info'
-},
+        BackButton: {
+            selector: '.flow-header-back'
+        },
 
-//CardHeader : '.card-header-custom',
-Author : {
-    selector: '.username-wrapper.mt-2'
-},
+        FlowNameonBackButton: {
+            selector: '.flow-name.text-slicer'
+        },
 
-FlowName : {
-    selector: '.app-input-invisible.c-p.p-0'
-},
+        DataSourcesButton: {
+            selector: '#datasources-header-button'
+        },
 
-Selected : {
-    selector : '.sort-control-button.c-p.selected'
-  
-},
+        FlowMenu: {
+            selector: '.flow-status'
+        },
 
-SpanForName : {
-    selector : '/html/body/div/div/div/div[2]/div/div[1]/div[3]/div/span',
-    locateStrategy: 'xpath'
-},
+        Edit: {
+            selector: '#edit'
+        },
 
-SpanForGini : {
-    selector : '/html/body/div/div/div/div[2]/div/div[1]/div[4]/div/span',
-    locateStrategy: 'xpath'
-},
+        Delete: {
+            selector: '#delete'
+        },
 
-SpanForDatecreated : {
-    selector : '/html/body/div/div/div/div[2]/div/div[1]/div[5]/div/span',
-    locateStrategy: 'xpath'
+        Copy: {
+            selector: '#copy'
+        },
 
-},
 
-UploadBtn : {
-    selector : '#uploadButton',
-},
+        FlowCount: {
+            selector: '.flow-count.fw-bold'
+        },
 
-InputFileId : {
-    selector : '#inputFileId',
-},
+        CardBodyChart: {
+            selector: '.card-body-chart'
+        },
 
-EmptyInput : {
-selector : '.input-empty',
-},
+        CardBodyInfo: {
+            selector: '.card-body-info'
+        },
 
-ErrorInput : {
-    selector : '.input-error',
-},
+        //CardHeader : '.card-header-custom',
+        Author: {
+            selector: '.username-wrapper.mt-2'
+        },
 
-FileInformation : {
-    selector : '.source-info',
-},
+        FlowName: {
+            selector: '.app-input-invisible.c-p.p-0'
+        },
 
-Name : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/strong',
-    locateStrategy: 'xpath'
-},
+        Selected: {
+            selector: '.sort-control-button.c-p.selected'
 
-Type : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/strong',
-    locateStrategy: 'xpath'
-},
+        },
 
-Columns : {
-   selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/strong',
-   locateStrategy: 'xpath'
-},
+        SpanForName: {
+            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[3]/div/span',
+            locateStrategy: 'xpath'
+        },
 
-NameOfThefile : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/span',
-    locateStrategy: 'xpath'
-},
+        SpanForGini: {
+            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[4]/div/span',
+            locateStrategy: 'xpath'
+        },
 
-TypeOfTheFile : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/span',
-    locateStrategy: 'xpath'
-},
+        SpanForDatecreated: {
+            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[5]/div/span',
+            locateStrategy: 'xpath'
 
-NumberOfColumns : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/span',
-    locateStrategy: 'xpath'
-},
+        },
 
-PreviewData : {
-    selector : '#data-preview-button',
-},
+        UploadBtn: {
+            selector: '#uploadButton',
+        },
 
-Table : {
-    selector : '.custom-table',
-},
+        InputFileId: {
+            selector: '#inputFileId',
+        },
 
-TableRowItem : {
-    selector : '.table-row-item'
-},
+        EmptyInput: {
+            selector: '.input-empty',
+        },
 
-SelectLabelInput : {
-    selector : '#model-select-label',
-},
+        ErrorInput: {
+            selector: '.input-error',
+        },
 
-LabelWarning : {
-    selector : '#label-warning'
-},
+        FileInformation: {
+            selector: '.source-info',
+        },
 
-LabelMenuVisible : {
-    selector : '.menu.visible'
-},
+        Name: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/strong',
+            locateStrategy: 'xpath'
+        },
 
-PieChart : {
-    selector : '#pie-chart'
-},
+        Type: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/strong',
+            locateStrategy: 'xpath'
+        },
 
-DataSourcesButton : {
-    selector : '#datasources-header-button-run',
-},
+        Columns: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/strong',
+            locateStrategy: 'xpath'
+        },
 
-TransformationButton : {
-    selector : '#transformations-header-button',
-},
+        NameOfThefile: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/span',
+            locateStrategy: 'xpath'
+        },
 
-FlowLogButton : {
-   selector : '.d-flex.notifications-button',
-},
+        TypeOfTheFile: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/span',
+            locateStrategy: 'xpath'
+        },
 
-LogError : {
-  selector : '.pre-log.error-log'
- },
+        NumberOfColumns: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/span',
+            locateStrategy: 'xpath'
+        },
 
- Log : {
- selector : '.pre-log'
- },
+        PreviewData: {
+            selector: '#data-preview-button',
+        },
 
- MsgInTransformation : {
-     selector : '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
-     locateStrategy: 'xpath'
- },
+        Table: {
+            selector: '.custom-table',
+        },
 
- FirstFlow : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div[1]/div[1]/div/div[1]',
-    locateStrategy: 'xpath'
- },
+        TableRowItem: {
+            selector: '.table-row-item'
+        },
 
- SecondFlow : {
-    selector : '/html/body/div/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[1]',
-    locateStrategy: 'xpath'
- },
+        SelectLabelInput: {
+            selector: '#model-select-label',
+        },
 
- FlowList : {
-     selector : '.app-card-custom.flow-card.select-none.flow-list-item'
-    //selector : '.flow-list-wrapper'
- },
- Date :{
-     selector : '.text-center'
- }
-}
+        LabelWarning: {
+            selector: '#label-warning'
+        },
+
+        LabelMenuVisible: {
+            selector: '.menu.visible'
+        },
+
+        PieChart: {
+            selector: '#pie-chart'
+        },
+
+        DataSourcesButton: {
+            selector: '#datasources-header-button-run',
+        },
+
+        TransformationButton: {
+            selector: '#transformations-header-button',
+        },
+
+        FlowLogButton: {
+            selector: '.d-flex.notifications-button',
+        },
+
+        LogError: {
+            selector: '.pre-log.error-log'
+        },
+
+        Log: {
+            selector: '.pre-log'
+        },
+
+        MsgInTransformation: {
+            selector: '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
+            locateStrategy: 'xpath'
+        },
+
+        FirstFlow: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div[1]/div[1]/div/div[1]',
+            locateStrategy: 'xpath'
+        },
+
+        SecondFlow: {
+            selector: '/html/body/div/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[1]',
+            locateStrategy: 'xpath'
+        },
+
+        FlowList: {
+            selector: '.app-card-custom.flow-card.select-none.flow-list-item'
+            //selector : '.flow-list-wrapper'
+        },
+        Date: {
+            selector: '.text-center'
+        },
+        DataSourceSection: {
+            selector: '.data-sourse-list-wrapper.h-100'
+        },
+        RemoveAllButton: {
+            selector: '.app-btn.app-btn-danger.app-btn-small'
+            
+        },
+        FileNameButton: {
+            selector: '.app-btn.app-btn-medium.app-btn-asset.data-source-list-item.disabled'
+        },
+        AddDataSourceButton: {
+            //selector: '.w-100.app-btn.app-btn-medium.app-btn-primary'
+            selector : 'button[name="add-data-source"]'
+        },
+        CombinedRows: {
+            selector: '#data-shape-combined-rows'
+        },
+        RowsAfterFiltering: {
+            selector: '#data-shape-rows-after-filtering'
+        },
+        ColumnsInDataSourceSection: {
+            selector: '#data-shape-columns'
+        },
+        HeaderOfDataSourceSection :{
+            selector : '.d-flex.justify-content-between.card-header-custom'
+        },
+        //This for "EyeOnRisk License will expire in 5 days"
+        SubmitButton :{
+            selector : '#submit-button'
+        }
+    }
 };
-
