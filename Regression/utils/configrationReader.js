@@ -81,3 +81,9 @@ exports.getNumberOfColumns = () => {
     var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
     return numberOfcolumnsinFileUploaded;
 }
+
+//search by feature name 
+exports.getFeatureName = () => {
+    var searchthisFeatureName = config.searchthisFeatureName;
+    return searchthisFeatureName;
+}

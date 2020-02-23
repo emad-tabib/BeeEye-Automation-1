@@ -310,22 +310,37 @@ exports.VerifyDatasourceSection = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.HeaderOfDataSourceSection, configrationReader.getPeriod(), 'Test was failed because the Header of the Data Source section was not exists')
-    .assert.elementPresent(FlowsSelector.elements.HeaderOfDataSourceSection,'Test was failed because the Header of the Data Source section was not exists')
-    .assert.containsText(FlowsSelector.elements.HeaderOfDataSourceSection, 'Data Sources','Test was failed because The Title of Data Source section was not displayed as Data Sources')
-    .waitForElementVisible(FlowsSelector.elements.RemoveAllButton, configrationReader.getPeriod(),'Test was failed because Remove All Button was not displayed in the Header')
-    .assert.elementPresent(FlowsSelector.elements.RemoveAllButton,'Test was failed because Remove All Button was not displayed in the Header')
-    .assert.containsText(FlowsSelector.elements.RemoveAllButton, 'Remove all','Test was failed because the Button in the header was not contained Remove All word')
-    .waitForElementVisible(FlowsSelector.elements.FileNameButton, configrationReader.getPeriod(),'Test was failed because File Name Button was not displayed')
-    .assert.elementPresent(FlowsSelector.elements.FileNameButton,'Test was failed because File Name Button was not displayed')
-    .assert.containsText(FlowsSelector.elements.FileNameButton, configrationReader.getTheFileInformation_Name(),'Test was failed because the File Name Button was not contained the name of the File Uploaded')
+    .assert.elementPresent(FlowsSelector.elements.HeaderOfDataSourceSection, 'Test was failed because the Header of the Data Source section was not exists')
+    .assert.containsText(FlowsSelector.elements.HeaderOfDataSourceSection, 'Data Sources', 'Test was failed because The Title of Data Source section was not displayed as Data Sources')
+    .waitForElementVisible(FlowsSelector.elements.RemoveAllButton, configrationReader.getPeriod(), 'Test was failed because Remove All Button was not displayed in the Header')
+    .assert.elementPresent(FlowsSelector.elements.RemoveAllButton, 'Test was failed because Remove All Button was not displayed in the Header')
+    .assert.containsText(FlowsSelector.elements.RemoveAllButton, 'Remove all', 'Test was failed because the Button in the header was not contained Remove All word')
+    .waitForElementVisible(FlowsSelector.elements.FileNameButton, configrationReader.getPeriod(), 'Test was failed because File Name Button was not displayed')
+    .assert.elementPresent(FlowsSelector.elements.FileNameButton, 'Test was failed because File Name Button was not displayed')
+    .assert.containsText(FlowsSelector.elements.FileNameButton, configrationReader.getTheFileInformation_Name(), 'Test was failed because the File Name Button was not contained the name of the File Uploaded')
     .waitForElementVisible(FlowsSelector.elements.AddDataSourceButton, 'Test was failed because Add Data Source Button was not displayed')
     .assert.elementPresent(FlowsSelector.elements.AddDataSourceButton, 'Test was failed because Add Data Source Button was not displayed')
     .assert.containsText(FlowsSelector.elements.AddDataSourceButton, 'Add Data Source', 'Test was failed because Add Data Source Button was not contained Add Data Source word')
-    .assert.elementPresent(FlowsSelector.elements.CombinedRows,'Test was failed because Combined Rows value was not displayed')
-    .assert.containsText(FlowsSelector.elements.CombinedRows, configrationReader.getNumberOfCombinedRows(),'Test was failed because Combined Rows value was not displayed correctly as the Combined Rows value for the uploaded file')
-    .assert.elementPresent(FlowsSelector.elements.RowsAfterFiltering,'Test was failed because the Rows After Filtering value was not displayed')
-    .assert.containsText(FlowsSelector.elements.RowsAfterFiltering, configrationReader.getNumberOfRowsAfterFiltering(),'Test was failed because the Rows After Filtering value was not displayed correctly as the Rows After Filtering value for the uploaded file')
-    .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection,'Test was failed because the Columns value was not displayed')
-    .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(),'Test was failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.CombinedRows, 'Test was failed because Combined Rows value was not displayed')
+    .assert.containsText(FlowsSelector.elements.CombinedRows, configrationReader.getNumberOfCombinedRows(), 'Test was failed because Combined Rows value was not displayed correctly as the Combined Rows value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.RowsAfterFiltering, 'Test was failed because the Rows After Filtering value was not displayed')
+    .assert.containsText(FlowsSelector.elements.RowsAfterFiltering, configrationReader.getNumberOfRowsAfterFiltering(), 'Test was failed because the Rows After Filtering value was not displayed correctly as the Rows After Filtering value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection, 'Test was failed because the Columns value was not displayed')
+    .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(), 'Test was failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
 
+}
+
+//Preview data - search by feature name is working as expected 
+exports.SearchByfeatureName = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    //check if Search input field is exists or not
+    .waitForElementVisible(FlowsSelector.elements.SearchByFeatureName, 'Test was failed because the Search input field was not exists in Preview Data section')
+    .assert.elementPresent(FlowsSelector.elements.SearchByFeatureName, 'Test was failed because the Search input field was not exists in Preview Data section')
+    //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
+    .setValue(FlowsSelector.elements.SearchByFeatureName,configrationReader.getFeatureName())
+    //check if the search result is correct 
+    .assert.elementPresent(FlowsSelector.elements.FirstColumninTable, 'Test was failed because No Result value was displayed for what you searched on')
+    //check if first column is what you searched about
+    .assert.containsText(FlowsSelector.elements.FirstColumninTable,configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
 }

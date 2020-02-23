@@ -213,14 +213,14 @@ module.exports = {
         },
         RemoveAllButton: {
             selector: '.app-btn.app-btn-danger.app-btn-small'
-            
+
         },
         FileNameButton: {
             selector: '.app-btn.app-btn-medium.app-btn-asset.data-source-list-item.disabled'
         },
         AddDataSourceButton: {
             //selector: '.w-100.app-btn.app-btn-medium.app-btn-primary'
-            selector : 'button[name="add-data-source"]'
+            selector: 'button[name="add-data-source"]'
         },
         CombinedRows: {
             selector: '#data-shape-combined-rows'
@@ -231,12 +231,24 @@ module.exports = {
         ColumnsInDataSourceSection: {
             selector: '#data-shape-columns'
         },
-        HeaderOfDataSourceSection :{
-            selector : '.d-flex.justify-content-between.card-header-custom'
+        HeaderOfDataSourceSection: {
+            selector: '.d-flex.justify-content-between.card-header-custom'
         },
         //This for "EyeOnRisk License will expire in 5 days"
-        SubmitButton :{
-            selector : '#submit-button'
-        }
+        SubmitButton: {
+            selector: '#submit-button'
+        },
+        SearchByFeatureName: {
+            selector: '.app-input.app-input-primary.app-input-medium.mr-3'
+        },
+
+
+        //LIMIT_BAL: {
+         //   selector: '.table-row-item:nth-child(2)'
+       // },
+
+        FirstColumninTable: {
+            selector: '.table-row-item:nth-child(1)'
+        },
     }
 };

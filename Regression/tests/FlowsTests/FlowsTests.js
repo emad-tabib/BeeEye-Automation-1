@@ -213,4 +213,12 @@ it('Verify Data Sources section in Flow Page' , function(browser){
   browser.end();
 });
 
+//Preview data - search by feature name is working as expected 
+it('Verify that search by feature name is working as expected ' , function(browser){
+  setup.logTestDetails(this, " Try to verify that the search by feature name is working as expected After you Upload File for the New Flow")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.SearchByfeatureName(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the result After you search by feature name in Preview Data section");
+  browser.end();
+});
 });
