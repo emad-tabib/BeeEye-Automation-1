@@ -35,7 +35,6 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
       setup.lunchBrowser(browser,'');
       logReport.log(this, "Login with valid Information");
       loginPage.LoginWithValidInformation(browser);
-      browser.click(FlowsSelector.elements.SubmitButton);
       logReport.log(this, "Check The title of the Page");
       title.getTitle(browser);
       console.log("before each");
@@ -221,4 +220,14 @@ it('Verify that search by feature name is working as expected ' , function(brows
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the result After you search by feature name in Preview Data section");
   browser.end();
 });
+
+//Check if Data are displayed in Columns tab
+it('Verify if Data are displayed in Columns tab ' , function(browser){
+  setup.logTestDetails(this, " Try to verify if Data are displayed in Columns tab")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.CheckColumnsTab(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for the Data that are displayed in Columns tab");
+  browser.end();
+});
+
 });

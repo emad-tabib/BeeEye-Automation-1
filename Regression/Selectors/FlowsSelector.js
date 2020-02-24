@@ -242,13 +242,122 @@ module.exports = {
             selector: '.app-input.app-input-primary.app-input-medium.mr-3'
         },
 
-
-        //LIMIT_BAL: {
-         //   selector: '.table-row-item:nth-child(2)'
-       // },
-
         FirstColumninTable: {
             selector: '.table-row-item:nth-child(1)'
         },
+        //Selectors in Columns Tab
+        ColumnsTab: {
+            selector: '#columns-table-button'
+        },
+        SwitcherBoxColumn: {
+            selector: '.switcher-box'
+        },
+        NameColumn: {
+            selector: '.table-row-item:nth-child(2)'
+        },
+        RoleColumn: {
+            selector: '.table-row-item:nth-child(3)'
+        },
+        TypeColumn: {
+            selector: '.table-row-item:nth-child(4)'
+        },
+        CardinalityColumn: {
+            selector: '.table-row-item:nth-child(5)'
+        },
+        NullRatioColumn: {
+            selector: '.table-row-item:nth-child(6)'
+        },
+        PreviewColumn: {
+            selector: '.table-row-item:nth-child(7)'
+        },
+        ID: {
+            selector: '.table-row',
+            index: '1'
+        },
+        LIMIT_BAL: {
+            selector: '.table-row:nth-child(2)'
+        },
+        GENDER: {
+            selector: '.table-row:nth-child(3)'
+        },
+        EDUCATION: {
+            selector: '.table-row:nth-child(4)'
+        },
+        MARRIAGERow: {
+            selector: '.table-row:nth-child(5)'
+        },
+        AGE: {
+            selector: '.table-row:nth-child(6)'
+        },
+        PAY_0: {
+            selector: '.table-row:nth-child(7)'
+        },
+        PAY_2: {
+            selector: '.table-row:nth-child(8)'
+        },
+        PAY_3: {
+            selector: '.table-row:nth-child(9)'
+        },
+        PAY_4: {
+            selector: '.table-row:nth-child(10)'
+        },
+
+        PAY_5: {
+            selector: '.table-row',
+            index: '1'
+        },
+        PAY_6: {
+            selector: '.table-row:nth-child(2)'
+        },
+        BILL_AMT1: {
+            selector: '.table-row:nth-child(3)'
+        },
+        BILL_AMT2: {
+            selector: '.table-row:nth-child(4)'
+        },
+        BILL_AMT3: {
+            selector: '.table-row:nth-child(5)'
+        },
+        BILL_AMT4: {
+            selector: '.table-row:nth-child(6)'
+        },
+        BILL_AMT5: {
+            selector: ' .table-row:nth-child(7)'
+        },
+        BILL_AMT6: {
+            selector: '.table-row:nth-child(8)'
+        },
+
+        PAY_AMT1: {
+            selector: '.table-row:nth-child(9)'
+        },
+
+        PAY_AMT2: {
+            selector: '.table-row:nth-child(10)'
+        },
+
+        paginationInColumnsTab: {
+            selector: '.pagination-item:nth-child(5)'
+        },
+
+        PAY_AMT3: {
+            selector: '.table-row',
+            index : '1'
+        },
+        PAY_AMT4: {
+            selector: '.table-row:nth-child(2)'
+        },
+        PAY_AMT5: {
+            selector: '.table-row:nth-child(3)'
+        },
+        PAY_AMT6: {
+            selector: '.table-row:nth-child(4)'
+        },
+
+        DefaultPaymentNextMonth: {
+            selector: '.table-row:nth-child(5)'
+        },
+
+
     }
 };
