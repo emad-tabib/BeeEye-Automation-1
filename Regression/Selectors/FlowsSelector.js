@@ -337,7 +337,7 @@ module.exports = {
             selector: '.table-row:nth-child(10)'
         },
 
-        paginationInColumnsTab: {
+        paginationInTabs: {
             selector: '.pagination-item:nth-child(5)'
         },
 
@@ -363,8 +363,48 @@ module.exports = {
         },
         FirstRowInTable : {
             Selector : '.table-body>div>.table-row-item:nth-child(2)'
-        }
-        
-
+        },
+        StatisticsTab: {
+            selector:'.tablist>ul>li>#stats-table-button'
+        },
+        FeatureName : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(1)'
+        },
+        CountValues: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(2)'
+        },
+        UniqueCount: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(3)'
+        },
+        NullRatio: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(4)'
+        },
+        Mean: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(5)'
+        },
+        Stdv: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(6)'
+        },
+        MinValue : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(7)'
+        },
+        the25Percentile: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(8)'
+        },
+        Median    : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(9)'
+        },
+        the75Percentile   : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(10)'
+        },   
+        MaxValue    : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(11)'
+        },
+        MostCommonFrequency  : {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(12)'
+        },
+        MostCommonValue: {
+            selector: '#stats-table>div>div>div>.table-row-item:nth-child(13)'
+        },
     }
 };

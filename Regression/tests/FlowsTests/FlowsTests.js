@@ -235,9 +235,16 @@ it('Verify that search by Column is working as expected in Columns tab ' , funct
   setup.logTestDetails(this, " Try to verify if search by Column is working as expected in Columns tab " )
   Flows.CreateNewFlowAndUploadFile(browser);
   Flows.SearchByFeatureNameInColumnTab(browser);
-  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Data Sources section after you Upload File to the new Flow");
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you search by Column in Columns tab");
   browser.end();
 });
 
-
+//Check if Data are displayed in Statistics tab
+it('Verify if Data are displayed in Statistics tab ' , function(browser){
+  setup.logTestDetails(this, " Try to verify if Data are displayed in Statistics tab" )
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.CheckStatisticsTab(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Statistics tab");
+  browser.end();
+});
 });
