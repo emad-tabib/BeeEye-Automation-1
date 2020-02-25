@@ -355,7 +355,7 @@ exports.CheckColumnsTab = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'Test was failed because Columns Tab was not exist in Data Source Details Section')
     .pause(configrationReader.getPauseValue())
     .click(FlowsSelector.elements.ColumnsTab)
-  browser
+
     .assert.elementPresent(FlowsSelector.elements.NameColumn, 'Test was failed After you Click on Columns Tab because the switcher box column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.ID, 'Test was failed because the ID Row was not display')
     .assert.containsText(FlowsSelector.elements.ID, 'ID', 'Test was failed because the ID Row was not contained ID as in the File Uploaded')
@@ -416,6 +416,32 @@ exports.CheckColumnsTab = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.CardinalityColumn, 'Test was failed After you Click on Columns Tab because the Cardinality Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.NullRatioColumn, 'Test was failed After you Click on Columns Tab because the NullRatio Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.PreviewColumn, 'Test was failed After you Click on Columns Tab because the Preview Column was not displayed')
+
+
+}
+
+//Columns - search by feature name is working as expected 
+exports.SearchByFeatureNameInColumnTab = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'Test was failed because Columns Tab was not exist in Data Source Details Section')
+    .pause(7000)
+    .click(FlowsSelector.elements.ColumnsTab, function (result) {
+      //check if Search input field is exists or not
+      browser
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowsSelector.elements.SearchByColumn, 'Test was failed because the Search input field was not exists in Columns tab')
+        //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
+        .setValue(FlowsSelector.elements.SearchByColumn, configrationReader.getFeatureName())
+        //check if the search result is correct 
+        .waitForElementVisible(FlowsSelector.elements.FirstRowInTable, 'Test was failed because No Result value was displayed for what you searched on')
+        //check if first column is what you searched about
+        .assert.containsText(FlowsSelector.elements.FirstRowInTable, configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
+        .pause(configrationReader.getPauseValue());
+
+
+    });
+
 
 
 }

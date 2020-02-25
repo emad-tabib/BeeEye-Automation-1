@@ -230,4 +230,14 @@ it('Verify if Data are displayed in Columns tab ' , function(browser){
   browser.end();
 });
 
+//Check if search by Column is working as expected in columns tab
+it('Verify that search by Column is working as expected in Columns tab ' , function(browser){
+  setup.logTestDetails(this, " Try to verify if search by Column is working as expected in Columns tab " )
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.SearchByFeatureNameInColumnTab(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Data Sources section after you Upload File to the new Flow");
+  browser.end();
+});
+
+
 });

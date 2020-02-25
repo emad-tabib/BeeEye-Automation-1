@@ -247,7 +247,8 @@ module.exports = {
         },
         //Selectors in Columns Tab
         ColumnsTab: {
-            selector: '#columns-table-button'
+            selector: '.tablist>ul>li>#columns-table-button'
+        
         },
         SwitcherBoxColumn: {
             selector: '.switcher-box'
@@ -357,7 +358,13 @@ module.exports = {
         DefaultPaymentNextMonth: {
             selector: '.table-row:nth-child(5)'
         },
-
+        SearchByColumn :{
+            selector :'.table-options-wrapper>div>div>.app-input.app-input-primary.app-input-medium'
+        },
+        FirstRowInTable : {
+            Selector : '.table-body>div>.table-row-item:nth-child(2)'
+        }
+        
 
     }
 };
