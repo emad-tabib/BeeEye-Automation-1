@@ -42,10 +42,9 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   });
 
   afterEach(function (browser, done) {
-    browser.waitForElementVisible('body', configrationReader.getPeriod()) 
     done();
 });
-
+/*
 //New flow
 it('Create New Flow', function(browser) {
  
@@ -247,4 +246,14 @@ it('Verify if Data are displayed in Statistics tab ' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Statistics tab");
   browser.end();
 });
+*/
+//Check if search by feature name is working as expected in Statistics tab
+it('Verify that search by feature name is working as expected in in Statistics tab' , function(browser){
+  setup.logTestDetails(this, "Try to verify if search by feature name is working as expected in Statistics tab " )
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.SearchByFeatureNameInStatisticsTab(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you search by feature name in Statistics tab");
+  browser.end();
+});
+
 });
