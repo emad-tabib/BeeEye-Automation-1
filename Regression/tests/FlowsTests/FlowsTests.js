@@ -305,7 +305,14 @@ it('Verify if Flow edit nav header are navigates you to the correct page' , func
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Flow edit nav header");
   browser.end();
 });
-
+//Flow name button navigates to flow manager dashboard
+it('Verify if Flow name button navigates to flow manager dashboard page' , function(browser){
+  setup.logTestDetails(this, "Try to verify if Flow name button navigates to flow manager dashboard")
+  Flows.CreateNewFlow(browser);
+  Flows.FlowNameButton(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on Flow name button in Flow edit nav header");
+  browser.end();
+});
 
 
 });

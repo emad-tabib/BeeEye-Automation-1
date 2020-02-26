@@ -659,4 +659,17 @@ exports.IsFlowEditNavHeaderDisplay = (browser) => {
     .pause(configrationReader.getPauseValue())
 
 }
-
+//Flow name button navigates to flow manager dashbord
+exports.FlowNameButton = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .assert.elementPresent(FlowsSelector.elements.BackButton, 'The assertion failed because Flow name button was not displayed in Flow edit nav header')
+    //click on Flow Name button
+    .click(FlowsSelector.elements.BackButton)
+    .pause(configrationReader.getPauseValue())
+    //check after you click if it takes you to flow Manager Dashboard
+    .assert.elementPresent(FlowsSelector.elements.FlowManagerTitle, 'The assertion failed after you click on Flow name button Button because it did not take you to correct Page')
+    .assert.elementPresent(FlowsSelector.elements.FlowList, 'The assertion failed after you click on Flow name button Button because it did not take you to correct Page')
+    .pause(configrationReader.getPauseValue())
+}
