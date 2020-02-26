@@ -553,9 +553,9 @@ exports.DeleteColumn = (browser) => {
     //Click on Columns tab
     .click(FlowsSelector.elements.ColumnsTab, function (result) {
       browser
-      //delay
+        //delay
         .pause(configrationReader.getPauseValue())
-          //check if Search input field is exists or not
+        //check if Search input field is exists or not
         .assert.elementPresent(FlowsSelector.elements.SearchByColumn, 'The assertion failed because the Search input field was not exists in Statistics tab')
         //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
         .setValue(FlowsSelector.elements.SearchByColumn, configrationReader.getFeatureName())
@@ -572,8 +572,25 @@ exports.DeleteColumn = (browser) => {
         .pause(configrationReader.getPauseValue())
         //Msg No columns should display When you search on deleted column
         .assert.elementPresent(FlowsSelector.elements.NoColumnsMsg)
-        .assert.containsText(FlowsSelector.elements.NoColumnsMsg,'No columns to preview')
+        .assert.containsText(FlowsSelector.elements.NoColumnsMsg, 'No columns to preview')
         .pause(configrationReader.getPauseValue());
     })
     .pause(configrationReader.getPauseValue());
+}
+
+//Add another CSV file
+exports.AddAnotherCSVFile = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.AddDataSourceButton, 'The assertion failed because Add Data Source Button was not display in Flow Page')
+    .click(FlowsSelector.elements.AddDataSourceButton)
+    .waitForElementVisible(FlowsSelector.elements.UploadBtn, 'Test was failed because select file button was not displayed in the new flow page')
+    .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
+    .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
+    .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Birth_Dates.csv'))
+    .pause(configrationReader.getPauseValue())
+    .assert.elementPresent(FlowsSelector.elements.NameOfThefile, 'The assertion failed because the File Name in File Information section was not displayed after you Upload File')
+    .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
+    .pause(configrationReader.getPauseValue());
+
 }

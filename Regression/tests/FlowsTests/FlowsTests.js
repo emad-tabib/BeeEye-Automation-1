@@ -44,7 +44,7 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
 });
-/*
+
 //New flow
 it('Create New Flow', function(browser) {
  
@@ -255,7 +255,7 @@ it('Verify that search by feature name is working as expected in in Statistics t
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you search by feature name in Statistics tab");
   browser.end();
 });
-*/
+
 
 //Delete Column
 it('Verify if Delete Column from Columns Tab is done correctly' , function(browser){
@@ -263,6 +263,16 @@ it('Verify if Delete Column from Columns Tab is done correctly' , function(brows
   Flows.CreateNewFlowAndUploadFile(browser);
   Flows.DeleteColumn(browser);
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot in Preview Data Tab after you delete the column from Columns Tab");
+  browser.end();
+});
+
+
+//Add Another CSV File
+it('Verify if Add Another CSV File is done correctly' , function(browser){
+  setup.logTestDetails(this, "Try to add another CSV file")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.AddAnotherCSVFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you add another CSV File");
   browser.end();
 });
 });

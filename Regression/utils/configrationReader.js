@@ -24,6 +24,11 @@ exports.getTheFileInformation_Name = () => {
     return nameOfTheUploadedFile;
 }
 
+
+exports.getTheFileInformation_NameForSecondFile = () => {
+    var nameofSecondUploadedFile = config.nameofSecondUploadedFile;
+    return nameofSecondUploadedFile;
+}
 exports.getTheFileInformation_Columns = () => {
     var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
     return numberOfcolumnsinFileUploaded;

@@ -124,8 +124,7 @@ module.exports = {
         },
 
         NameOfThefile: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/span',
-            locateStrategy: 'xpath'
+            selector: '.source-info>ul>li:nth-child(1)>span'
         },
 
         TypeOfTheFile: {
@@ -410,6 +409,7 @@ module.exports = {
         NoColumnsMsg :{
             selector:'.text-no-columns'
         }
+
        
     }
 };
