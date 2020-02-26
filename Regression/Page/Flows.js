@@ -259,7 +259,7 @@ exports.RunDataSources = (browser) => {
     .waitForElementVisible(FlowsSelector.elements.DataSourcesButton, 'Test was failed because the DataSources button was not found in flow Page')
     .assert.elementPresent(FlowsSelector.elements.DataSourcesButton, 'The assertion failed because the DataSources button was not found in flow Page')
     .click(FlowsSelector.elements.DataSourcesButton)
-    .pause(configrationReader.getPauseValue());
+    .pause(7000);
 }
 
 //Verify No error displayed in the log file
@@ -587,10 +587,22 @@ exports.AddAnotherCSVFile = (browser) => {
     .waitForElementVisible(FlowsSelector.elements.UploadBtn, 'Test was failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
+    //Add another file
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Birth_Dates.csv'))
     .pause(configrationReader.getPauseValue())
     .assert.elementPresent(FlowsSelector.elements.NameOfThefile, 'The assertion failed because the File Name in File Information section was not displayed after you Upload File')
     .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
+    .pause(configrationReader.getPauseValue())
+    //Add join value 
+    .assert.elementPresent(FlowsSelector.elements.FirstJoinField)
+    .setValue(FlowsSelector.elements.FirstJoinField,configrationReader.getJoinValue())
+    .pause(configrationReader.getPauseValue())
+    .click(FlowsSelector.elements.FirstElement)
+    .pause(configrationReader.getPauseValue())
+    .assert.elementPresent(FlowsSelector.elements.SecondjoinField)
+    .setValue(FlowsSelector.elements.SecondjoinField,configrationReader.getJoinValue())
+    .pause(configrationReader.getPauseValue())
+    .click(FlowsSelector.elements.FirstElement)
     .pause(configrationReader.getPauseValue());
 
 }
@@ -634,3 +646,17 @@ exports.DeleteAllDataSource = (browser) => {
 
 
 }
+
+//Flow edit nav header
+exports.IsFlowEditNavHeaderDisplay = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .assert.elementPresent(FlowsSelector.elements.BackButton, 'The assertion failed because Flow name button was not displayed in Flow edit nav header')
+    .assert.elementPresent(FlowsSelector.elements.TransformationButton, 'The assertion failed because Transformation Button was not displayed in Flow edit nav header')
+    .assert.elementPresent(FlowsSelector.elements.AutoFGButton, 'The assertion failed because AutoFG Button was not displayed in Flow edit nav header')
+    .assert.elementPresent(FlowsSelector.elements.ExperimentsButton, 'The assertion failed because Experiments Button was not displayed in Flow edit nav header')
+    .pause(configrationReader.getPauseValue())
+
+}
+

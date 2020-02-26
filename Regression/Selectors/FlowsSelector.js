@@ -419,9 +419,42 @@ module.exports = {
         },
         AddMasterDataSourceButton : {
             selector : '.add-new-button'
+        },
+        FlowEditHeader : {
+            selector: '.flow-edit-header'
+        },
+        AutoFGButton : {
+            selector : '#AutoFG'
+        },
+        ExperimentsButton : {
+            selector : '#experiments-header-button'
+        },
+        FlowManagerTitle : {
+            selector : '#flow-manager-title'
+        },
+        FlowList : {
+            selector : '.flow-list-main-wrapper'
+        },
+
+        FirstJoinField : {
+            selector : '.top-part>div>div.d-flex >div:nth-child(1)>.ui.fluid.search.selection.dropdown>.search'
+        },
+        SecondjoinField : {
+            selector : '.d-flex>div:nth-child(2)>.ui.fluid.search.selection.dropdown>.search'
+        },
+        TransformationTab : {
+            selector : '#transformations-tab'
+        },
+        ExperimentSideBar : {
+            selector: '.experiment-sidebar.h-100'
+        },
+
+        FirstElement : {
+            selector : '.ui.fluid.search.selection.dropdown.active.visible:nth-child(1)>div.menu.visible>div'
+        },
+        
+        AutoFGPage : {
+Selector : '.autofg-wrapper'
         }
-        
-        
-        
     }
 };

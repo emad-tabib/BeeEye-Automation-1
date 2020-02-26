@@ -296,4 +296,16 @@ it('Verify if Delete All Data Sources are  done correctly' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you delete the second CSV File");
   browser.end();
 });
+
+//Flow edit nav header
+it('Verify if Flow edit nav header are navigates you to the correct page' , function(browser){
+  setup.logTestDetails(this, "Try to verify if the buttons in Flow edit nav header are navigates you to the correct page")
+  Flows.CreateNewFlow(browser);
+  Flows.IsFlowEditNavHeaderDisplay(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Flow edit nav header");
+  browser.end();
+});
+
+
+
 });

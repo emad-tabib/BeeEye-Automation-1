@@ -103,3 +103,9 @@ exports.getFeatureName = () => {
     var searchthisFeatureName = config.searchthisFeatureName;
     return searchthisFeatureName;
 }
+
+//Join Value
+exports.getJoinValue = () => {
+    var JoinValue = config.JoinValue;
+    return JoinValue;
+}
