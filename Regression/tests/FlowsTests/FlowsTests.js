@@ -314,5 +314,12 @@ it('Verify if Flow name button navigates to flow manager dashboard page' , funct
   browser.end();
 });
 
-
+//Transformations button navigates to transformations
+it('Verify if Transformations button navigates to transformations Page' , function(browser){
+  setup.logTestDetails(this, "Try to verify if Transformations button navigates to transformations Page")
+  Flows.CreateNewFlow(browser);
+  Flows.TransformationButton(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on Transformations button in Flow edit nav header");
+  browser.end();
+});
 });
