@@ -139,7 +139,7 @@ module.exports = {
         },
 
         PreviewData: {
-            selector: '#data-preview-button',
+            selector: '.tablist>ul>li>#data-preview-button',
         },
 
         Table: {
@@ -239,7 +239,8 @@ module.exports = {
             selector: '#submit-button'
         },
         SearchByFeatureName: {
-            selector: '.app-input.app-input-primary.app-input-medium.mr-3'
+            //selector: '.app-input.app-input-primary.app-input-medium.mr-3'
+              selector: '.preview-table-wrapper>div>div>.app-input.app-input-primary.app-input-medium.mr-3'
         },
 
         FirstColumninTable: {
@@ -406,5 +407,9 @@ module.exports = {
         MostCommonValue: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(13)'
         },
+        NoColumnsMsg :{
+            selector:'.text-no-columns'
+        }
+       
     }
 };

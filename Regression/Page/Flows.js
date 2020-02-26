@@ -131,7 +131,7 @@ exports.SortByGini = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.NavFlows, 'The assertion failed because the Flows Link was not found in the Main Navigation Bar')
     .click(FlowsSelector.elements.NavFlows, function (result) {
       browser
-      .assert.elementPresent(FlowsSelector.elements.SpanForGini, 'The assertion failed because the sort by Gini was not displayed in Flows Page')
+        .assert.elementPresent(FlowsSelector.elements.SpanForGini, 'The assertion failed because the sort by Gini was not displayed in Flows Page')
         .click(FlowsSelector.elements.SpanForGini)
     })
     .pause(configrationReader.getPauseValue());
@@ -441,7 +441,7 @@ exports.SearchByFeatureNameInColumnTab = (browser) => {
 
 
     });
-  }
+}
 //Check if Data are displayed in Statistics tab
 exports.CheckStatisticsTab = (browser) => {
   browser
@@ -523,23 +523,55 @@ exports.CheckStatisticsTab = (browser) => {
 //Check if Data are displayed in Statistics tab
 exports.SearchByFeatureNameInStatisticsTab = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .assert.elementPresent(FlowsSelector.elements.StatisticsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
-  .pause(7000)
-  .click(FlowsSelector.elements.StatisticsTab, function (result) {
-    //check if Search input field is exists or not
-    browser
-      .pause(configrationReader.getPauseValue())
-      .assert.elementPresent(FlowsSelector.elements.SearchByColumn, 'The assertion failed because the Search input field was not exists in Statistics tab')
-      //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
-      .setValue(FlowsSelector.elements.SearchByColumn, configrationReader.getFeatureName())
-      //check if the search result is correct 
-      .waitForElementVisible(FlowsSelector.elements.FirstRowInTable,configrationReader.getPeriod(),'Test was failed because No Result value was displayed for what you searched on')
-      //check if first column is what you searched about
-      .assert.containsText(FlowsSelector.elements.FirstRowInTable, configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
-      .pause(7000);
-  })
-  .pause(7000);
-
-
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.StatisticsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
+    .pause(7000)
+    .click(FlowsSelector.elements.StatisticsTab, function (result) {
+      //check if Search input field is exists or not
+      browser
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowsSelector.elements.SearchByColumn, 'The assertion failed because the Search input field was not exists in Statistics tab')
+        //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
+        .setValue(FlowsSelector.elements.SearchByColumn, configrationReader.getFeatureName())
+        //check if the search result is correct 
+        .waitForElementVisible(FlowsSelector.elements.FirstRowInTable, configrationReader.getPeriod(), 'Test was failed because No Result value was displayed for what you searched on')
+        //check if first column is what you searched about
+        .assert.containsText(FlowsSelector.elements.FirstRowInTable, configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
+        .pause(7000);
+    })
+    .pause(7000);
+}
+//Delete a column that was added to the Central Data Source table, use the slider in the Columns tab, Verify that this column will no longer be in the Data Panel.
+exports.DeleteColumn = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
+    //Add this pause value to make delay while the tabs are loading
+    .pause(7000)
+    //Click on Columns tab
+    .click(FlowsSelector.elements.ColumnsTab, function (result) {
+      browser
+      //delay
+        .pause(configrationReader.getPauseValue())
+          //check if Search input field is exists or not
+        .assert.elementPresent(FlowsSelector.elements.SearchByColumn, 'The assertion failed because the Search input field was not exists in Statistics tab')
+        //set the search field input to search on "LIMIT_BAL" , this value was declared in Config.ini
+        .setValue(FlowsSelector.elements.SearchByColumn, configrationReader.getFeatureName())
+        //Check the switcher box column if is display
+        .assert.elementPresent(FlowsSelector.elements.SwitcherBoxColumn)
+        //click on Switcher box to delete this column "LIMIT_BAL" 
+        .click(FlowsSelector.elements.SwitcherBoxColumn)
+        .pause(configrationReader.getPeriod())
+        //Go to Preview Data Tab to verify that this column will no longer be in the Data Panel. 
+        .click(FlowsSelector.elements.PreviewData)
+        .assert.elementPresent(FlowsSelector.elements.SearchByFeatureName)
+        //search on "LIMIT_BAL"
+        .setValue(FlowsSelector.elements.SearchByFeatureName, configrationReader.getFeatureName())
+        .pause(configrationReader.getPauseValue())
+        //Msg No columns should display When you search on deleted column
+        .assert.elementPresent(FlowsSelector.elements.NoColumnsMsg)
+        .assert.containsText(FlowsSelector.elements.NoColumnsMsg,'No columns to preview')
+        .pause(configrationReader.getPauseValue());
+    })
+    .pause(configrationReader.getPauseValue());
 }

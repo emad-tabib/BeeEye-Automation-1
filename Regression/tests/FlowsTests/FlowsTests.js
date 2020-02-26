@@ -246,7 +246,7 @@ it('Verify if Data are displayed in Statistics tab ' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot for Statistics tab");
   browser.end();
 });
-*/
+
 //Check if search by feature name is working as expected in Statistics tab
 it('Verify that search by feature name is working as expected in in Statistics tab' , function(browser){
   setup.logTestDetails(this, "Try to verify if search by feature name is working as expected in Statistics tab " )
@@ -255,5 +255,14 @@ it('Verify that search by feature name is working as expected in in Statistics t
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you search by feature name in Statistics tab");
   browser.end();
 });
+*/
 
+//Delete Column
+it('Verify if Delete Column from Columns Tab is done correctly' , function(browser){
+  setup.logTestDetails(this, "Try to Delete Column from Columns Tab then Verify that this column will no longer be in the Data Panel")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.DeleteColumn(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot in Preview Data Tab after you delete the column from Columns Tab");
+  browser.end();
+});
 });
