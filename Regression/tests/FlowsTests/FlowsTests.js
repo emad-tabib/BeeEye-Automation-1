@@ -322,4 +322,14 @@ it('Verify if Transformations button navigates to transformations Page' , functi
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on Transformations button in Flow edit nav header");
   browser.end();
 });
+
+//Experiments navigates to experiments
+it('Verify if Experiments button navigates to experiments page' , function(browser){
+  setup.logTestDetails(this, "Try to verify if Experiments button navigates to experiments page")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.AddAnotherCSVFile(browser);
+  Flows.ExperimentsButton(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on experiments button in Flow edit nav header");
+  browser.end();
+});
 });

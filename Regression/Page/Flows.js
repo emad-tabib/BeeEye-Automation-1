@@ -686,3 +686,16 @@ exports.TransformationButton = (browser) => {
     .pause(configrationReader.getPauseValue())
 
 }
+
+//Experiments navigates to experiments Page
+exports.ExperimentsButton = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .assert.elementPresent(FlowsSelector.elements.ExperimentsButton, 'The assertion failed because Experiments Button was not displayed in Flow edit nav header')
+    .click(FlowsSelector.elements.ExperimentsButton)
+    .pause(configrationReader.getPauseValue())
+    .assert.elementPresent(FlowsSelector.elements.ExperimentSideBar, 'The assertion failed after you click on Experiments Button because it did not take you to correct Page')
+    .pause(configrationReader.getPauseValue())
+
+}
