@@ -238,7 +238,7 @@ module.exports = {
         },
         SearchByFeatureName: {
             //selector: '.app-input.app-input-primary.app-input-medium.mr-3'
-              selector: '.preview-table-wrapper>div>div>.app-input.app-input-primary.app-input-medium.mr-3'
+            selector: '.preview-table-wrapper>div>div>.app-input.app-input-primary.app-input-medium.mr-3'
         },
 
         FirstColumninTable: {
@@ -247,7 +247,7 @@ module.exports = {
         //Selectors in Columns Tab
         ColumnsTab: {
             selector: '.tablist>ul>li>#columns-table-button'
-        
+
         },
         SwitcherBoxColumn: {
             selector: '.switcher-box'
@@ -342,7 +342,7 @@ module.exports = {
 
         PAY_AMT3: {
             selector: '.table-row',
-            index : '1'
+            index: '1'
         },
         PAY_AMT4: {
             selector: '.table-row:nth-child(2)'
@@ -357,16 +357,16 @@ module.exports = {
         DefaultPaymentNextMonth: {
             selector: '.table-row:nth-child(5)'
         },
-        SearchByColumn :{
-            selector :'.table-options-wrapper>div>div>.app-input.app-input-primary.app-input-medium'
+        SearchByColumn: {
+            selector: '.table-options-wrapper>div>div>.app-input.app-input-primary.app-input-medium'
         },
-        FirstRowInTable : {
-            Selector : '.table-body>div>.table-row-item:nth-child(2)'
+        FirstRowInTable: {
+            Selector: '.table-body>div>.table-row-item:nth-child(2)'
         },
         StatisticsTab: {
-            selector:'.tablist>ul>li>#stats-table-button'
+            selector: '.tablist>ul>li>#stats-table-button'
         },
-        FeatureName : {
+        FeatureName: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(1)'
         },
         CountValues: {
@@ -384,77 +384,77 @@ module.exports = {
         Stdv: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(6)'
         },
-        MinValue : {
+        MinValue: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(7)'
         },
         the25Percentile: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(8)'
         },
-        Median    : {
+        Median: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(9)'
         },
-        the75Percentile   : {
+        the75Percentile: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(10)'
-        },   
-        MaxValue    : {
+        },
+        MaxValue: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(11)'
         },
-        MostCommonFrequency  : {
+        MostCommonFrequency: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(12)'
         },
         MostCommonValue: {
             selector: '#stats-table>div>div>div>.table-row-item:nth-child(13)'
         },
-        NoColumnsMsg :{
-            selector:'.text-no-columns'
+        NoColumnsMsg: {
+            selector: '.text-no-columns'
         },
-        RemoveIcon:{
-            selector : '.app-btn.app-btn-danger.app-btn-square'
+        RemoveIcon: {
+            selector: '.app-btn.app-btn-danger.app-btn-square'
         },
-        ModalForRemoveDataSource : {
+        ModalForRemoveDataSource: {
             selector: '.modal-background.d-flex>#modal-view'
         },
-        SubmitButtonInRemoveModal : {
-            selector : '.modal-background.d-flex>div>div>#submit-button'
+        SubmitButtonInRemoveModal: {
+            selector: '.modal-background.d-flex>div>div>#submit-button'
         },
-        AddMasterDataSourceButton : {
-            selector : '.add-new-button'
+        AddMasterDataSourceButton: {
+            selector: '.add-new-button'
         },
-        FlowEditHeader : {
+        FlowEditHeader: {
             selector: '.flow-edit-header'
         },
-        AutoFGButton : {
-            selector : '#AutoFG'
+        AutoFGButton: {
+            selector: '#AutoFG'
         },
-        ExperimentsButton : {
-            selector : '#experiments-header-button'
+        ExperimentsButton: {
+            selector: '#experiments-header-button'
         },
-        FlowManagerTitle : {
-            selector : '#flow-manager-title'
+        FlowManagerTitle: {
+            selector: '#flow-manager-title'
         },
-        FlowList : {
-            selector : '.flow-list-main-wrapper'
+        FlowList: {
+            selector: '.flow-list-main-wrapper'
         },
 
-        FirstJoinField : {
-            selector : '.top-part>div>div.d-flex >div:nth-child(1)>.ui.fluid.search.selection.dropdown>.search'
+        FirstJoinField: {
+            selector: '.top-part>div>div.d-flex >div:nth-child(1)>.ui.fluid.search.selection.dropdown>.search'
         },
-        SecondjoinField : {
-            selector : '.d-flex>div:nth-child(2)>.ui.fluid.search.selection.dropdown>.search'
+        SecondjoinField: {
+            selector: '.d-flex>div:nth-child(2)>.ui.fluid.search.selection.dropdown>.search'
         },
-        TransformationTab : {
-            selector : '#transformations-tab'
+        TransformationTab: {
+            selector: '#transformations-tab'
         },
-        ExperimentSideBar : {
+        ExperimentSideBar: {
             selector: '.experiment-sidebar.h-100'
         },
 
-        FirstElement : {
-            selector : '.ui.fluid.search.selection.dropdown.active.visible:nth-child(1)>div.menu.visible>div'
+        FirstElement: {
+            selector: '.ui.fluid.search.selection.dropdown.active.visible:nth-child(1)>div.menu.visible>div'
         },
-        
-        AutoFGPage : {
-Selector : '.autofg-wrapper'
+
+        AutoFGPage: {
+            selector: '.autofg-wrapper'
         }
     }
 };

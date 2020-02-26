@@ -687,6 +687,19 @@ exports.TransformationButton = (browser) => {
 
 }
 
+//AutoFG navigates to AFG Page
+exports.AutoFGButton = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .assert.elementPresent(FlowsSelector.elements.AutoFGButton, 'The assertion failed because AutoFG Button was not displayed in Flow edit nav header')
+    .click(FlowsSelector.elements.AutoFGButton)
+    .pause(configrationReader.getPauseValue())
+    .assert.elementPresent(FlowsSelector.elements.AutoFGPage)
+    .pause(configrationReader.getPauseValue())
+
+}
+
 //Experiments navigates to experiments Page
 exports.ExperimentsButton = (browser) => {
   browser

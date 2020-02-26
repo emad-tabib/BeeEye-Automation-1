@@ -323,6 +323,20 @@ it('Verify if Transformations button navigates to transformations Page' , functi
   browser.end();
 });
 
+
+
+//AutoFG navigates to AFG
+it('Verify if AutoFG button navigates to AFG page' , function(browser){
+  setup.logTestDetails(this, "Try to verify if AutoFG navigates to AFG page")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.SelectValidLabel(browser);
+  Flows.RunDataSources(browser);
+  Flows.AutoFGButton(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on AFG button in Flow edit nav header");
+  browser.end();
+});
+
+
 //Experiments navigates to experiments
 it('Verify if Experiments button navigates to experiments page' , function(browser){
   setup.logTestDetails(this, "Try to verify if Experiments button navigates to experiments page")
@@ -332,4 +346,5 @@ it('Verify if Experiments button navigates to experiments page' , function(brows
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on experiments button in Flow edit nav header");
   browser.end();
 });
+
 });
