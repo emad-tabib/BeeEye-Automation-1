@@ -275,4 +275,15 @@ it('Verify if Add Another CSV File is done correctly' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you add another CSV File");
   browser.end();
 });
+
+
+//Delete CSV File
+it('Verify if Delete the second CSV File is done correctly' , function(browser){
+  setup.logTestDetails(this, "Try to delete the CSV File to verify the quantity of columns in the Data Panel is updated on the left")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.AddAnotherCSVFile(browser);
+  Flows.DeleteCSVFile(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you delete the second CSV File");
+  browser.end();
+});
 });

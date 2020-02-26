@@ -133,8 +133,7 @@ module.exports = {
         },
 
         NumberOfColumns: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/span',
-            locateStrategy: 'xpath'
+            selector: '.source-info>ul>li:nth-child(3)>span'
         },
 
         PreviewData: {
@@ -408,6 +407,9 @@ module.exports = {
         },
         NoColumnsMsg :{
             selector:'.text-no-columns'
+        },
+        RemoveIcon:{
+            selector : '.app-btn.app-btn-danger.app-btn-square'
         }
 
        

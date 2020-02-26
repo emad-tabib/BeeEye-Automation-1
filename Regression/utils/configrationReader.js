@@ -81,12 +81,23 @@ exports.getNumberOfRowsAfterFiltering = () => {
     return numberOfRowsafterfiltering;
 }
 
-//Number of Columns in Data Sources section
+//Number of Columns in Data Sources section For First File Uploaded
 exports.getNumberOfColumns = () => {
     var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
     return numberOfcolumnsinFileUploaded;
 }
 
+//Number of Columns in File Information section For Second File Uploaded
+exports.getNumberOfColumnsFortheSecondFile = () => {
+    var numberOfcolumnsinSecondFileUploaded = config.numberOfcolumnsinSecondFileUploaded;
+    return numberOfcolumnsinSecondFileUploaded;
+}
+
+//number Of columnsa in Data Sources Section after Uploading Two Files
+exports.getNumberOfColumnsafterUploadingTwoFiles = () => {
+    var numberOfcolumnsafterUploadingTwoFiles = config.numberOfcolumnsafterUploadingTwoFiles;
+    return numberOfcolumnsafterUploadingTwoFiles;
+}
 //search by feature name 
 exports.getFeatureName = () => {
     var searchthisFeatureName = config.searchthisFeatureName;

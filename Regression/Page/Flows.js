@@ -593,4 +593,24 @@ exports.AddAnotherCSVFile = (browser) => {
     .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
     .pause(configrationReader.getPauseValue());
 
-}
+  }
+
+  //Delete The Second CSV File
+  exports.DeleteCSVFile = (browser) => {
+    browser
+      .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+      .assert.elementPresent(FlowsSelector.elements.NumberOfColumns, 'The assertion failed because the number of columns in File Information section was not displayed')
+      .assert.containsText(FlowsSelector.elements.NumberOfColumns, configrationReader.getNumberOfColumnsFortheSecondFile(), 'The assertion failed because the number of columns in File Information section was not match with the number of columns for the uploaded file')
+      .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection, 'The assertion failed because the Columns value was not displayed')
+      .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection,configrationReader.getNumberOfColumnsafterUploadingTwoFiles(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+      .assert.elementPresent(FlowsSelector.elements.RemoveIcon, 'The assertion failed because the Remove icon was not displayed')
+      //click on remove icon to delete the second CSV file
+      .click(FlowsSelector.elements.RemoveIcon)
+      .click(FlowsSelector.elements.DataSourcesButton)
+      //delay
+      .pause(configrationReader.getPauseValue())
+      //check the columns value after you delete the second CSV file
+      .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+      .pause(configrationReader.getPauseValue());
+  
+    }
