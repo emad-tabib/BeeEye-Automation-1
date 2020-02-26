@@ -593,24 +593,44 @@ exports.AddAnotherCSVFile = (browser) => {
     .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
     .pause(configrationReader.getPauseValue());
 
-  }
+}
 
-  //Delete The Second CSV File
-  exports.DeleteCSVFile = (browser) => {
-    browser
-      .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-      .assert.elementPresent(FlowsSelector.elements.NumberOfColumns, 'The assertion failed because the number of columns in File Information section was not displayed')
-      .assert.containsText(FlowsSelector.elements.NumberOfColumns, configrationReader.getNumberOfColumnsFortheSecondFile(), 'The assertion failed because the number of columns in File Information section was not match with the number of columns for the uploaded file')
-      .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection, 'The assertion failed because the Columns value was not displayed')
-      .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection,configrationReader.getNumberOfColumnsafterUploadingTwoFiles(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
-      .assert.elementPresent(FlowsSelector.elements.RemoveIcon, 'The assertion failed because the Remove icon was not displayed')
-      //click on remove icon to delete the second CSV file
-      .click(FlowsSelector.elements.RemoveIcon)
-      .click(FlowsSelector.elements.DataSourcesButton)
-      //delay
-      .pause(configrationReader.getPauseValue())
-      //check the columns value after you delete the second CSV file
-      .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
-      .pause(configrationReader.getPauseValue());
-  
-    }
+//Delete The Second CSV File
+exports.DeleteCSVFile = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.NumberOfColumns, 'The assertion failed because the number of columns in File Information section was not displayed')
+    .assert.containsText(FlowsSelector.elements.NumberOfColumns, configrationReader.getNumberOfColumnsFortheSecondFile(), 'The assertion failed because the number of columns in File Information section was not match with the number of columns for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.ColumnsInDataSourceSection, 'The assertion failed because the Columns value was not displayed')
+    .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumnsafterUploadingTwoFiles(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+    .assert.elementPresent(FlowsSelector.elements.RemoveIcon, 'The assertion failed because the Remove icon was not displayed')
+    //click on remove icon to delete the second CSV file
+    .click(FlowsSelector.elements.RemoveIcon)
+    .click(FlowsSelector.elements.DataSourcesButton)
+    //delay
+    .pause(configrationReader.getPauseValue())
+    //check the columns value after you delete the second CSV file
+    .assert.containsText(FlowsSelector.elements.ColumnsInDataSourceSection, configrationReader.getNumberOfColumns(), 'The assertion failed because the Columns value was not displayed correctly as the Columns value for the uploaded file')
+    .pause(configrationReader.getPauseValue());
+
+}
+//Delete All Data Sources
+exports.DeleteAllDataSource = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.RemoveAllButton, 'The assertion failed because Remove all button was not displayed in Flow Page')
+    //click on remove all button
+    .click(FlowsSelector.elements.RemoveAllButton)
+    .assert.elementPresent(FlowsSelector.elements.ModalForRemoveDataSource, 'The assertion failed after you click on Remove all button because no madal was displayed for Removing')
+    .assert.elementPresent(FlowsSelector.elements.SubmitButtonInRemoveModal, 'The assertion failed because no submit button in the Removing Modal')
+    .pause(configrationReader.getPauseValue())
+    //Click on submit button to remove all data source
+    .click(FlowsSelector.elements.SubmitButtonInRemoveModal)
+    //delay
+    .pause(configrationReader.getPauseValue())
+    //if Add Master Data Source was display then all Data sources was deleted 
+    .assert.elementPresent(FlowsSelector.elements.AddMasterDataSourceButton, 'The assertion failed after you Remove all data source because the Add Master Data Source Button was not displayed')
+    .assert.containsText(FlowsSelector.elements.AddMasterDataSourceButton, 'Add Master Data Source', 'The assertion failed after you Remove all data source because the button was not contained Add Master Data Source which indicates that all data sources are not deleted')
+
+
+}

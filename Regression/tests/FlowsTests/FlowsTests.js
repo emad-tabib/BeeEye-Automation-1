@@ -286,4 +286,14 @@ it('Verify if Delete the second CSV File is done correctly' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you delete the second CSV File");
   browser.end();
 });
+
+//Delete All Data Sources
+it('Verify if Delete All Data Sources are  done correctly' , function(browser){
+  setup.logTestDetails(this, "Try to delete All Data Sources ")
+  Flows.CreateNewFlowAndUploadFile(browser);
+  Flows.AddAnotherCSVFile(browser);
+  Flows.DeleteAllDataSource(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you delete the second CSV File");
+  browser.end();
+});
 });

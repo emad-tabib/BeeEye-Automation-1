@@ -410,8 +410,18 @@ module.exports = {
         },
         RemoveIcon:{
             selector : '.app-btn.app-btn-danger.app-btn-square'
+        },
+        ModalForRemoveDataSource : {
+            selector: '.modal-background.d-flex>#modal-view'
+        },
+        SubmitButtonInRemoveModal : {
+            selector : '.modal-background.d-flex>div>div>#submit-button'
+        },
+        AddMasterDataSourceButton : {
+            selector : '.add-new-button'
         }
-
-       
+        
+        
+        
     }
 };
