@@ -595,12 +595,12 @@ exports.AddAnotherCSVFile = (browser) => {
     .pause(configrationReader.getPauseValue())
     //Add join value 
     .assert.elementPresent(FlowsSelector.elements.FirstJoinField)
-    .setValue(FlowsSelector.elements.FirstJoinField,configrationReader.getJoinValue())
+    .setValue(FlowsSelector.elements.FirstJoinField, configrationReader.getJoinValue())
     .pause(configrationReader.getPauseValue())
     .click(FlowsSelector.elements.FirstElement)
     .pause(configrationReader.getPauseValue())
     .assert.elementPresent(FlowsSelector.elements.SecondjoinField)
-    .setValue(FlowsSelector.elements.SecondjoinField,configrationReader.getJoinValue())
+    .setValue(FlowsSelector.elements.SecondjoinField, configrationReader.getJoinValue())
     .pause(configrationReader.getPauseValue())
     .click(FlowsSelector.elements.FirstElement)
     .pause(configrationReader.getPauseValue());
@@ -656,6 +656,10 @@ exports.IsFlowEditNavHeaderDisplay = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.TransformationButton, 'The assertion failed because Transformation Button was not displayed in Flow edit nav header')
     .assert.elementPresent(FlowsSelector.elements.AutoFGButton, 'The assertion failed because AutoFG Button was not displayed in Flow edit nav header')
     .assert.elementPresent(FlowsSelector.elements.ExperimentsButton, 'The assertion failed because Experiments Button was not displayed in Flow edit nav header')
+    .assert.elementPresent(FlowsSelector.elements.FlowLogButton, 'The assertion failed because Bell Button was not displayed in Flow edit header')
+    .assert.elementPresent(FlowsSelector.elements.RunFlowButton, 'The assertion failed because Run Flow Button was not displayed in Flow edit header')
+    .assert.elementPresent(FlowsSelector.elements.StopFlowButton, 'The assertion failed because Stop Flow Button was not displayed in Flow edit header')
+
     .pause(configrationReader.getPauseValue())
 
 }
@@ -711,4 +715,17 @@ exports.ExperimentsButton = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.ExperimentSideBar, 'The assertion failed after you click on Experiments Button because it did not take you to correct Page')
     .pause(configrationReader.getPauseValue())
 
+}
+
+//verify if Bell button opens the messages dialog
+exports.BellButton = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .assert.elementPresent(FlowsSelector.elements.FlowLogButton, 'The assertion failed because Bell Button was not displayed in Flow edit header')
+    .click(FlowsSelector.elements.FlowLogButton)
+    .pause(configrationReader.getPauseValue())
+    .assert.elementPresent(FlowsSelector.elements.LogWindow, 'The assertion failed after you click on Bell Button because the Log window was not displayed')
+    .assert.containsText(FlowsSelector.elements.LogWindow,'Flow Log')
+    .pause(configrationReader.getPauseValue())
 }

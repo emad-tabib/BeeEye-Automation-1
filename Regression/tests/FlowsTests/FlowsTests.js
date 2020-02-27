@@ -347,4 +347,13 @@ it('Verify if Experiments button navigates to experiments page' , function(brows
   browser.end();
 });
 
+
+//Bell button opens the messages dialog
+it('Verify if Bell button opens the messages dialog' , function(browser){
+  setup.logTestDetails(this, "Try to verify if Bell button opens the messages dialog")
+  Flows.CreateNewFlow(browser);
+  Flows.BellButton(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on Bell button in Flow edit Header");
+  browser.end();
+});
 });

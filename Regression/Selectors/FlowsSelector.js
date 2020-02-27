@@ -175,6 +175,14 @@ module.exports = {
         FlowLogButton: {
             selector: '.d-flex.notifications-button',
         },
+        
+        RunFlowButton : {
+            Selector : '#run-flow-button'
+        },
+       
+        StopFlowButton :{
+            selector : '.flow-edit-control-buttons>div:nth-child(2)>.app-btn.app-btn-asset.app-btn-square'
+        },
 
         LogError: {
             selector: '.pre-log.error-log'
@@ -183,7 +191,11 @@ module.exports = {
         Log: {
             selector: '.pre-log'
         },
-
+        
+        LogWindow: {
+            selector : '.notifications-window-wrapper>div>.app-modal-view.app-card-custom'
+        },
+        
         MsgInTransformation: {
             selector: '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
             locateStrategy: 'xpath'
