@@ -177,11 +177,14 @@ module.exports = {
         },
         
         RunFlowButton : {
-            Selector : '#run-flow-button'
+            Selector : '.flow-edit-control-buttons>div:nth-child(1)>.app-btn.app-btn-asset.app-btn-square'
         },
        
         StopFlowButton :{
             selector : '.flow-edit-control-buttons>div:nth-child(2)>.app-btn.app-btn-asset.app-btn-square'
+        },
+        RefreshFlowButton : {
+            selector : '.flow-edit-control-buttons>div:nth-child(3)>.app-btn.app-btn-asset.app-btn-square'
         },
 
         LogError: {
@@ -195,7 +198,7 @@ module.exports = {
         LogWindow: {
             selector : '.notifications-window-wrapper>div>.app-modal-view.app-card-custom'
         },
-        
+
         MsgInTransformation: {
             selector: '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
             locateStrategy: 'xpath'
@@ -467,6 +470,10 @@ module.exports = {
 
         AutoFGPage: {
             selector: '.autofg-wrapper'
+        },
+
+        ToolTipforRunFlow : {
+            selector : '.flow-edit-control-buttons>div:nth-child(1)'
         }
     }
 };

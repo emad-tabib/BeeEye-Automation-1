@@ -726,6 +726,22 @@ exports.BellButton = (browser) => {
     .click(FlowsSelector.elements.FlowLogButton)
     .pause(configrationReader.getPauseValue())
     .assert.elementPresent(FlowsSelector.elements.LogWindow, 'The assertion failed after you click on Bell Button because the Log window was not displayed')
-    .assert.containsText(FlowsSelector.elements.LogWindow,'Flow Log')
+    .assert.containsText(FlowsSelector.elements.LogWindow, 'Flow Log')
+    .pause(configrationReader.getPauseValue())
+}
+
+//verify if Stop flow is disabled for new flow (tool tip explains why)
+exports.StopFlow = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .pause(configrationReader.getPauseValue())
+    //make sure that stop flow button was displayed in Flow Edit Header
+    .assert.elementPresent(FlowsSelector.elements.StopFlowButton, 'The assertion failed because Stop Flow Button was not displayed in Flow Edit Header')
+    //check if attribute disabled is true or not 
+    .getAttribute(FlowsSelector.elements.StopFlowButton, 'disabled', function (result) {
+      browser.assert.equal(result.value, 'true', 'The assertion failed because Stop Flow Button was enabled for the new flow');
+    })
+    //delay
     .pause(configrationReader.getPauseValue())
 }

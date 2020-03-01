@@ -356,4 +356,15 @@ it('Verify if Bell button opens the messages dialog' , function(browser){
   screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you click on Bell button in Flow edit Header");
   browser.end();
 });
+
+//Stop flow is disabled for new flow (tool tip explains why)
+it('Verify if Stop flow is disabled for new flow' , function(browser){
+  setup.logTestDetails(this, "Try to verify if Run flow is disabled for new flow")
+  Flows.CreateNewFlow(browser);
+  //Go to StopFlow function immediatly afetr you create new flow to check that the button is disabled for the new flow
+  Flows.StopFlow(browser);
+  screenShotUtils.takeScreenShot(this,browser,"Here is the screenshot after you hovered on Run Flow button in Flow edit Header");
+  browser.end();
+});
+
 });
