@@ -730,7 +730,7 @@ exports.BellButton = (browser) => {
     .pause(configrationReader.getPauseValue())
 }
 
-//verify if Stop flow is disabled for new flow (tool tip explains why)
+//verify if Stop flow is disabled for new flow
 exports.StopFlow = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
@@ -741,6 +741,21 @@ exports.StopFlow = (browser) => {
     //check if attribute disabled is true or not 
     .getAttribute(FlowsSelector.elements.StopFlowButton, 'disabled', function (result) {
       browser.assert.equal(result.value, 'true', 'The assertion failed because Stop Flow Button was enabled for the new flow');
+    })
+    //delay
+    .pause(configrationReader.getPauseValue())
+}
+
+//verify if Run flow is disabled for new flow (tool tip explains why)
+exports.RunFlow = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .pause(configrationReader.getPauseValue())
+    .getAttribute(FlowsSelector.elements.RunFlowButton, 'title', function (result) {
+      browser
+      .assert.equal(result.value, '*Configure data sources*Select a label for training*Configure experiments')
+      .pause(7000)
     })
     //delay
     .pause(configrationReader.getPauseValue())

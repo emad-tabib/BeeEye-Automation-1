@@ -177,7 +177,7 @@ module.exports = {
         },
         
         RunFlowButton : {
-            Selector : '.flow-edit-control-buttons>div:nth-child(1)>.app-btn.app-btn-asset.app-btn-square'
+            Selector : '.flow-edit-control-buttons>div:nth-child(1)'
         },
        
         StopFlowButton :{
