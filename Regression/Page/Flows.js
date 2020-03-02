@@ -522,7 +522,7 @@ exports.CheckStatisticsTab = (browser) => {
 
 }
 
-//Check if Data are displayed in Statistics tab
+//Check if Search By Feature Name is working as expected In Statistics tab
 exports.SearchByFeatureNameInStatisticsTab = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
@@ -543,6 +543,7 @@ exports.SearchByFeatureNameInStatisticsTab = (browser) => {
     })
     .pause(7000);
 }
+
 //Delete a column that was added to the Central Data Source table, use the slider in the Columns tab, Verify that this column will no longer be in the Data Panel.
 exports.DeleteColumn = (browser) => {
   browser
@@ -733,15 +734,19 @@ exports.BellButton = (browser) => {
 //verify if Stop flow is disabled for new flow
 exports.StopFlow = (browser) => {
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
-  .pause(configrationReader.getPauseValue())
-  //make sure that stop flow button was displayed in Flow Edit Header
-  .assert.elementPresent(FlowsSelector.elements.StopFlowButton, 'The assertion failed because Stop Flow Button was not displayed in Flow Edit Header')
-  //check if attribute disabled is true or not 
-  .getAttribute(FlowsSelector.elements.StopFlowButton, 'disabled', function (result) {
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
+    .pause(configrationReader.getPauseValue())
+    //make sure that stop flow button was displayed in Flow Edit Header
+    .assert.elementPresent(FlowsSelector.elements.StopFlowButton, 'The assertion failed because Stop Flow Button was not displayed in Flow Edit Header')
+    //check if attribute disabled is true or not 
+    .getAttribute(FlowsSelector.elements.StopFlowButton, 'disabled', function (result) {
       browser
-      .assert.equal(result.value, 'true', 'The assertion failed because Stop Flow Button was enabled for the new flow');
+        .assert.equal(result.value, 'true', 'The assertion failed because Stop Flow Button was enabled for the new flow');
+    })
+    .click(FlowsSelector.elements.StopFlowButton,function(result){
+    browser
+    .pause(configrationReader.getPauseValue())
     })
     //delay
     .pause(configrationReader.getPauseValue())
@@ -749,23 +754,23 @@ exports.StopFlow = (browser) => {
 
 //verify if Run flow is disabled for new flow (tool tip explains why)
 exports.RunFlow = (browser) => {
-  
+
   browser
-  .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-  .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
-  .pause(configrationReader.getPauseValue())
-  .assert.elementPresent(FlowsSelector.elements.RunFlowButton, 'The assertion failed because Run Flow Button was not displayed in Flow Edit Nav Header after you create new flow')
-  .getAttribute(FlowsSelector.elements.RunFlowButton, 'title', function (result) {
-    browser
-    .assert.equal(result.value, '<strong>*Configure data sources<br>*Select a label for training<br>*Configure experiments<br></strong>', 'The assertion failed because the tool tip was not describe the actual status')
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+    .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
     .pause(configrationReader.getPauseValue())
-  })
-  .click(FlowsSelector.elements.RunFlowButton, function(result){
-    browser
-    //make sure that Tool Tip was displayed 
-.assert.elementPresent(FlowsSelector.elements.ToolTipforRunFlow)
-.pause(configrationReader.getPauseValue())
-  })
+    .assert.elementPresent(FlowsSelector.elements.RunFlowButton, 'The assertion failed because Run Flow Button was not displayed in Flow Edit Nav Header after you create new flow')
+    .getAttribute(FlowsSelector.elements.RunFlowButton, 'title', function (result) {
+      browser
+        .assert.equal(result.value, '<strong>*Configure data sources<br>*Select a label for training<br>*Configure experiments<br></strong>', 'The assertion failed because the tool tip was not describe the actual status')
+        .pause(configrationReader.getPauseValue())
+    })
+    .click(FlowsSelector.elements.RunFlowButton, function (result) {
+      browser
+        //make sure that Tool Tip was displayed 
+        .assert.elementPresent(FlowsSelector.elements.ToolTipforRunFlow)
+        .pause(configrationReader.getPauseValue())
+    })
     //delay
-  .pause(configrationReader.getPauseValue())
+    .pause(configrationReader.getPauseValue())
 }

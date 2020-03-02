@@ -69,22 +69,18 @@ module.exports = {
 
         Selected: {
             selector: '.sort-control-button.c-p.selected'
-
         },
 
         SpanForName: {
-            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[3]/div/span',
-            locateStrategy: 'xpath'
+            selector: '.sort-control-items:nth-child(3)>div>span'
         },
 
         SpanForGini: {
-            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[4]/div/span',
-            locateStrategy: 'xpath'
+            selector: '.sort-control-items:nth-child(4)>div>span'
         },
 
         SpanForDatecreated: {
-            selector: '/html/body/div/div/div/div[2]/div/div[1]/div[5]/div/span',
-            locateStrategy: 'xpath'
+            selector: '.sort-control-items:nth-child(5)>div>span'
 
         },
 
@@ -109,18 +105,19 @@ module.exports = {
         },
 
         Name: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[1]/strong',
-            locateStrategy: 'xpath'
+            selector: '.source-info>ul>li:nth-child(1)>strong'
         },
-
-        Type: {
+    
+        Type:{
+            selector:'.source-info>ul>li:nth-child(2)>strong'
+        },
+        /*Type: {
             selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/strong',
             locateStrategy: 'xpath'
         },
-
+*/
         Columns: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[3]/strong',
-            locateStrategy: 'xpath'
+            selector: '.source-info>ul>li:nth-child(3)>strong'
         },
 
         NameOfThefile: {
@@ -128,8 +125,7 @@ module.exports = {
         },
 
         TypeOfTheFile: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/div/ul/li[2]/span',
-            locateStrategy: 'xpath'
+            selector: '.source-info>ul>li:nth-child(2)>span'
         },
 
         NumberOfColumns: {
@@ -197,21 +193,6 @@ module.exports = {
         
         LogWindow: {
             selector : '.notifications-window-wrapper>div>.app-modal-view.app-card-custom'
-        },
-
-        MsgInTransformation: {
-            selector: '/html/body/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/h3',
-            locateStrategy: 'xpath'
-        },
-
-        FirstFlow: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div[1]/div[1]/div/div[1]',
-            locateStrategy: 'xpath'
-        },
-
-        SecondFlow: {
-            selector: '/html/body/div/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[1]',
-            locateStrategy: 'xpath'
         },
 
         FlowList: {
@@ -290,65 +271,84 @@ module.exports = {
             index: '1'
         },
         LIMIT_BAL: {
-            selector: '.table-row:nth-child(2)'
+            selector: '.table-row',
+            index :'2'
         },
         GENDER: {
-            selector: '.table-row:nth-child(3)'
+            selector: '.table-row',
+            index :'3'
         },
         EDUCATION: {
-            selector: '.table-row:nth-child(4)'
+            selector: '.table-row',
+            index :'4'
         },
         MARRIAGERow: {
-            selector: '.table-row:nth-child(5)'
+            selector: '.table-row',
+            index :'5'
         },
         AGE: {
-            selector: '.table-row:nth-child(6)'
+            selector: '.table-row',
+            index :'6'
         },
         PAY_0: {
-            selector: '.table-row:nth-child(7)'
+            selector: '.table-row',
+            index :'7'
         },
         PAY_2: {
-            selector: '.table-row:nth-child(8)'
+           /// selector: '.table-row:nth-child(8)'
+           selector: '.table-row',
+           index :'8'
         },
         PAY_3: {
-            selector: '.table-row:nth-child(9)'
+            selector: '.table-row',
+            index :'9'
         },
         PAY_4: {
-            selector: '.table-row:nth-child(10)'
+            selector: '.table-row',
+            index :'10'
         },
 
         PAY_5: {
             selector: '.table-row',
-            index: '1'
+            index : '1'
         },
         PAY_6: {
-            selector: '.table-row:nth-child(2)'
+            selector: '.table-row',
+            index :'2'
         },
         BILL_AMT1: {
-            selector: '.table-row:nth-child(3)'
+            selector: '.table-row',
+            index :'3'
         },
         BILL_AMT2: {
-            selector: '.table-row:nth-child(4)'
+            selector: '.table-row',
+            index :'4'
         },
         BILL_AMT3: {
-            selector: '.table-row:nth-child(5)'
+            selector: '.table-row',
+            index :'5'
         },
         BILL_AMT4: {
-            selector: '.table-row:nth-child(6)'
+            selector: '.table-row',
+            index :'6'
         },
         BILL_AMT5: {
-            selector: ' .table-row:nth-child(7)'
+            selector: ' .table-row',
+            index :'7'
         },
         BILL_AMT6: {
-            selector: '.table-row:nth-child(8)'
+            selector: '.table-row',
+            index :'8'
         },
 
         PAY_AMT1: {
-            selector: '.table-row:nth-child(9)'
+            selector: '.table-row',
+            index :'9'
         },
 
         PAY_AMT2: {
-            selector: '.table-row:nth-child(10)'
+            selector: '.table-row',
+            index :'10'
         },
 
         paginationInTabs: {
@@ -356,8 +356,7 @@ module.exports = {
         },
 
         PAY_AMT3: {
-            selector: '.table-row',
-            index: '1'
+            selector: '.custom-table>.table-body>.table-row:nth-child(1)'
         },
         PAY_AMT4: {
             selector: '.table-row:nth-child(2)'
@@ -376,7 +375,7 @@ module.exports = {
             selector: '.table-options-wrapper>div>div>.app-input.app-input-primary.app-input-medium'
         },
         FirstRowInTable: {
-            selector: '.table-body>div>.table-row-item:nth-child(2)'
+            selector: '.custom-table>.table-body>.table-row:nth-child(1)'
         },
         StatisticsTab: {
             selector: '.tablist>ul>li>#stats-table-button'
