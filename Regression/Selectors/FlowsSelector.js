@@ -177,7 +177,7 @@ module.exports = {
         },
         
         RunFlowButton : {
-            Selector : '.flow-edit-control-buttons>div:nth-child(1)'
+            selector : '.flow-edit-control-buttons>div:nth-child(1)'
         },
        
         StopFlowButton :{
@@ -376,7 +376,7 @@ module.exports = {
             selector: '.table-options-wrapper>div>div>.app-input.app-input-primary.app-input-medium'
         },
         FirstRowInTable: {
-            Selector: '.table-body>div>.table-row-item:nth-child(2)'
+            selector: '.table-body>div>.table-row-item:nth-child(2)'
         },
         StatisticsTab: {
             selector: '.tablist>ul>li>#stats-table-button'
