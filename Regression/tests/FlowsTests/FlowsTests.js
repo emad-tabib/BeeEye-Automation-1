@@ -44,7 +44,7 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
   });
-  /*
+  
     //New flow
     it('Create New Flow', function (browser) {
 
@@ -366,8 +366,8 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
       screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Stop Flow Button when it is disabled in Flow Edit Header after you create new flow");
       browser.end();
     });
+    
 
-*/
   //Run flow is disabled for new flow (tool tip explains why)
   it('Verify if Run flow is disabled for new flow', function (browser) {
     setup.logTestDetails(this, "Try to verify if Run flow is disabled for new flow")
@@ -377,4 +377,6 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
     screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the tool tip displayed after you clcik on Run Flow button when you create new flow");
 
   });
+  
 });
+
