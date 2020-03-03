@@ -473,6 +473,10 @@ module.exports = {
 
         ToolTipforRunFlow : {
             selector : '.flow-edit-control-buttons>div:nth-child(1)'
+        },
+        FlowMemberinthelist: {
+            selector: '.card-header-custom>div>.flow-name'
         }
+        
     }
 };

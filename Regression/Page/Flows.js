@@ -229,6 +229,7 @@ exports.SelectNotValidLabel = (browser) => {
         .pause(configrationReader.getPauseValue())
         .waitForElementVisible(FlowsSelector.elements.LabelWarning, 'Test was failed After you select the Label because the error msg was not displayed even though you select the not valid label')
         .assert.elementPresent(FlowsSelector.elements.LabelWarning, 'The assertion failed After you select the Label because the error msg was not displayed even though you select the not valid label')
+        .assert.containsText(FlowsSelector.elements.LabelWarning, 'Selected column has more than two values')
     })
     .pause(configrationReader.getPauseValue());
 }
