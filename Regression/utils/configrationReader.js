@@ -24,6 +24,11 @@ exports.getTheFileInformation_Name = () => {
     return nameOfTheUploadedFile;
 }
 
+
+exports.getTheFileInformation_NameForSecondFile = () => {
+    var nameofSecondUploadedFile = config.nameofSecondUploadedFile;
+    return nameofSecondUploadedFile;
+}
 exports.getTheFileInformation_Columns = () => {
     var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
     return numberOfcolumnsinFileUploaded;
@@ -63,4 +68,44 @@ exports.getValidLabel = () => {
 exports.getNotValidLabel = () => {
     var notValidLabel = config.notValidLabel;
     return notValidLabel;
+}
+//Number of Rows in Uploaded file
+exports.getNumberOfCombinedRows = () => {
+    var numberOfRowsinFileUploaded = config.numberOfRowsinFileUploaded;
+    return numberOfRowsinFileUploaded;
+}
+
+//Number of Rows After Filtering
+exports.getNumberOfRowsAfterFiltering = () => {
+    var numberOfRowsafterfiltering = config.numberOfRowsafterfiltering;
+    return numberOfRowsafterfiltering;
+}
+
+//Number of Columns in Data Sources section For First File Uploaded
+exports.getNumberOfColumns = () => {
+    var numberOfcolumnsinFileUploaded = config.numberOfcolumnsinFileUploaded;
+    return numberOfcolumnsinFileUploaded;
+}
+
+//Number of Columns in File Information section For Second File Uploaded
+exports.getNumberOfColumnsFortheSecondFile = () => {
+    var numberOfcolumnsinSecondFileUploaded = config.numberOfcolumnsinSecondFileUploaded;
+    return numberOfcolumnsinSecondFileUploaded;
+}
+
+//number Of columnsa in Data Sources Section after Uploading Two Files
+exports.getNumberOfColumnsafterUploadingTwoFiles = () => {
+    var numberOfcolumnsafterUploadingTwoFiles = config.numberOfcolumnsafterUploadingTwoFiles;
+    return numberOfcolumnsafterUploadingTwoFiles;
+}
+//search by feature name 
+exports.getFeatureName = () => {
+    var searchthisFeatureName = config.searchthisFeatureName;
+    return searchthisFeatureName;
+}
+
+//Join Value
+exports.getJoinValue = () => {
+    var JoinValue = config.JoinValue;
+    return JoinValue;
 }
