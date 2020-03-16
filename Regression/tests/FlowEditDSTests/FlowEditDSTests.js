@@ -43,7 +43,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     afterEach(function (browser, done) {
         done();
     });
-/*
+
     //Verify user is navigated to the last confguring step for the selected flow
     it('Verify user is navigated to the last confguring step for the selected flow', function (browser) {
         setup.logTestDetails(this, "Try to Verify user is navigated to the last confguring step for the selected flow")
@@ -92,7 +92,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Run the Data Source");
         browser.end();
     });
-    */
+    
     //Verify no errors displayed in the log file
     it('Verify no errors displayed in the log file', function (browser) {
         setup.logTestDetails(this, "Try to Verify no errors displayed in the log file")
@@ -107,4 +107,18 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the log file with no errors");
         browser.end();
     });
+    
+    //Select label with more than 2 values - show error message
+    it('Verify the error message was displayed when you select not valid Label', function (browser) {
+        setup.logTestDetails(this, " Try to verify the error message was displayed when you select not valid Label")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.SelectNotValidLabel(browser)
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select not valid Label");
+        browser.end();
+    });
+    
 });
