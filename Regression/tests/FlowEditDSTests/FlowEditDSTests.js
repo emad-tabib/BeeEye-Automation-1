@@ -147,4 +147,18 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the result After you search by feature name in Preview Data section");
         browser.end();
     });
+    
+   //Check if Data are displayed in Columns tab
+   it('Verify if Data are displayed in Columns tab ', function (browser) {
+    setup.logTestDetails(this, " Try to verify if Data are displayed in Columns tab")
+    Flows.CreateNewFlow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+    FlowEditDS.LastConfiguringStep(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+    Flows.UploadFile(browser);
+    Flows.CheckColumnsTab(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Data that are displayed in Columns tab");
+    browser.end();
+});
+
 });
