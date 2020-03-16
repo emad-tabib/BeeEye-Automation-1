@@ -53,4 +53,16 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         browser.end();
     });
 
+    //Upload CSV file to not new flow
+    it('Verify Upload CSV file function is working as expected', function (browser) {
+        setup.logTestDetails(this, "Try to Verify Uploading CSV file function is working as expected")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File for the selected Flow");
+        browser.end();
+    });
+    
 });

@@ -1,4 +1,5 @@
 const FlowsSelector = require("../Selectors/FlowsSelector");
+const FlowEditDsSelector = require("../Selectors/FlowEditDsSelector");
 const {
   assert
 } = require('chai').assert
@@ -40,8 +41,6 @@ exports.CreateNewFlow = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.FlowNameonBackButton, 'The assertion failed after you click on Submit button in the pop ups window that the name of the new flow does not display on the Back button')
     .pause(configrationReader.getPauseValue());
 }
-
-
 
 
 //Edit flow
@@ -173,7 +172,7 @@ exports.ExtensionOfTheFileUploaded = (browser) => {
     .assert.containsText(FlowsSelector.elements.ErrorInput, 'Selected file type not allowed', 'The assertion failed because error msg was not displayed even though the extension for the file is not CSV ')
     .pause(configrationReader.getPauseValue());
 }
-
+      
 //Upload File
 exports.UploadFile = (browser) => {
   browser
@@ -182,7 +181,8 @@ exports.UploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(configrationReader.getPauseValue());
+    .pause(100000)
+    //.pause(configrationReader.getPauseValue());
 }
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
