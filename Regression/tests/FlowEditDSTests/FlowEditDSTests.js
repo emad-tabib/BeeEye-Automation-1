@@ -78,7 +78,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select a new Label for the selected flow");
         browser.end();
     });
-*/
+
     //Run the Data Source
     it('Run the Data Source', function (browser) {
         setup.logTestDetails(this, "Try to Run the Data Source")
@@ -92,5 +92,19 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Run the Data Source");
         browser.end();
     });
-    
+    */
+    //Verify no errors displayed in the log file
+    it('Verify no errors displayed in the log file', function (browser) {
+        setup.logTestDetails(this, "Try to Verify no errors displayed in the log file")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.SelectValidLabel(browser);
+        Flows.RunDataSources(browser);
+        Flows.VerifyTheLogFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the log file with no errors");
+        browser.end();
+    });
 });
