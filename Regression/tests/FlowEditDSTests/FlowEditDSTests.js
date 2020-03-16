@@ -121,4 +121,16 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         browser.end();
     });
     
+     //Verify Data Sources section is display as expected
+     it('Verify Data Sources section is display as expected', function (browser) {
+        setup.logTestDetails(this, " Try to verify the Data Sources section is display as expected After you Upload File for the Flow")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.VerifyDatasourceSection(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Data Sources section after you Upload File to the Selected Flow");
+        browser.end();
+    });
 });
