@@ -48,6 +48,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     it('Verify user is navigated to the last confguring step for the selected flow', function (browser) {
         setup.logTestDetails(this, "Try to Verify user is navigated to the last confguring step for the selected flow")
         Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
         FlowEditDS.LastConfiguringStep(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the last confguring step for the selected flow");
         browser.end();
@@ -62,6 +63,19 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
         Flows.UploadFile(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File for the selected Flow");
+        browser.end();
+    });
+
+     //Select a new Label
+     it('Verify Selecting a new Label', function (browser) {
+        setup.logTestDetails(this, "Try to Verify Select a new Label")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select a new Label for the selected flow");
         browser.end();
     });
     
