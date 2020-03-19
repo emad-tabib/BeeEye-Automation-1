@@ -194,6 +194,9 @@ module.exports = {
         LogWindow: {
             selector : '.notifications-window-wrapper>div>.app-modal-view.app-card-custom'
         },
+        CloseIcon : {
+            selector : '.close-modal.c-p.d-flex'
+        },
 
         FlowList: {
             selector: '.app-card-custom.flow-card.select-none.flow-list-item'
@@ -476,7 +479,11 @@ module.exports = {
         },
         FlowMemberinthelist: {
             selector: '.card-header-custom>div>.flow-name'
+        },
+        FirstElementinLabelList : {
+            selector: '.ui.fluid.search.selection.dropdown.active.visible>.menu.visible'
         }
+        
         
     }
 };
