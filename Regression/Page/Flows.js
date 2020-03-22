@@ -181,8 +181,8 @@ exports.UploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(100000)
-    //.pause(configrationReader.getPauseValue());
+    .pause(configrationReader.getLongWait())
+    
 }
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
@@ -249,7 +249,7 @@ exports.SelectValidLabel = (browser) => {
         .pause(7000)
         .click(FlowsSelector.elements.FirstElementinLabelList)
        // .keys(browser.Keys.ENTER)
-        .pause(100000)
+        .pause(configrationReader.getLongWait())
         .waitForElementVisible(FlowsSelector.elements.PieChart, 'Test was failed After you select the Label because the PieChart was not displayed even though you select the valid label')
         .assert.elementPresent(FlowsSelector.elements.PieChart, 'The assertion failed After you select the Label because the PieChart was not displayed even though you select the valid label')
     })
@@ -317,9 +317,7 @@ exports.CreateNewFlowAndUploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(100000)
-
-    //.pause(configrationReader.getPauseValue());
+    .pause(configrationReader.getLongWait())
 }
 
 //Verify Data Sources section is displayed as wxpected
