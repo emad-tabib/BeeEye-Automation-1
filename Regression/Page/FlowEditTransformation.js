@@ -24,10 +24,17 @@ exports.RunTransformation = (browser) => {
         .assert.elementPresent(FlowEditTransformationsSelector.elements.FeaturesTable)
         //get pause value
         .pause(configrationReader.getPauseValue())
+
+}
+//Check if there is an error in Log window after you run Transformation Tab
+exports.CheckLogWindow = (browser) => {
+    browser
+        //wait the body to be loadded 
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
         .assert.elementPresent(FlowsSelector.elements.FlowLogButton)
         .click(FlowsSelector.elements.FlowLogButton, function (result) {
             browser
-            .pause(7000)
+                .pause(configrationReader.getDelayValue())
                 .elements('css selector', FlowEditTransformationsSelector.elements.WarningLog, (results) => {
                     if (results.value && results.value.ELEMENT) {
                         console.log('There is an error in the Log Window')

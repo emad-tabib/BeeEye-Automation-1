@@ -52,6 +52,18 @@ exports.getPauseValue = () => {
     return pauseValue;
 }
 
+//Long delay
+exports.getLongWait = () => {
+    var LongWait = config.LongWait;
+    return LongWait;
+}
+
+//Delay
+exports.getDelayValue = () => {
+    var DelayValue = config.DelayValue;
+    return DelayValue;
+}
+
 //Error  msg
 exports.DisplayError = () => {
     var err = config.err;

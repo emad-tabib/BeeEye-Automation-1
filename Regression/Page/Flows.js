@@ -27,13 +27,17 @@ exports.CreateNewFlow = (browser) => {
         //pop up will appear to write the name of the new flow
         .waitForElementVisible(FlowsSelector.elements.PopUp, 'Test was failed after you click on Add flow button because no pop ups window displayed')
         .assert.elementPresent(FlowsSelector.elements.PopUp, 'The assertion failed after you click on Add flow button because no pop ups window displayed')
-
         .waitForElementVisible(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
         .assert.elementPresent(FlowsSelector.elements.FlowNameInput, 'The assertion failed after you click on Add flow button because no flow name input field in the pop ups window')
         //Add random number to the name of the new flow
         .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
         .keys(browser.Keys.ENTER)
     })
+    .pause(configrationReader.getPauseValue());
+}
+//Check if Back button is display To check if creating new Flow is done successfully
+exports.CheckBackButton = (browser) => {
+  browser
     //Check if back button is display To check if creating Flow is done successfully
     .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod(), 'Test was failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
     .assert.elementPresent(FlowsSelector.elements.BackButton, 'The assertion failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
@@ -41,7 +45,6 @@ exports.CreateNewFlow = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.FlowNameonBackButton, 'The assertion failed after you click on Submit button in the pop ups window that the name of the new flow does not display on the Back button')
     .pause(configrationReader.getPauseValue());
 }
-
 
 //Edit flow
 exports.EditFlow = (browser) => {
@@ -181,8 +184,8 @@ exports.UploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(100000)
-    //.pause(configrationReader.getPauseValue());
+    .pause(configrationReader.getLongWait())
+    
 }
 
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section
@@ -246,10 +249,10 @@ exports.SelectValidLabel = (browser) => {
         .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible, configrationReader.getPeriod(), 'Test was failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .assert.elementPresent(FlowsSelector.elements.LabelMenuVisible, 'The assertion failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .setValue(FlowsSelector.elements.SelectLabelInput, configrationReader.getValidLabel())
-        .pause(7000)
+        .pause(configrationReader.getDelayValue())
         .click(FlowsSelector.elements.FirstElementinLabelList)
        // .keys(browser.Keys.ENTER)
-        .pause(100000)
+        .pause(configrationReader.getLongWait())
         .waitForElementVisible(FlowsSelector.elements.PieChart, 'Test was failed After you select the Label because the PieChart was not displayed even though you select the valid label')
         .assert.elementPresent(FlowsSelector.elements.PieChart, 'The assertion failed After you select the Label because the PieChart was not displayed even though you select the valid label')
     })
@@ -266,11 +269,11 @@ exports.RunDataSources = (browser) => {
     .pause(configrationReader.getPauseValue())
     .getAttribute(FlowsSelector.elements.AutoFGButton, 'disabled', function (result) {
       browser
-      .pause(7000)
+      .pause(configrationReader.getDelayValue())
       browser
         .assert.equal(result.value, 'true', 'The assertion failed because Auto FG Button was enabled for the new flow');
     })
-    .pause(7000);
+    .pause(configrationReader.getDelayValue());
 }
 
 //Verify No error displayed in the log file
@@ -317,9 +320,7 @@ exports.CreateNewFlowAndUploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(100000)
-
-    //.pause(configrationReader.getPauseValue());
+    .pause(configrationReader.getLongWait())
 }
 
 //Verify Data Sources section is displayed as wxpected
@@ -440,7 +441,7 @@ exports.SearchByFeatureNameInColumnTab = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     .click(FlowsSelector.elements.ColumnsTab, function (result) {
       //check if Search input field is exists or not
       browser
@@ -540,7 +541,7 @@ exports.SearchByFeatureNameInStatisticsTab = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.StatisticsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     .click(FlowsSelector.elements.StatisticsTab, function (result) {
       //check if Search input field is exists or not
       browser
@@ -552,9 +553,9 @@ exports.SearchByFeatureNameInStatisticsTab = (browser) => {
         .waitForElementVisible(FlowsSelector.elements.FirstRowInTable, configrationReader.getPeriod(), 'Test was failed because No Result value was displayed for what you searched on')
         //check if first column is what you searched about
         .assert.containsText(FlowsSelector.elements.FirstRowInTable, configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
-        .pause(7000);
+        .pause(configrationReader.getDelayValue());
     })
-    .pause(7000);
+    .pause(configrationReader.getDelayValue());
 }
 
 //Delete a column that was added to the Central Data Source table, use the slider in the Columns tab, Verify that this column will no longer be in the Data Panel.
@@ -563,7 +564,7 @@ exports.DeleteColumn = (browser) => {
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
     //Add this pause value to make delay while the tabs are loading
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     //Click on Columns tab
     .click(FlowsSelector.elements.ColumnsTab, function (result) {
       browser
