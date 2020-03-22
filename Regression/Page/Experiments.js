@@ -32,7 +32,7 @@ exports.CreateExperiments = (browser) => {
         .assert.elementPresent(ExperimentsSelector.elements.SecondControllerButton, 'The assertion failed because the Second Controller Button (>>) was not displayed in New Experiment Model')
         .click(ExperimentsSelector.elements.SecondControllerButton)
         .pause(configrationReader.getPauseValue())
-        .assert.elementPresent(ExperimentsSelector.elements.Submitbutton, 'The assertion failed because Submit button was not displayed in New Experiment Model')
+        .waitForElementVisible(ExperimentsSelector.elements.Submitbutton, 'The assertion failed because Submit button was not displayed in New Experiment Model')
         .click(ExperimentsSelector.elements.Submitbutton)
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(ExperimentsSelector.elements.ExperimentsCard, 'The assertion failed because the Experiment Card was not displayed in Experiments Page after you creat a new one')

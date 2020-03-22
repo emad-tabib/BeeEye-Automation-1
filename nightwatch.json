@@ -42,7 +42,10 @@
         "chromeOptions" : {
           "args" : ["start-maximized"]
         },
-        "browserName": "chrome"
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "elementScrollBehavior": 1
     }
   },
 

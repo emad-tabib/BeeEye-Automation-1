@@ -181,7 +181,7 @@ exports.UploadFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(100000)
+    .pause(5000)
     //.pause(configrationReader.getPauseValue());
 }
 
@@ -246,12 +246,12 @@ exports.SelectValidLabel = (browser) => {
         .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible, configrationReader.getPeriod(), 'Test was failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .assert.elementPresent(FlowsSelector.elements.LabelMenuVisible, 'The assertion failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .setValue(FlowsSelector.elements.SelectLabelInput, configrationReader.getValidLabel())
-        .pause(7000)
+        .pause(3000)
         .click(FlowsSelector.elements.FirstElementinLabelList)
        // .keys(browser.Keys.ENTER)
-        .pause(100000)
-        .waitForElementVisible(FlowsSelector.elements.PieChart, 'Test was failed After you select the Label because the PieChart was not displayed even though you select the valid label')
-        .assert.elementPresent(FlowsSelector.elements.PieChart, 'The assertion failed After you select the Label because the PieChart was not displayed even though you select the valid label')
+        .pause(3000)
+       // .waitForElementVisible(FlowsSelector.elements.PieChart, 'Test was failed After you select the Label because the PieChart was not displayed even though you select the valid label')
+        //.assert.elementPresent(FlowsSelector.elements.PieChart, 'The assertion failed After you select the Label because the PieChart was not displayed even though you select the valid label')
     })
     .pause(configrationReader.getPauseValue());
 }
