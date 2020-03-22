@@ -27,13 +27,17 @@ exports.CreateNewFlow = (browser) => {
         //pop up will appear to write the name of the new flow
         .waitForElementVisible(FlowsSelector.elements.PopUp, 'Test was failed after you click on Add flow button because no pop ups window displayed')
         .assert.elementPresent(FlowsSelector.elements.PopUp, 'The assertion failed after you click on Add flow button because no pop ups window displayed')
-
         .waitForElementVisible(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
         .assert.elementPresent(FlowsSelector.elements.FlowNameInput, 'The assertion failed after you click on Add flow button because no flow name input field in the pop ups window')
         //Add random number to the name of the new flow
         .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
         .keys(browser.Keys.ENTER)
     })
+    .pause(configrationReader.getPauseValue());
+}
+//Check if Back button is display To check if creating new Flow is done successfully
+exports.CheckBackButton = (browser) => {
+  browser
     //Check if back button is display To check if creating Flow is done successfully
     .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod(), 'Test was failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
     .assert.elementPresent(FlowsSelector.elements.BackButton, 'The assertion failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
@@ -41,7 +45,6 @@ exports.CreateNewFlow = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.FlowNameonBackButton, 'The assertion failed after you click on Submit button in the pop ups window that the name of the new flow does not display on the Back button')
     .pause(configrationReader.getPauseValue());
 }
-
 
 //Edit flow
 exports.EditFlow = (browser) => {

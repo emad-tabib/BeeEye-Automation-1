@@ -51,6 +51,8 @@ describe('End To End Testing : ', function () {
         setup.logTestDetails(this, "End To End Testing")
         Flows.CreateNewFlow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you create a new flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow");
         Flows.UploadFile(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
         Flows.SelectValidLabel(browser);
@@ -59,9 +61,17 @@ describe('End To End Testing : ', function () {
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
         FlowEditTransformation.RunTransformation(browser);
         //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs after you run the Transformation ");
         Experiments.CreateExperiments(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs after you run the Transformation ");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Plus icon to create new Experiment");
+        Experiments.SelectExpModel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select the Experiment Model from the List ");
+        Experiments.SubmitExpModel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select the feature and Submit the Experiment Model ");
+        Experiments.RunExpAndChecktheResult(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result displayed after you Run the Flow");
         browser.end();
     });
 
