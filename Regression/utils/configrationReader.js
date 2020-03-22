@@ -58,6 +58,12 @@ exports.getLongWait = () => {
     return LongWait;
 }
 
+//Delay
+exports.getDelayValue = () => {
+    var DelayValue = config.DelayValue;
+    return DelayValue;
+}
+
 //Error  msg
 exports.DisplayError = () => {
     var err = config.err;

@@ -28,7 +28,7 @@ const {
           .waitForElementVisible(FlowEditDsSelector.elements.SearchFlowField,'The Test failed because Search by flow name was not displayed in Flows Page')
           //put the flow name that you stored it on search field 
           .setValue(FlowEditDsSelector.elements.SearchFlowField, FlowNameValue)
-        .pause(7000)
+        .pause(configrationReader.getDelayValue())
         })
         //check if "no file chosen" was exist to make sure that the user is navigated to the last confguring step for the selected flow
         .click(FlowEditDsSelector.elements.FirstFlow)

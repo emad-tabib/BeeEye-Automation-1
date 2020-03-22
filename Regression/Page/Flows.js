@@ -246,7 +246,7 @@ exports.SelectValidLabel = (browser) => {
         .waitForElementVisible(FlowsSelector.elements.LabelMenuVisible, configrationReader.getPeriod(), 'Test was failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .assert.elementPresent(FlowsSelector.elements.LabelMenuVisible, 'The assertion failed After you click on the Label Input because the dropdown for Labels was not displayed')
         .setValue(FlowsSelector.elements.SelectLabelInput, configrationReader.getValidLabel())
-        .pause(7000)
+        .pause(configrationReader.getDelayValue())
         .click(FlowsSelector.elements.FirstElementinLabelList)
        // .keys(browser.Keys.ENTER)
         .pause(configrationReader.getLongWait())
@@ -266,11 +266,11 @@ exports.RunDataSources = (browser) => {
     .pause(configrationReader.getPauseValue())
     .getAttribute(FlowsSelector.elements.AutoFGButton, 'disabled', function (result) {
       browser
-      .pause(7000)
+      .pause(configrationReader.getDelayValue())
       browser
         .assert.equal(result.value, 'true', 'The assertion failed because Auto FG Button was enabled for the new flow');
     })
-    .pause(7000);
+    .pause(configrationReader.getDelayValue());
 }
 
 //Verify No error displayed in the log file
@@ -438,7 +438,7 @@ exports.SearchByFeatureNameInColumnTab = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     .click(FlowsSelector.elements.ColumnsTab, function (result) {
       //check if Search input field is exists or not
       browser
@@ -538,7 +538,7 @@ exports.SearchByFeatureNameInStatisticsTab = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.StatisticsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     .click(FlowsSelector.elements.StatisticsTab, function (result) {
       //check if Search input field is exists or not
       browser
@@ -550,9 +550,9 @@ exports.SearchByFeatureNameInStatisticsTab = (browser) => {
         .waitForElementVisible(FlowsSelector.elements.FirstRowInTable, configrationReader.getPeriod(), 'Test was failed because No Result value was displayed for what you searched on')
         //check if first column is what you searched about
         .assert.containsText(FlowsSelector.elements.FirstRowInTable, configrationReader.getFeatureName(), 'Test was failed because the Result does not match what you serached on')
-        .pause(7000);
+        .pause(configrationReader.getDelayValue());
     })
-    .pause(7000);
+    .pause(configrationReader.getDelayValue());
 }
 
 //Delete a column that was added to the Central Data Source table, use the slider in the Columns tab, Verify that this column will no longer be in the Data Panel.
@@ -561,7 +561,7 @@ exports.DeleteColumn = (browser) => {
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .assert.elementPresent(FlowsSelector.elements.ColumnsTab, 'The assertion failed because Columns Tab was not exist in Data Source Details Section')
     //Add this pause value to make delay while the tabs are loading
-    .pause(7000)
+    .pause(configrationReader.getDelayValue())
     //Click on Columns tab
     .click(FlowsSelector.elements.ColumnsTab, function (result) {
       browser

@@ -27,7 +27,7 @@ exports.RunTransformation = (browser) => {
         .assert.elementPresent(FlowsSelector.elements.FlowLogButton)
         .click(FlowsSelector.elements.FlowLogButton, function (result) {
             browser
-            .pause(7000)
+            .pause(configrationReader.getDelayValue())
                 .elements('css selector', FlowEditTransformationsSelector.elements.WarningLog, (results) => {
                     if (results.value && results.value.ELEMENT) {
                         console.log('There is an error in the Log Window')
