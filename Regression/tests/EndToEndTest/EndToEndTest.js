@@ -64,6 +64,12 @@ describe('End To End Testing : ', function () {
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
         FlowEditTransformation.CheckLogWindow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs after you run the Transformation ");
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Built In Type function from the list");
+        FlowEditTransformation.DisplayDataforTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you create transformation function and Run Transformation to see the result ");
         Experiments.CreateExperiments(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Plus icon to create new Experiment");
         Experiments.SelectExpModel(browser);
