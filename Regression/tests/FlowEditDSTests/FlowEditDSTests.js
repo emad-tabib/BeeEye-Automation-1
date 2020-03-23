@@ -1,4 +1,4 @@
-const loginPage = require("../../Page/login");
+/*const loginPage = require("../../Page/login");
 const Flows = require("../../Page/Flows");
 const title = require("../../Page/Title");
 const FlowEditDS = require("../../Page/FlowEditDS");
@@ -161,4 +161,18 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     browser.end();
 });
 
+//Check if search by Column is working as expected in columns tab
+it('Verify that search by Column is working as expected in Columns tab ', function (browser) {
+    setup.logTestDetails(this, " Try to verify if search by Column is working as expected in Columns tab ")
+    Flows.CreateNewFlow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+    FlowEditDS.LastConfiguringStep(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+    Flows.UploadFile(browser);
+    Flows.SearchByFeatureNameInColumnTab(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you search by Column in Columns tab");
+    browser.end();
 });
+
+});
+*/

@@ -1,4 +1,4 @@
-const loginPage = require("../../Page/login");
+ /*const loginPage = require("../../Page/login");
 const Flows = require("../../Page/Flows");
 const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
@@ -44,7 +44,7 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   afterEach(function (browser, done) {
     done();
   });
-  
+ 
     //New flow
     it('Create New Flow', function (browser) {
 
@@ -379,4 +379,4 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   });
   
 });
-
+*/
