@@ -27,6 +27,7 @@ exports.CreateNewFlow = (browser) => {
         //pop up will appear to write the name of the new flow
         .waitForElementVisible(FlowsSelector.elements.PopUp, 'Test was failed after you click on Add flow button because no pop ups window displayed')
         .assert.elementPresent(FlowsSelector.elements.PopUp, 'The assertion failed after you click on Add flow button because no pop ups window displayed')
+
         .waitForElementVisible(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
         .assert.elementPresent(FlowsSelector.elements.FlowNameInput, 'The assertion failed after you click on Add flow button because no flow name input field in the pop ups window')
         //Add random number to the name of the new flow
@@ -35,7 +36,7 @@ exports.CreateNewFlow = (browser) => {
     })
     .pause(configrationReader.getPauseValue());
 }
-//Check if Back button is display To check if creating new Flow is done successfully
+//Check if back button is display To check if creating Flow is done successfully
 exports.CheckBackButton = (browser) => {
   browser
     //Check if back button is display To check if creating Flow is done successfully
@@ -267,12 +268,7 @@ exports.RunDataSources = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.DataSourcesButton, 'The assertion failed because the DataSources button was not found in flow Page')
     .click(FlowsSelector.elements.DataSourcesButton)
     .pause(configrationReader.getPauseValue())
-    .getAttribute(FlowsSelector.elements.AutoFGButton, 'disabled', function (result) {
-      browser
-      .pause(configrationReader.getDelayValue())
-      browser
-        .assert.equal(result.value, 'true', 'The assertion failed because Auto FG Button was enabled for the new flow');
-    })
+    .assert.not.elementPresent(FlowsSelector.elements.AutoFGButtonDisabled,'The assertion failed because Auto FG Button was disabled for the flow')
     .pause(configrationReader.getDelayValue());
 }
 

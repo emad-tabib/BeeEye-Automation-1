@@ -121,3 +121,14 @@ exports.getJoinValue = () => {
     var JoinValue = config.JoinValue;
     return JoinValue;
 }
+
+//TransformationFunction
+exports.getTransformationFunction = () => {
+    var transformationFunction = config.transformationFunction;
+    return transformationFunction;
+}
+
+exports.getFeature = () => {
+    var feature = config.feature;
+    return feature;
+}
