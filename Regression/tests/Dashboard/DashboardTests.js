@@ -1,4 +1,4 @@
-const DashboardPage = require("../../Page/Dashboard");
+/*const DashboardPage = require("../../Page/Dashboard");
 const login = require("../../Page/login");
 const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
@@ -74,3 +74,4 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         browser.end();
     });
 });
+*/

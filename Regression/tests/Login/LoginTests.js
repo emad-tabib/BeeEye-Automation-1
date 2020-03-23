@@ -1,4 +1,4 @@
-const loginPage = require("../../Page/login");
+/*const loginPage = require("../../Page/login");
 const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
 const logReport = require("mochawesome-screenshots/logReport");
@@ -77,3 +77,4 @@ describe('Login in BeeEye : Try to login without Password , Try to login without
     });
 
 });
+*/

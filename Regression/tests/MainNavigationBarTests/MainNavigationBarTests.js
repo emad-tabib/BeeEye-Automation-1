@@ -1,4 +1,4 @@
-const MainNavigationBar = require("../../Page/MainNavigationBar");
+/*const MainNavigationBar = require("../../Page/MainNavigationBar");
 const loginPage = require("../../Page/login");
 const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
@@ -95,3 +95,4 @@ describe('Main Navigation Bar : Test if Logo is display or not , and check every
         browser.end();
     });
 });
+*/

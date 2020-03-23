@@ -121,7 +121,5 @@ exports.LoginWithValidInformation = (browser) => {
     .pause(configrationReader.getPauseValue())
     //Here to check that the login is successfully 
     .waitForElementVisible(loginSelectors.elements.UserMenu,configrationReader.getPeriod(),'Test was failed After you click on Sign in button because the login was not successfully even though the login was With Valid Information')
-    .assert.containsText(loginSelectors.elements.UserMenu,configrationReader.getUserName(),'The assertion failed After you click on Sign in button because the login was not successfully even though the login was With Valid Information') 
-    
-
+    .assert.containsText(loginSelectors.elements.UserMenu,configrationReader.getUserName(),'The assertion failed After you click on Sign in button because the login was not successfully even though the login was With Valid Information')
 }

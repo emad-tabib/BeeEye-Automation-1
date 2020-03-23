@@ -1,4 +1,4 @@
-const UserStatusBar = require("../../Page/UserstatusBar");
+/*const UserStatusBar = require("../../Page/UserstatusBar");
 const loginPage = require("../../Page/login");
 const title = require("../../Page/Title");
 const screenShotUtils = require("../../utils/screenShotUtils");
@@ -80,3 +80,4 @@ it('LogOut Link', function(browser) {
 
 
 });
+*/
