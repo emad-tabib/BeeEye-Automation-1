@@ -212,4 +212,18 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot in Preview Data Tab after you delete the column from Columns Tab");
         browser.end();
     });
+    
+    //Add Another CSV File
+    it('Verify if Add Another CSV File is done correctly', function (browser) {
+        setup.logTestDetails(this, "Try to add another CSV file")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.AddAnotherCSVFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you add another CSV File");
+        browser.end();
+    });
+    
 });

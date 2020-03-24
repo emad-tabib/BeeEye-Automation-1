@@ -600,8 +600,8 @@ exports.AddAnotherCSVFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     //Add another file
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Birth_Dates.csv'))
-    .pause(configrationReader.getPauseValue())
-    .assert.elementPresent(FlowsSelector.elements.NameOfThefile, 'The assertion failed because the File Name in File Information section was not displayed after you Upload File')
+    .pause(configrationReader.getLongWait())
+        .assert.elementPresent(FlowsSelector.elements.NameOfThefile, 'The assertion failed because the File Name in File Information section was not displayed after you Upload File')
     .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
     .pause(configrationReader.getPauseValue())
     //Add join value 
@@ -614,7 +614,7 @@ exports.AddAnotherCSVFile = (browser) => {
     .setValue(FlowsSelector.elements.SecondjoinField, configrationReader.getJoinValue())
     .pause(configrationReader.getPauseValue())
     .click(FlowsSelector.elements.FirstElement)
-    .pause(configrationReader.getPauseValue());
+    .pause(configrationReader.getLongWait())
 
 }
 
