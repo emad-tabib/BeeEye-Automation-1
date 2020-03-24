@@ -43,7 +43,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     afterEach(function (browser, done) {
         done();
     });
-    /*
+    
         //Verify user is navigated to the last confguring step for the selected flow
         it('Verify user is navigated to the last confguring step for the selected flow', function (browser) {
             setup.logTestDetails(this, "Try to Verify user is navigated to the last confguring step for the selected flow")
@@ -186,7 +186,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Statistics tab");
             browser.end();
         });
-        */
+        
     //Check if search by feature name is working as expected in Statistics tab
     it('Verify that search by feature name is working as expected in in Statistics tab', function (browser) {
         setup.logTestDetails(this, "Try to verify if search by feature name is working as expected in Statistics tab ")
@@ -197,6 +197,19 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         Flows.UploadFile(browser);
         Flows.SearchByFeatureNameInStatisticsTab(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you search by feature name in Statistics tab");
+        browser.end();
+    });
+
+    //Delete Column
+    it('Verify if Delete Column from Columns Tab is done correctly', function (browser) {
+        setup.logTestDetails(this, "Try to Delete Column from Columns Tab then Verify that this column will no longer be in the Data Panel")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+        Flows.UploadFile(browser);
+        Flows.DeleteColumn(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot in Preview Data Tab after you delete the column from Columns Tab");
         browser.end();
     });
 });
