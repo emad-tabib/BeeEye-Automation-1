@@ -654,7 +654,9 @@ exports.DeleteAllDataSource = (browser) => {
     //if Add Master Data Source was display then all Data sources was deleted 
     .assert.elementPresent(FlowsSelector.elements.AddMasterDataSourceButton, 'The assertion failed after you Remove all data source because the Add Master Data Source Button was not displayed')
     .assert.containsText(FlowsSelector.elements.AddMasterDataSourceButton, 'Add Master Data Source', 'The assertion failed after you Remove all data source because the button was not contained Add Master Data Source which indicates that all data sources are not deleted')
-
+    // check if "No file chosen" msg is display or not after you remove all data sources
+    .assert.elementPresent(FlowsSelector.elements.EmptyInput, 'The assertion failed After you click on Remove all button because the msg for empty input was not displayed')
+    .assert.containsText(FlowsSelector.elements.EmptyInput, 'No file chosen', 'The assertion failed because there is no file uploaded but the msg was not displayed that no file chosen after you click on Remove All button')
 
 }
 
