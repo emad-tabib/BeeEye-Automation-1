@@ -43,7 +43,7 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
     afterEach(function (browser, done) {
         done();
     });
-    
+    /*
         //Verify user is navigated to the last confguring step for the selected flow
         it('Verify user is navigated to the last confguring step for the selected flow', function (browser) {
             setup.logTestDetails(this, "Try to Verify user is navigated to the last confguring step for the selected flow")
@@ -173,17 +173,30 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you search by Column in Columns tab");
             browser.end();
         });
-    
-    //Check if Data are displayed in Statistics tab
-    it('Verify if Data are displayed in Statistics tab ', function (browser) {
-        setup.logTestDetails(this, " Try to verify if Data are displayed in Statistics tab")
+
+        //Check if Data are displayed in Statistics tab
+        it('Verify if Data are displayed in Statistics tab ', function (browser) {
+            setup.logTestDetails(this, " Try to verify if Data are displayed in Statistics tab")
+            Flows.CreateNewFlow(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+            FlowEditDS.LastConfiguringStep(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
+            Flows.UploadFile(browser);
+            Flows.CheckStatisticsTab(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Statistics tab");
+            browser.end();
+        });
+        */
+    //Check if search by feature name is working as expected in Statistics tab
+    it('Verify that search by feature name is working as expected in in Statistics tab', function (browser) {
+        setup.logTestDetails(this, "Try to verify if search by feature name is working as expected in Statistics tab ")
         Flows.CreateNewFlow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
         FlowEditDS.LastConfiguringStep(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for teh Last configuring step that user make it to the selected Flow");
         Flows.UploadFile(browser);
-        Flows.CheckStatisticsTab(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Statistics tab");
+        Flows.SearchByFeatureNameInStatisticsTab(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you search by feature name in Statistics tab");
         browser.end();
     });
 });
