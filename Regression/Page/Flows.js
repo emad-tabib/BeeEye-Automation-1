@@ -1,4 +1,5 @@
 const FlowsSelector = require("../Selectors/FlowsSelector");
+const FlowEditTransformationsSelector = require("../Selectors/FlowEditTransformationsSelector");
 const FlowEditDsSelector = require("../Selectors/FlowEditDsSelector");
 const {
   assert
@@ -278,10 +279,18 @@ exports.VerifyTheLogFile = (browser) => {
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     .waitForElementVisible(FlowsSelector.elements.FlowLogButton, configrationReader.getPeriod(), false, 'Test was failed because the Flow log icon was not found in flow Page')
     .assert.elementPresent(FlowsSelector.elements.FlowLogButton, 'The assertion failed because the Flow log icon was not found in flow Page')
-    .click(FlowsSelector.elements.FlowLogButton)
-    //.waitForElementNotPresent(FlowsSelector.elements.LogError, configrationReader.getPeriod())
-    .waitForElementVisible(FlowsSelector.elements.Log, configrationReader.getPeriod(), 'Test was failed because the log was not display After you click on Flow Log icon')
-    .assert.elementPresent(FlowsSelector.elements.Log, 'The assertion failed because the log was not display After you click on Flow Log icon')
+    .click(FlowsSelector.elements.FlowLogButton, function (result) {
+      browser
+          .pause(configrationReader.getDelayValue())
+          .elements('css selector', FlowEditTransformationsSelector.elements.WarningLog, (results) => {
+              if (results.value && results.value.ELEMENT) {
+                  console.log('There is an error in the Log Window')
+              } else {
+                  // Error is not present.
+                  console.log('There is no error in the Log Window')
+              }
+          })
+  })
     .pause(configrationReader.getPauseValue());
 }
 
