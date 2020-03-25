@@ -66,6 +66,6 @@ FirstElementInFirstList : {
 FirstElementInSecondList : {
   selector : '#InputFeature_1>div>div>.ui.fluid.search.selection.dropdown.build-in-select.active.visible>div:nth-child(4)'
 }
-  
+
     }
   };

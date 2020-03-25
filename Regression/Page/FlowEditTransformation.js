@@ -22,6 +22,8 @@ exports.RunTransformation = (browser) => {
         .click(FlowEditTransformationsSelector.elements.TransformationTab)
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.FeaturesTable)
+        .assert.elementPresent(FlowsSelector.elements.ID, 'The assertion failed because the ID Row was not display')
+        .assert.containsText(FlowsSelector.elements.ID, configrationReader.getFeature(), 'The assertion failed because the ID Row was not contained ID as in the File Uploaded')
         //get pause value
         .pause(configrationReader.getPauseValue())
 

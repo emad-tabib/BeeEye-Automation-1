@@ -21,6 +21,10 @@ const {
         browser
         FlowNameValue = result.value;
       })
+    }
+    //this function to search by the flow name to access to last created new flow and check if the changes on this flow is still the same when the user returns back to this flow
+    exports.SearchOnSpecificFlowName = (browser) => {
+      browser
       //return to Flows Page
         .click(FlowsSelector.elements.NavFlows)
         .perform(function() {
@@ -32,7 +36,7 @@ const {
         })
         //check if "no file chosen" was exist to make sure that the user is navigated to the last confguring step for the selected flow
         .click(FlowEditDsSelector.elements.FirstFlow)
-        .assert.elementPresent(FlowsSelector.elements.EmptyInput)
+        .assert.elementPresent(FlowsSelector.elements.EmptyInput,'The assertion failed because "No file chosen" was not displayed eventhough no file was chosen')
       .pause(configrationReader.getPauseValue());
   }
 
