@@ -14,7 +14,7 @@ const {
 const {
     expect
 } = require('chai')
-describe('Dashboard Page : Test if these section are display or not: Best Flow(GINI) , System Statistics , Top Flows , Platform Staistics , Recent Viewed Flows', function () {
+describe('Flow Edit - DS : Verify if the user is navigated to the last confguring step for the selected flow then Upload Valid/Not Valid CSV file, Select Valid/Not Valid Label and Check if search process works as expected in all tabs in DS Page', function () {
 
     before(function (browser, done) {
         logReport.log(this, "Test Cases for Flow Edit - DS");
