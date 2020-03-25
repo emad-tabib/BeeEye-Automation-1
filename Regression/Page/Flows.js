@@ -294,41 +294,7 @@ exports.VerifyTheLogFile = (browser) => {
     .pause(configrationReader.getPauseValue());
 }
 
-//general method  to reduce the duplicate code 
-exports.CreateNewFlowAndUploadFile = (browser) => {
-  browser
-    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
-    //Click on Flows Link in Navigation Bar
-    .assert.elementPresent(FlowsSelector.elements.NavFlows, 'The assertion failed because the Flows Link was not found in the Main Navigation Bar')
-    .click(FlowsSelector.elements.NavFlows)
-    .waitForElementVisible(FlowsSelector.elements.AddFlowBtn, 'Test was failed because Add Flow Button was not found Flows Page')
-    .assert.elementPresent(FlowsSelector.elements.AddFlowBtn, 'The assertion failed because Add Flow Button was not found Flows Page')
-    //Click on "+" Add flow button
-    .click(FlowsSelector.elements.AddFlowBtn, function (result) {
-      browser
-        //pop up will appear to write the name of the new flow
-        .waitForElementVisible(FlowsSelector.elements.PopUp, 'Test was failed after you click on Add flow button because no pop ups window displayed')
-        .assert.elementPresent(FlowsSelector.elements.PopUp, 'The assertion failed after you click on Add flow button because no pop ups window displayed')
-        .waitForElementVisible(FlowsSelector.elements.FlowNameInput, 'Test was failed after you click on Add flow button because no flow name input field in the pop ups window')
-        .assert.elementPresent(FlowsSelector.elements.FlowNameInput, 'The assertion failed after you click on Add flow button because no flow name input field in the pop ups window')
-        //Add random number to the name of the new flow
-        .setValue(FlowsSelector.elements.FlowNameInput, FlowName.getThenameOfTheNewFlow())
-        .keys(browser.Keys.ENTER)
-    })
-    //Check if back button is display To check if creating Flow is done successfully
-    .waitForElementVisible(FlowsSelector.elements.BackButton, configrationReader.getPeriod(), 'Test was failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
-    .assert.elementPresent(FlowsSelector.elements.BackButton, 'The assertion failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
-    .waitForElementVisible(FlowsSelector.elements.FlowNameonBackButton, 'Test was failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
-    .assert.elementPresent(FlowsSelector.elements.FlowNameonBackButton, 'The assertion failed after you click on Submit button in the pop ups window that the new flow does not done successfully')
-    .pause(configrationReader.getPauseValue())
-    .waitForElementVisible(FlowsSelector.elements.UploadBtn, 'Test was failed because select file button was not displayed in the new flow page')
-    .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
-    .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
-    .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card.csv'))
-    .pause(configrationReader.getLongWait())
-}
-
-//Verify Data Sources section is displayed as wxpected
+//Verify Data Sources section is displayed as expected
 exports.VerifyDatasourceSection = (browser) => {
   browser
     .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
@@ -379,7 +345,7 @@ exports.CheckColumnsTab = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.SwitcherBoxColumn, 'The assertion failed After you Click on Columns Tab because the Switcher box column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.NameColumn, 'The assertion failed After you Click on Columns Tab because the Name column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.ID, 'The assertion failed because the ID Row was not display')
-    .assert.containsText(FlowsSelector.elements.ID,configrationReader.getFeature(), 'The assertion failed because the ID Row was not contained ID as in the File Uploaded')
+    .assert.containsText(FlowsSelector.elements.ID, configrationReader.getFeature(), 'The assertion failed because the ID Row was not contained ID as in the File Uploaded')
     .assert.elementPresent(FlowsSelector.elements.RoleColumn, 'The assertion failed After you Click on Columns Tab because the Role Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.TypeColumn, 'The assertion failed After you Click on Columns Tab because the Type Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.CardinalityColumn, 'The assertion failed After you Click on Columns Tab because the Cardinality Column was not displayed')
@@ -431,7 +397,7 @@ exports.CheckStatisticsTab = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.MaxValue, 'The assertion failed After you Click on Statistics Tab because the Max Value Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.MostCommonFrequency, 'The assertion failed After you Click on Statistics Tab because the Most Common Frequency Column was not displayed')
     .assert.elementPresent(FlowsSelector.elements.MostCommonValue, 'The assertion failed After you Click on Statistics Tab because the Most Common Value Column was not displayed')
-
+    .pause(configrationReader.getPauseValue())
 }
 
 //Check if Search By Feature Name is working as expected In Statistics tab
@@ -506,6 +472,11 @@ exports.AddAnotherCSVFile = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.NameOfThefile, 'The assertion failed because the File Name in File Information section was not displayed after you Upload File')
     .assert.containsText(FlowsSelector.elements.NameOfThefile, configrationReader.getTheFileInformation_NameForSecondFile(), 'The assertion failed because the File Name in File Information section was not match with the uploaded file name after you Upload File')
     .pause(configrationReader.getPauseValue())
+}
+
+exports.SelectJoinValue = (browser) => {
+  browser
+    .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
     //Add join value 
     .assert.elementPresent(FlowsSelector.elements.FirstJoinField)
     .setValue(FlowsSelector.elements.FirstJoinField, configrationReader.getJoinValue())
