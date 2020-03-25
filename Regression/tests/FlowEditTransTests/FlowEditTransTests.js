@@ -13,7 +13,7 @@ const {
 const {
     expect
 } = require('chai')
-describe('Dashboard Page : Test if these section are display or not: Best Flow(GINI) , System Statistics , Top Flows , Platform Staistics , Recent Viewed Flows', function () {
+describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creating New Transformations, Try to Add builting transformation and try to Add imputations', function () {
 
     before(function (browser, done) {
         logReport.log(this, "Test Cases for Flow Edit - DS");
@@ -43,8 +43,8 @@ describe('Dashboard Page : Test if these section are display or not: Best Flow(G
         done();
     });
 
-    //Run Tranfsfromation phase and verify data is loaded.
-    it('Run Tranfsfromation phase and verify data is loaded', function (browser) {
+    //Run Transformation phase and verify data is loaded.
+    it('Run Transformation phase and verify data is loaded', function (browser) {
         setup.logTestDetails(this, "Try to Run Tranfsfromation phase and verify data is loaded")
         Flows.CreateNewFlow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
