@@ -74,6 +74,8 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   //Edit Flow
   it('Edit Flow', function (browser) {
     setup.logTestDetails(this, "Try to Edit the Flow ")
+    Flows.SortByDateCreated(browser);
+    Flows.SortByDateCreated(browser);
     Flows.EditFlow(browser);
     screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Edit the Flow");
     browser.end();
@@ -83,6 +85,8 @@ describe('Flows Page : Test if Create new flow, Edit flow, Delete flow and check
   //Delete Flow 
   it('Delete Flow', function (browser) {
     setup.logTestDetails(this, "Try to Delete the flow")
+    Flows.SortByDateCreated(browser);
+    Flows.SortByDateCreated(browser);
     Flows.DeleteFlow(browser);
     screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for Delete the flow");
     browser.end();
