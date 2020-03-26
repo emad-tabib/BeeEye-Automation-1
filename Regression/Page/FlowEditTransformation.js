@@ -62,7 +62,7 @@ exports.CreateTransformationFunction = (browser) => {
         .assert.elementPresent(FlowEditTransformationsSelector.elements.TransformationTabLink, 'The assertion failed because Transformation Tab was not displayed in Transformation Page')
         .click(FlowEditTransformationsSelector.elements.TransformationTabLink)
         .pause(configrationReader.getPauseValue())
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.AddTransformationButton, 'The assertion failed because Add Transformation button was not displayed in Transformation Page')
+    //.assert.elementPresent(FlowEditTransformationsSelector.elements.AddTransformationButton, 'The assertion failed because Add Transformation button was not displayed in Transformation Page')
 }
 
 //select Transformation Function - Built-In Type (Subtraction Function)
@@ -105,11 +105,11 @@ exports.SelectTransformationFunction_abs = (browser) => {
         .setValue(FlowEditTransformationsSelector.elements.BuiltInTypeList, configrationReader.getAbsFunction())
         .keys(browser.Keys.ENTER)
         .pause(configrationReader.getDelayValue())
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.InputFeaturesList_abs, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
-        .click(FlowEditTransformationsSelector.elements.InputFeaturesList_abs)
-        .setValue(FlowEditTransformationsSelector.elements.InputFeaturesList_abs, configrationReader.getFeature_abs())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.InputFeaturesList, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
+        .click(FlowEditTransformationsSelector.elements.InputFeaturesList)
+        .setValue(FlowEditTransformationsSelector.elements.InputFeaturesList, configrationReader.getFeature_abs())
         .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.FirstElementInFirstList_abs)
+        .click(FlowEditTransformationsSelector.elements.FirstElementInList)
         .pause(configrationReader.getPauseValue())
         //.assert.not.elementPresent(FlowsSelector.elements.SubmitTransformationButtonDisabled)
         .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
@@ -119,10 +119,38 @@ exports.SelectTransformationFunction_abs = (browser) => {
         .click(FlowEditTransformationsSelector.elements.TransformationButton)
         .pause(configrationReader.getPauseValue())
 }
+
+//select Transformation Function - Built-In Type - sqrt function
+exports.SelectTransformationFunction_sqrt = (browser) => {
+    browser
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.AddTransformationButton, 'The assertion failed because Add Transformation button was not displayed in Transformation Page')
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInClicked, 'The assertion failed because Built In button was not clicked by default when you enetr Transformation Page')
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed because Built In Type List was not displayed in Transformation Page After you click on Add Transformation Button')
+        .click(FlowEditTransformationsSelector.elements.BuiltInTypeList)
+        .pause(configrationReader.getPauseValue())
+        .setValue(FlowEditTransformationsSelector.elements.BuiltInTypeList, configrationReader.getSqrtFunction())
+        .keys(browser.Keys.ENTER)
+        .pause(configrationReader.getDelayValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.InputFeaturesList, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
+        .click(FlowEditTransformationsSelector.elements.InputFeaturesList)
+        .setValue(FlowEditTransformationsSelector.elements.InputFeaturesList, configrationReader.getFeature_abs())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInList)
+        .pause(configrationReader.getPauseValue())
+        //.assert.not.elementPresent(FlowsSelector.elements.SubmitTransformationButtonDisabled)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+        .pause(configrationReader.getPauseValue())
+}
+
 //Display Data after run transformation_abs 
 exports.DisplayDataforTransformationFunction_abs = (browser) => {
     browser
-        //The reson for this step is the issue in EYEON-127
+        //The reason for this step is the issue in EYEON-127
         .pause(configrationReader.getPauseValue())
         .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
         .pause(configrationReader.getPauseValue())
@@ -184,10 +212,51 @@ exports.DisplayDataforTransformationFunction_abs = (browser) => {
     browser.pause(configrationReader.getDelayValue())
 }
 
+//Display Data after run transformation_sqrt
+exports.DisplayDataforTransformationFunction_sqrt = (browser) => {
+    browser
+
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SecondTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+        //First Elemnt in First Row 
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+            browser
+            Valuebeforsqrt = result.value;
+        })
+        .perform(function () {
+            browser
+            Valueaftersqrt = Math.sqrt(Valuebeforsqrt)
+            console.log('Result value after sqrt function is ' + Valueaftersqrt)
+            browser.pause(configrationReader.getDelayValue())
+        })
+        //Second Element in First Row 
+        .getText(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow, function (result1) {
+            browser
+            SecondValue = result1.value;
+        })
+        .perform(function () {
+            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow)
+            if (SecondValue == Valueaftersqrt) {
+                console.log('Sqrt function works as expected')
+            } else {
+                console.log('Sqrt function does not work as expected')
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+    browser.pause(configrationReader.getDelayValue())
+}
+
+
 //Display Data after run transformation function (Subtraction)
 exports.DisplayDataforTransformationFunction = (browser) => {
     browser
-        //The reson for this step is the issue in EYEON-127
+        //The reason for this step is the issue in EYEON-127
         .pause(configrationReader.getPauseValue())
         .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
         .pause(configrationReader.getPauseValue())

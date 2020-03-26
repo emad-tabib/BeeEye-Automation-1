@@ -142,3 +142,8 @@ exports.getFeature_abs = () => {
     var feature_abs = config.feature_abs;
     return feature_abs;
 }
+
+exports.getSqrtFunction = () => {
+    var Sqrt = config.Sqrt;
+    return Sqrt;
+}

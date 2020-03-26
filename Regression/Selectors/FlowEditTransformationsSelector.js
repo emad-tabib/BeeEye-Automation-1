@@ -77,13 +77,15 @@ BuiltInClicked : {
   selector : '.app-btn.app-btn-asset.app-btn-medium.transformation-type-item'
 },
 //Input Features for Subtract function
-InputFeaturesList_abs : {
+InputFeaturesList : {
   selector : '#InputFeature_0>div>div>.ui.fluid.search.dropdown.selection.multiple.build-in-multiselect>input.search'
 },
-FirstElementInFirstList_abs : {
+FirstElementInList : {
   selector: '#InputFeature_0>div>div>.ui.fluid.search.dropdown.selection.multiple.build-in-multiselect.active.visible>div:nth-child(4)'
 },
-
+SecondTransformationFunction : {
+  selector : '#scrollDiv>.transformations-list>div>button:nth-child(2)'
+}
 
 
     }

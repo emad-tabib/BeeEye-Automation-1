@@ -63,12 +63,19 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
         FlowEditTransformation.CheckLogWindow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Abs function
         FlowEditTransformation.CreateTransformationFunction(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
         FlowEditTransformation.SelectTransformationFunction_abs(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
         FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot ");
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+        //Sqrt function
+        // already we are in transformation Tab
+        FlowEditTransformation.SelectTransformationFunction_sqrt(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select sqrt function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
         browser.end();
     });
 
