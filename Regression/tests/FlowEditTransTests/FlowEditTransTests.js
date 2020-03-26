@@ -44,7 +44,9 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
     });
 
     //Run Transformation phase and verify data is loaded.
-    it('Run Transformation phase and verify data is loaded', function (browser) {
+    //Creating New Transformation
+    //Add builting transformation 
+    it('Run Transformation phase and verify data is loaded Then Create Transformation function', function (browser) {
         setup.logTestDetails(this, "Try to Run Tranfsfromation phase and verify data is loaded")
         Flows.CreateNewFlow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
@@ -54,10 +56,6 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
         Flows.SelectValidLabel(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
-        Flows.AddAnotherCSVFile(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after uploading Second CSV File ");
-        Flows.SelectJoinValue(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Join value");
         Flows.RunDataSources(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
         FlowEditTransformation.RunTransformation(browser);
@@ -67,6 +65,12 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
         FlowEditTransformation.CreateTransformationFunction(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot ");
         browser.end();
     });
+
+
 });

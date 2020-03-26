@@ -132,3 +132,13 @@ exports.getFeature = () => {
     var feature = config.feature;
     return feature;
 }
+
+exports.getAbsFunction = () => {
+    var Abs = config.Abs;
+    return Abs;
+}
+
+exports.getFeature_abs = () => {
+    var feature_abs = config.feature_abs;
+    return feature_abs;
+}

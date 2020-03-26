@@ -30,6 +30,7 @@ module.exports = {
   BuiltInTypeList : {
     selector : '#builtInType'
   },
+  //Input Features for Subtract function
   FirstInputFeaturesList : {
     selector : '#InputFeature_0>div>div>.ui.fluid.search.selection.dropdown.build-in-select>input.search'
   },
@@ -57,6 +58,12 @@ SecondElemntinFirstRow  : {
 ThirdElemntinFirstRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
 },
+FirstElemntinSixthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(1)'
+},
+SecondElemntinSixthRow  : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(2)'
+},
 TableRowItem : {
   selector : '.table-row-item'
 },
@@ -65,6 +72,19 @@ FirstElementInFirstList : {
 },
 FirstElementInSecondList : {
   selector : '#InputFeature_1>div>div>.ui.fluid.search.selection.dropdown.build-in-select.active.visible>div:nth-child(4)'
-}
+}, 
+BuiltInClicked : {
+  selector : '.app-btn.app-btn-asset.app-btn-medium.transformation-type-item'
+},
+//Input Features for Subtract function
+InputFeaturesList_abs : {
+  selector : '#InputFeature_0>div>div>.ui.fluid.search.dropdown.selection.multiple.build-in-multiselect>input.search'
+},
+FirstElementInFirstList_abs : {
+  selector: '#InputFeature_0>div>div>.ui.fluid.search.dropdown.selection.multiple.build-in-multiselect.active.visible>div:nth-child(4)'
+},
+
+
+
     }
   };
