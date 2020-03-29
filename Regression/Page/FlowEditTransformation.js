@@ -147,6 +147,39 @@ exports.SelectTransformationFunction_sqrt = (browser) => {
         .pause(configrationReader.getPauseValue())
 }
 
+//select Transformation Function - Built-In Type - Addition function
+exports.SelectTransformationFunction_Addition = (browser) => {
+    browser
+    .assert.elementPresent(FlowEditTransformationsSelector.elements.AddTransformationButton, 'The assertion failed because Add Transformation button was not displayed in Transformation Page')
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInClicked, 'The assertion failed because Built In button was not clicked by default when you enetr Transformation Page')
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed because Built In Type List was not displayed in Transformation Page After you click on Add Transformation Button')
+        .click(FlowEditTransformationsSelector.elements.BuiltInTypeList)
+        .pause(configrationReader.getPauseValue())
+        .setValue(FlowEditTransformationsSelector.elements.BuiltInTypeList, configrationReader.getAdditionFunction())
+        .keys(browser.Keys.ENTER)
+        .pause(configrationReader.getDelayValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.FirstInputFeaturesList, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
+        .click(FlowEditTransformationsSelector.elements.FirstInputFeaturesList)
+        .setValue(FlowEditTransformationsSelector.elements.FirstInputFeaturesList, configrationReader.getFeature())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInFirstList)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SecondInputFeatureList, 'The assertion failed because Second Input Feature List was not displayed after you select the type of transformation function')
+        .click(FlowEditTransformationsSelector.elements.SecondInputFeatureList)
+        .setValue(FlowEditTransformationsSelector.elements.SecondInputFeatureList, configrationReader.getFeature())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInSecondList)
+        .pause(configrationReader.getPauseValue())
+        //.assert.not.elementPresent(FlowsSelector.elements.SubmitTransformationButtonDisabled)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+
+}
+
 //Display Data after run transformation_abs 
 exports.DisplayDataforTransformationFunction_abs = (browser) => {
     browser

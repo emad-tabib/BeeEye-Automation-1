@@ -147,3 +147,8 @@ exports.getSqrtFunction = () => {
     var Sqrt = config.Sqrt;
     return Sqrt;
 }
+
+exports.getAdditionFunction = () => {
+    var addition = config.addition;
+    return addition;
+}
