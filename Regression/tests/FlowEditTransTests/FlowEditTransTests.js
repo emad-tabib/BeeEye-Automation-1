@@ -76,6 +76,11 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select sqrt function from Built in List ");
         FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
+        //Addition function
+        FlowEditTransformation.SelectTransformationFunction_Addition(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Addition function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Addition function ");
         browser.end();
     });
 
