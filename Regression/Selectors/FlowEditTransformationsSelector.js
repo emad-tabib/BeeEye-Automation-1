@@ -85,8 +85,15 @@ FirstElementInList : {
 },
 SecondTransformationFunction : {
   selector : '#scrollDiv>.transformations-list>div>button:nth-child(2)'
+},
+ThirdTransformationFunction : {
+  selector : '#scrollDiv>.transformations-list>div>button:nth-child(3)'
+},
+EditTransformationbutton : {
+  selector : '#edit-transformation'
+},
+DeleteIcon : {
+  selector : '.delete.icon'
 }
-
-
     }
   };
