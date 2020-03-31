@@ -211,5 +211,34 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         browser.end();
     });
 
-    
+    //Add Imputation
+    it('Manual Imputation', function (browser) {
+        setup.logTestDetails(this, "Try to Delete transformation")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFileWithNullValues(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Imputation function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.AddImputation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.ImputeWithNegative(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for The Manual Imputation with -1");
+        FlowEditTransformation.DisplayDataforTransformationFunction_ImputeWithNegative(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result after you apply The Manual Imputation with -1");
+
+        browser.end();
+    });
 });
