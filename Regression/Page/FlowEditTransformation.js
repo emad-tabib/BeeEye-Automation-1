@@ -290,7 +290,7 @@ exports.EditTransformation = (browser) => {
         
 }
 
-//Trans - edit transformation
+//Trans - Save Edit transformation
 exports.SaveTransformation = (browser) => {
     browser
         .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
@@ -298,5 +298,16 @@ exports.SaveTransformation = (browser) => {
         .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
         .pause(configrationReader.getPauseValue())
         .click(FlowEditTransformationsSelector.elements.TransformationButton)
+        .pause(configrationReader.getPauseValue())
+}
+
+//Trans - Delete transformation
+exports.DeleteTransformation = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.DeleteTransformation,'the assertion failed because the Delete transformation button was not displayed')
+        .click(FlowEditTransformationsSelector.elements.DeleteTransformation)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed after you click on Delete icon because Built In List should display after you click on delete icon but it did not display ')
         .pause(configrationReader.getPauseValue())
 }

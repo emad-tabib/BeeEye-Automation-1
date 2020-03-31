@@ -94,6 +94,9 @@ EditTransformationbutton : {
 },
 DeleteIcon : {
   selector : '.delete.icon'
+},
+DeleteTransformation : {
+  selector : '#delete-transformation'
 }
     }
   };

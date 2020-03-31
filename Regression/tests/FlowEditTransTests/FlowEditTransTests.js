@@ -78,7 +78,7 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
             browser.end();
         });
-    */
+   */
     //Trans - edit transformation
     it('Trans - edit transformation', function (browser) {
         setup.logTestDetails(this, "Try to edit transformation")
@@ -110,6 +110,36 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Save transformation");
         FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Columns Preview Data");
+        browser.end();
+    });
+
+    //Trans - Delete transformations
+    it('Trans - edit transformation', function (browser) {
+        setup.logTestDetails(this, "Try to edit transformation")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Abs function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+        FlowEditTransformation.DeleteTransformation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Delete icon");
         browser.end();
     });
 
