@@ -42,7 +42,7 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
     afterEach(function (browser, done) {
         done();
     });
-    /*
+    
         //Run Transformation phase and verify data is loaded.
         //Creating New Transformation
         //Add builting transformation 
@@ -63,22 +63,90 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
             FlowEditTransformation.CheckLogWindow(browser);
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
-            //Abs function
-            FlowEditTransformation.CreateTransformationFunction(browser);
-            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
-            FlowEditTransformation.SelectTransformationFunction_abs(browser);
-            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
-            FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
-            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+            browser.end();
+        });
+
+   //Abs - run works fine
+   it('Run Absolute transformation function and verify if it works fine', function (browser) {
+    setup.logTestDetails(this, "Try to Run Absolute transformation function and verify if it works fine")
+    Flows.CreateNewFlow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+    Flows.CheckBackButton(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+    Flows.UploadFile(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+    Flows.SelectValidLabel(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+    Flows.RunDataSources(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+    FlowEditTransformation.RunTransformation(browser);
+    //Take screenshot for the result by call takeScreenShot function
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+    FlowEditTransformation.CheckLogWindow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+    //Abs function
+    FlowEditTransformation.CreateTransformationFunction(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+    FlowEditTransformation.SelectTransformationFunction_abs(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+    FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+    browser.end();
+});
+//sqrt  - run works fine
+ it('Run Sqrt transformation function and verify if it works fine', function (browser) {
+            setup.logTestDetails(this, "Try to Run Sqrt transformation function and verify if it works fine")
+            Flows.CreateNewFlow(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+            Flows.CheckBackButton(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+            Flows.UploadFile(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+            Flows.SelectValidLabel(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+            Flows.RunDataSources(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+            FlowEditTransformation.RunTransformation(browser);
+            //Take screenshot for the result by call takeScreenShot function
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+            FlowEditTransformation.CheckLogWindow(browser);
+            screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
             //Sqrt function
-            // already we are in transformation Tab
+            FlowEditTransformation.CreateTransformationFunction(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
             FlowEditTransformation.SelectTransformationFunction_sqrt(browser);
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select sqrt function from Built in List ");
             FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
             browser.end();
         });
-   */
+        //Subtraction - run works fine
+   it('Run Subtraction transformation function and verify if it works fine', function (browser) {
+    setup.logTestDetails(this, "Try to Run Subtraction transformation function and verify if it works fine")
+    Flows.CreateNewFlow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+    Flows.CheckBackButton(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+    Flows.UploadFile(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+    Flows.SelectValidLabel(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+    Flows.RunDataSources(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+    FlowEditTransformation.RunTransformation(browser);
+    //Take screenshot for the result by call takeScreenShot function
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+    FlowEditTransformation.CheckLogWindow(browser);
+    screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+    //Abs function
+     FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Built In Type (Subtraction) function from the list");
+        FlowEditTransformation.DisplayDataforTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you create transformation function and Run Transformation to see the result ");
+    browser.end();
+});
     //Trans - edit transformation
     it('Trans - edit transformation', function (browser) {
         setup.logTestDetails(this, "Try to edit transformation")
@@ -114,8 +182,8 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
     });
 
     //Trans - Delete transformations
-    it('Trans - edit transformation', function (browser) {
-        setup.logTestDetails(this, "Try to edit transformation")
+    it('Trans - Delete transformation', function (browser) {
+        setup.logTestDetails(this, "Try to Delete transformation")
         Flows.CreateNewFlow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
         Flows.CheckBackButton(browser);
@@ -143,4 +211,5 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         browser.end();
     });
 
+    
 });
