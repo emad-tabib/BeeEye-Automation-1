@@ -58,6 +58,9 @@ SecondElemntinFirstRow  : {
 ThirdElemntinFirstRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
 },
+ForthElementinFirstRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(4)'
+},
 FirstElemntinSixthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(1)'
 },
@@ -82,6 +85,9 @@ InputFeaturesList : {
 },
 FirstElementInList : {
   selector: '#InputFeature_0>div>div>.ui.fluid.search.dropdown.selection.multiple.build-in-multiselect.active.visible>div:nth-child(4)'
+},
+FirstElementInList_DateSplit : {
+  selector :'#InputFeature_0>div>div>.ui.fluid.search.selection.dropdown.build-in-select.active.visible>div.menu.visible > div'
 },
 SecondTransformationFunction : {
   selector : '#scrollDiv>.transformations-list>div>button:nth-child(2)'
@@ -115,6 +121,12 @@ FirstElementInManualImputationList : {
 },
 StrategyList : {
   selector : '.strategy-select.custom-select'
+},
+TableRow : {
+  selector : '.table-body>.table-row'
+},
+InputFeatureList_DateSplit : {
+  selector : '#InputFeature_0 > div > div >.ui.fluid.search.selection.dropdown.build-in-select>input.search'
 }
 
     }
