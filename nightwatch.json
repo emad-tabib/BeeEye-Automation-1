@@ -33,6 +33,7 @@
         "browserName": "firefox",
         "marionette": true,
         "javascriptEnabled": true,
+        "acceptInsecureCerts": true,
         "acceptSslCerts": true
       }
     },
