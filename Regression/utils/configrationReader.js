@@ -170,3 +170,9 @@ exports.getFeatureForImputation = () => {
     var feature_Imputation = config.feature_Imputation;
     return feature_Imputation;
 }
+
+//Get feature name for Imputation function
+exports.getZeroStrategy = () => {
+    var ZeroStrategyValue = config.ZeroStrategyValue;
+    return ZeroStrategyValue;
+}

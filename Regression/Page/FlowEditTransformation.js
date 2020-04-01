@@ -370,3 +370,50 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
         })
 
 }
+
+//Manual Impute with zero
+exports.ImputeWithZero = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsForImputation, 'The assertion failed because the Columns for Imputation Input was not displayed')
+        .setValue(FlowEditTransformationsSelector.elements.ColumnsForImputation, configrationReader.getFeatureForImputation())
+        .pause(configrationReader.getPauseValue())
+
+        .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList)
+        .click(FlowEditTransformationsSelector.elements.StrategyList)
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList,configrationReader.getZeroStrategy())
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+}
+//Display Data after run transformation function (Impute with 0)
+exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+            browser
+            FirstValue=result.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if(FirstValue==0 || FirstValue<0 || FirstValue>0){
+            console.log('The value is ' + FirstValue)
+            }
+            else{
+                console.log('Something is wrong' + FirstValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+
+}
