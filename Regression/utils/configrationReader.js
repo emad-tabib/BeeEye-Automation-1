@@ -152,3 +152,27 @@ exports.getAdditionFunction = () => {
     var addition = config.addition;
     return addition;
 }
+
+//Manual Impute with -1
+exports.getNegativeStrategy = () => {
+    var negativeStrategyValue = config.negativeStrategyValue;
+    return negativeStrategyValue;
+}
+
+//Uploaded File With Null Values
+exports.getFileWithNullValues = () => {
+    var UploadedFileWithNullValues = config.UploadedFileWithNullValues;
+    return UploadedFileWithNullValues;
+}
+
+//Get feature name for Imputation function
+exports.getFeatureForImputation = () => {
+    var feature_Imputation = config.feature_Imputation;
+    return feature_Imputation;
+}
+
+//Get feature name for Imputation function
+exports.getZeroStrategy = () => {
+    var ZeroStrategyValue = config.ZeroStrategyValue;
+    return ZeroStrategyValue;
+}

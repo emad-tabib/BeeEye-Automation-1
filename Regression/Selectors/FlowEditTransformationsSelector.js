@@ -85,8 +85,37 @@ FirstElementInList : {
 },
 SecondTransformationFunction : {
   selector : '#scrollDiv>.transformations-list>div>button:nth-child(2)'
+},
+ThirdTransformationFunction : {
+  selector : '#scrollDiv>.transformations-list>div>button:nth-child(3)'
+},
+EditTransformationbutton : {
+  selector : '#edit-transformation'
+},
+DeleteIcon : {
+  selector : '.delete.icon'
+},
+DeleteTransformation : {
+  selector : '#delete-transformation'
+},
+ImputationTab : {
+  selector : '.app-btn.app-btn-asset.app-btn-medium.transformation-type-item:nth-child(2)'
+},
+ManualImputationRadiobutton : { 
+  selector : '.imputation-header-item-content > div[value="manual"] > .app-radio-button> label:nth-child(1) > span.custom-radio'
+},
+ColumnsForImputation : { 
+  selector : '#column_selector'
+},
+AddTransButtonDisabled : {
+  selector : '#submit-transformation[disabled="disabled"]'
+},
+FirstElementInManualImputationList : {
+  selector : '.imputation-main-item-content>div>.ui.fluid.search.dropdown.selection.multiple.active.visible>div.menu.visible>div'
+},
+StrategyList : {
+  selector : '.strategy-select.custom-select'
 }
-
 
     }
   };

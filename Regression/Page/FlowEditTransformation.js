@@ -147,39 +147,6 @@ exports.SelectTransformationFunction_sqrt = (browser) => {
         .pause(configrationReader.getPauseValue())
 }
 
-//select Transformation Function - Built-In Type - Addition function
-exports.SelectTransformationFunction_Addition = (browser) => {
-    browser
-    .assert.elementPresent(FlowEditTransformationsSelector.elements.AddTransformationButton, 'The assertion failed because Add Transformation button was not displayed in Transformation Page')
-        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInClicked, 'The assertion failed because Built In button was not clicked by default when you enetr Transformation Page')
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed because Built In Type List was not displayed in Transformation Page After you click on Add Transformation Button')
-        .click(FlowEditTransformationsSelector.elements.BuiltInTypeList)
-        .pause(configrationReader.getPauseValue())
-        .setValue(FlowEditTransformationsSelector.elements.BuiltInTypeList, configrationReader.getAdditionFunction())
-        .keys(browser.Keys.ENTER)
-        .pause(configrationReader.getDelayValue())
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.FirstInputFeaturesList, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
-        .click(FlowEditTransformationsSelector.elements.FirstInputFeaturesList)
-        .setValue(FlowEditTransformationsSelector.elements.FirstInputFeaturesList, configrationReader.getFeature())
-        .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.FirstElementInFirstList)
-        .pause(configrationReader.getPauseValue())
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.SecondInputFeatureList, 'The assertion failed because Second Input Feature List was not displayed after you select the type of transformation function')
-        .click(FlowEditTransformationsSelector.elements.SecondInputFeatureList)
-        .setValue(FlowEditTransformationsSelector.elements.SecondInputFeatureList, configrationReader.getFeature())
-        .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.FirstElementInSecondList)
-        .pause(configrationReader.getPauseValue())
-        //.assert.not.elementPresent(FlowsSelector.elements.SubmitTransformationButtonDisabled)
-        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
-        .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
-        .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.TransformationButton)
-
-}
-
 //Display Data after run transformation_abs 
 exports.DisplayDataforTransformationFunction_abs = (browser) => {
     browser
@@ -303,4 +270,150 @@ exports.DisplayDataforTransformationFunction = (browser) => {
                 .pause(configrationReader.getDelayValue())
 
         })
+}
+
+//Trans - edit transformation
+exports.EditTransformation = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.EditTransformationbutton, 'the assertion failed because the Edit Icone was not displayed')
+        .click(FlowEditTransformationsSelector.elements.EditTransformationbutton)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.InputFeaturesList, 'The assertion failed because the Input feature List was not displayed after you click on Edit button')
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.DeleteIcon, 'The assertion failed because the Delete Icon was not displayed on the feature name')
+        .click(FlowEditTransformationsSelector.elements.DeleteIcon)
+        .pause(configrationReader.getPauseValue())
+        .setValue(FlowEditTransformationsSelector.elements.InputFeaturesList, configrationReader.getFeature())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInList)
+        .pause(configrationReader.getPauseValue())
+
+}
+
+//Trans - Save Edit transformation
+exports.SaveTransformation = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton, 'the assertion failed because the Save transformation button was not displayed')
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+        .pause(configrationReader.getPauseValue())
+}
+
+//Trans - Delete transformation
+exports.DeleteTransformation = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.DeleteTransformation, 'the assertion failed because the Delete transformation button was not displayed')
+        .click(FlowEditTransformationsSelector.elements.DeleteTransformation)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed after you click on Delete icon because Built In List should display after you click on delete icon but it did not display ')
+        .pause(configrationReader.getPauseValue())
+}
+
+//Add imputations
+//Imputation Tab
+
+exports.AddImputation = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ImputationTab, 'The assertion failed because the Imputation tab was not displayed')
+        .click(FlowEditTransformationsSelector.elements.ImputationTab)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ManualImputationRadiobutton, 'The assertion failed after you click on Imputation Tab because Manual Imputation Input was not displayed')
+        .pause(configrationReader.getPauseValue())
+}
+//Manual Impute with -1
+exports.ImputeWithNegative = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsForImputation, 'The assertion failed because the Columns for Imputation Input was not displayed')
+        .setValue(FlowEditTransformationsSelector.elements.ColumnsForImputation, configrationReader.getFeatureForImputation())
+        .pause(configrationReader.getPauseValue())
+
+        .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList)
+        .click(FlowEditTransformationsSelector.elements.StrategyList)
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList,configrationReader.getNegativeStrategy())
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+}
+//Display Data after run transformation function (Impute with -1)
+exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+            browser
+            FirstValue=result.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if(FirstValue==-1 || FirstValue<0 || FirstValue>0){
+            console.log('The value is ' + FirstValue)
+            }
+            else{
+                console.log('Something is wrong' + FirstValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+
+}
+
+//Manual Impute with zero
+exports.ImputeWithZero = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsForImputation, 'The assertion failed because the Columns for Imputation Input was not displayed')
+        .setValue(FlowEditTransformationsSelector.elements.ColumnsForImputation, configrationReader.getFeatureForImputation())
+        .pause(configrationReader.getPauseValue())
+
+        .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList)
+        .click(FlowEditTransformationsSelector.elements.StrategyList)
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList,configrationReader.getZeroStrategy())
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+}
+//Display Data after run transformation function (Impute with 0)
+exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+            browser
+            FirstValue=result.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if(FirstValue==0 || FirstValue<0 || FirstValue>0){
+            console.log('The value is ' + FirstValue)
+            }
+            else{
+                console.log('Something is wrong' + FirstValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+
 }

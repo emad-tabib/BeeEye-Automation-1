@@ -63,6 +63,27 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
         FlowEditTransformation.CheckLogWindow(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        browser.end();
+    });
+
+    //Abs - run works fine
+    it('Run Absolute transformation function and verify if it works fine', function (browser) {
+        setup.logTestDetails(this, "Try to Run Absolute transformation function and verify if it works fine")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
         //Abs function
         FlowEditTransformation.CreateTransformationFunction(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
@@ -70,19 +91,185 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
         FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+        browser.end();
+    });
+    //sqrt  - run works fine
+    it('Run Sqrt transformation function and verify if it works fine', function (browser) {
+        setup.logTestDetails(this, "Try to Run Sqrt transformation function and verify if it works fine")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
         //Sqrt function
-        // already we are in transformation Tab
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
         FlowEditTransformation.SelectTransformationFunction_sqrt(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select sqrt function from Built in List ");
         FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
         screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
-        //Addition function
-        FlowEditTransformation.SelectTransformationFunction_Addition(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Addition function from Built in List ");
-        FlowEditTransformation.DisplayDataforTransformationFunction_sqrt(browser);
-        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Addition function ");
+        browser.end();
+    });
+    //Subtraction - run works fine
+    it('Run Subtraction transformation function and verify if it works fine', function (browser) {
+        setup.logTestDetails(this, "Try to Run Subtraction transformation function and verify if it works fine")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Abs function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select Built In Type (Subtraction) function from the list");
+        FlowEditTransformation.DisplayDataforTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you create transformation function and Run Transformation to see the result ");
+        browser.end();
+    });
+    //Trans - edit transformation
+    it('Trans - edit transformation', function (browser) {
+        setup.logTestDetails(this, "Try to edit transformation")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Abs function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+        FlowEditTransformation.EditTransformation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Edit icon");
+        FlowEditTransformation.SaveTransformation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Save transformation");
+        FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Columns Preview Data");
         browser.end();
     });
 
+    //Trans - Delete transformations
+    it('Trans - Delete transformation', function (browser) {
+        setup.logTestDetails(this, "Try to Delete transformation")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFile(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Abs function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.SelectTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.DisplayDataforTransformationFunction_abs(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
+        FlowEditTransformation.DeleteTransformation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Delete icon");
+        browser.end();
+    });
 
+    //Add Manual Imputation with -1
+    it('Manual Imputation with -1', function (browser) {
+        setup.logTestDetails(this, "Try to Apply Manual Imputation with -1")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFileWithNullValues(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Imputation function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.AddImputation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.ImputeWithNegative(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for The Manual Imputation with -1");
+        FlowEditTransformation.DisplayDataforTransformationFunction_ImputeWithNegative(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result after you apply The Manual Imputation with -1");
+
+        browser.end();
+    });
+    
+     //Add Manual Imputation with zero
+     it('Manual Imputation With Zero', function (browser) {
+        setup.logTestDetails(this, "Try to Apply Manual Imputation with zero")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow ");
+        Flows.UploadFileWithNullValues(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+        FlowEditTransformation.RunTransformation(browser);
+        //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Imputation function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.AddImputation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+        FlowEditTransformation.ImputeWithZero(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for The Manual Imputation with zero");
+        FlowEditTransformation.DisplayDataforTransformationFunction_ImputeWithZero(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result after you apply The Manual Imputation with zero");
+
+        browser.end();
+    });
 });
