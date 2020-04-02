@@ -470,11 +470,89 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             if (FirstValue == -1 || FirstValue < 0 || FirstValue > 0) {
                 console.log('The value is ' + FirstValue)
             } else {
-                console.log('Something is wrong' + FirstValue)
+                console.log('There is a null value' + FirstValue)
             }
             browser.pause(configrationReader.getDelayValue())
         })
-
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+            browser
+            SecondValue = result1.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SecondValue == -1 || SecondValue < 0 || SecondValue > 0) {
+                console.log('The value is ' + SecondValue)
+            } else {
+                console.log('There is a null value' + SecondValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+            browser
+            ThirdValue = result2.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ThirdValue == -1 || ThirdValue < 0 || ThirdValue > 0) {
+                console.log('The value is ' + ThirdValue)
+            } else {
+                console.log('There is a null value' + ThirdValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+            browser
+            ForthValue = result3.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ForthValue == -1 || ForthValue < 0 || ForthValue > 0) {
+                console.log('The value is ' + ForthValue)
+            } else {
+                console.log('There is a null value' + ForthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+            browser
+            FifthValue = result4.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (FifthValue == -1 || FifthValue < 0 || FifthValue > 0) {
+                console.log('The value is ' + FifthValue)
+            } else {
+                console.log('There is a null value' + FifthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+            browser
+            SixthValue = result5.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SixthValue == -1 || SixthValue < 0 || SixthValue > 0) {
+                console.log('The value is ' + SixthValue)
+            } else {
+                console.log('There is a null value' + SixthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+            browser
+            SeventhValue = result6.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SeventhValue == -1 || SeventhValue < 0 || SeventhValue > 0) {
+                console.log('The value is ' + SeventhValue)
+            } else {
+                console.log('There is a null value' + SeventhValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        
 }
 
 //Manual Impute with zero
@@ -516,7 +594,85 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             if (FirstValue == 0 || FirstValue < 0 || FirstValue > 0) {
                 console.log('The value is ' + FirstValue)
             } else {
-                console.log('Something is wrong' + FirstValue)
+                console.log('There is a null value' + FirstValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+            browser
+            SecondValue = result1.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SecondValue == 0 || SecondValue < 0 || SecondValue > 0) {
+                console.log('The value is ' + SecondValue)
+            } else {
+                console.log('There is a null value' + SecondValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+            browser
+            ThirdValue = result2.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ThirdValue == 0 || ThirdValue < 0 || ThirdValue > 0) {
+                console.log('The value is ' + ThirdValue)
+            } else {
+                console.log('There is a null value' + ThirdValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+            browser
+            ForthValue = result3.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ForthValue == 0 || ForthValue < 0 || ForthValue > 0) {
+                console.log('The value is ' + ForthValue)
+            } else {
+                console.log('There is a null value' + ForthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+            browser
+            FifthValue = result4.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (FifthValue == 0 || FifthValue < 0 || FifthValue > 0) {
+                console.log('The value is ' + FifthValue)
+            } else {
+                console.log('There is a null value' + FifthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+            browser
+            SixthValue = result5.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SixthValue == 0 || SixthValue < 0 || SixthValue > 0) {
+                console.log('The value is ' + SixthValue)
+            } else {
+                console.log('There is a null value' + SixthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+            browser
+            SeventhValue = result6.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SeventhValue == 0 || SeventhValue < 0 || SeventhValue > 0) {
+                console.log('The value is ' + SeventhValue)
+            } else {
+                console.log('There is a null value' + SeventhValue)
             }
             browser.pause(configrationReader.getDelayValue())
         })

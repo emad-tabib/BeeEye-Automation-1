@@ -127,6 +127,24 @@ TableRow : {
 },
 InputFeatureList_DateSplit : {
   selector : '#InputFeature_0 > div > div >.ui.fluid.search.selection.dropdown.build-in-select>input.search'
+},
+FirstElemntinSecondRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(2)>.table-row-item:nth-child(1)'
+},
+FirstElemntinThirdRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(3)>.table-row-item:nth-child(1)'
+},
+FirstElemntinForthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(4)>.table-row-item:nth-child(1)'
+},
+FirstElemntinFifthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(5)>.table-row-item:nth-child(1)'
+},
+FirstElemntinSixthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(1)'
+},
+FirstElemntinSeventhRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(7)>.table-row-item:nth-child(1)'
 }
 
     }
