@@ -678,3 +678,22 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
         })
 
 }
+
+//Manual Impute with Most frequent
+exports.ImputeWithMostFrequent = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsForImputation, 'The assertion failed because the Columns for Imputation Input was not displayed')
+        .setValue(FlowEditTransformationsSelector.elements.ColumnsForImputation, configrationReader.getFeatureForImputation())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList, 'The assertion failed because the Strategy List was not displayed')
+        .click(FlowEditTransformationsSelector.elements.StrategyList)
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList, configrationReader.getMostFrequentStrategy())
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton, 'The assertion failed because the submit transformation button was not displayed')
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+}
