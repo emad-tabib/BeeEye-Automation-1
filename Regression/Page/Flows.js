@@ -199,7 +199,7 @@ exports.UploadFileWithNullValues = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.UploadBtn, 'The assertion failed because select file button was not displayed in the new flow page')
     .assert.elementPresent(FlowsSelector.elements.InputFileId, 'The assertion failed because the Input field for the file was not displayed in the new flow page')
     .setValue(FlowsSelector.elements.InputFileId, require('path').resolve(__dirname + '/Data/UCI_Credit_Card_With_Null_Values.csv'))
-    .pause(configrationReader.getLongWait())
+    .pause(configrationReader.getDelayValue())
 
 }
 //Check after You upload the file, if File Information section have the correct data and check Data if are display in Preview Data section

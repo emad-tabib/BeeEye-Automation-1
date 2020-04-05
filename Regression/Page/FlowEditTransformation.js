@@ -147,6 +147,30 @@ exports.SelectTransformationFunction_sqrt = (browser) => {
         .pause(configrationReader.getPauseValue())
 }
 
+//select Transformation Function - Built-In Type - abs function
+exports.SelectTransformationFunction_DateSplit = (browser) => {
+    browser
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInClicked, 'The assertion failed because Built In button was not clicked by default when you enetr Transformation Page')
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.BuiltInTypeList, 'The assertion failed because Built In Type List was not displayed in Transformation Page After you click on Add Transformation Button')
+        .click(FlowEditTransformationsSelector.elements.BuiltInTypeList)
+        .pause(configrationReader.getPauseValue())
+        .setValue(FlowEditTransformationsSelector.elements.BuiltInTypeList, configrationReader.getDateSplitFunction())
+        .keys(browser.Keys.ENTER)
+        .pause(configrationReader.getDelayValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.InputFeatureList_DateSplit, 'The assertion failed because First Input Feature List was not displayed after you select the type of transformation function')
+        .click(FlowEditTransformationsSelector.elements.InputFeatureList_DateSplit)
+        .setValue(FlowEditTransformationsSelector.elements.InputFeatureList_DateSplit, configrationReader.getFeature_DateSplit())
+        .pause(configrationReader.getPauseValue())
+        //.keys(browser.Keys.ENTER)
+        .click(FlowEditTransformationsSelector.elements.FirstElementInList_DateSplit)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
+        .pause(configrationReader.getPauseValue())
+}
 //Display Data after run transformation_abs 
 exports.DisplayDataforTransformationFunction_abs = (browser) => {
     browser
@@ -252,6 +276,89 @@ exports.DisplayDataforTransformationFunction_sqrt = (browser) => {
     browser.pause(configrationReader.getDelayValue())
 }
 
+//Display Data after run transformation_DateSplit 
+exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+
+        //First Elemnt in the Row (Birth Date)
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+            browser
+            //This value displayed in the table
+            WholeDate = result.value;
+        })
+        .perform(function () {
+            browser
+            WholeDateAfterSplit = WholeDate.split("-")
+            console.log('The Whole Date is :' + WholeDate)
+            console.log('The Year is : ' + WholeDateAfterSplit[0])
+            console.log('The Month is : ' + WholeDateAfterSplit[1])
+            console.log('The Day is : ' + WholeDateAfterSplit[2])
+            browser.pause(configrationReader.getDelayValue())
+        })
+
+        //Second elemnt in the Row (Day)
+        .getText(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow, function (result3) {
+            browser
+            //this value is displayed in the table
+            DayValue = result3.value;
+        })
+        .perform(function () {
+            browser
+            console.log('The Day is : ' + WholeDateAfterSplit[2])
+            if (DayValue == WholeDateAfterSplit[2]) {
+                console.log('The Day value was display correctly in the table : ' + DayValue)
+            } else {
+                console.log('The Day value was not display correctly in the table : ' + DayValue)
+            }
+
+            browser.pause(configrationReader.getDelayValue())
+        })
+        //Third elemnt in the Row (Month)
+        .getText(FlowEditTransformationsSelector.elements.ThirdElemntinFirstRow, function (result2) {
+            browser
+        //this value is displayed in the table
+            MonthValue = result2.value;
+        })
+        .perform(function () {
+            browser
+            console.log('The Month is : ' + WholeDateAfterSplit[1])
+            if (MonthValue == WholeDateAfterSplit[1]) {
+                console.log('The Month value was display correctly in the table : ' + MonthValue)
+            } else {
+                console.log('The Month value was not display correctly in the table : ' + MonthValue)
+            }
+
+            browser.pause(configrationReader.getDelayValue())
+        })
+
+        //Forth Elemnt in the Row (Year)
+        .getText(FlowEditTransformationsSelector.elements.ForthElementinFirstRow, function (result1) {
+            browser
+            //this value is displayed in the table
+            YearValue = result1.value;
+        })
+        .perform(function () {
+            browser
+            console.log('The Year is : ' + WholeDateAfterSplit[0])
+            if (YearValue == WholeDateAfterSplit[0]) {
+                console.log('The Year value was display correctly in the table : ' + YearValue)
+            } else {
+                console.log('The Year value was not display correctly in the table : ' + YearValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+
+    browser.pause(configrationReader.getDelayValue())
+}
+
 
 //Display Data after run transformation function (Subtraction)
 exports.DisplayDataforTransformationFunction = (browser) => {
@@ -335,7 +442,7 @@ exports.ImputeWithNegative = (browser) => {
         .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
         .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList)
         .click(FlowEditTransformationsSelector.elements.StrategyList)
-        .setValue(FlowEditTransformationsSelector.elements.StrategyList,configrationReader.getNegativeStrategy())
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList, configrationReader.getNegativeStrategy())
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
         .pause(configrationReader.getPauseValue())
@@ -356,19 +463,96 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
         .pause(configrationReader.getPauseValue())
         .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
             browser
-            FirstValue=result.value
+            FirstValue = result.value
             browser.pause(configrationReader.getDelayValue())
         })
         .perform(function () {
-            if(FirstValue==-1 || FirstValue<0 || FirstValue>0){
-            console.log('The value is ' + FirstValue)
-            }
-            else{
-                console.log('Something is wrong' + FirstValue)
+            if (FirstValue == -1 || FirstValue < 0 || FirstValue > 0) {
+                console.log('The value is ' + FirstValue)
+            } else {
+                console.log('There is a null value' + FirstValue)
             }
             browser.pause(configrationReader.getDelayValue())
         })
-
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+            browser
+            SecondValue = result1.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SecondValue == -1 || SecondValue < 0 || SecondValue > 0) {
+                console.log('The value is ' + SecondValue)
+            } else {
+                console.log('There is a null value' + SecondValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+            browser
+            ThirdValue = result2.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ThirdValue == -1 || ThirdValue < 0 || ThirdValue > 0) {
+                console.log('The value is ' + ThirdValue)
+            } else {
+                console.log('There is a null value' + ThirdValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+            browser
+            ForthValue = result3.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ForthValue == -1 || ForthValue < 0 || ForthValue > 0) {
+                console.log('The value is ' + ForthValue)
+            } else {
+                console.log('There is a null value' + ForthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+            browser
+            FifthValue = result4.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (FifthValue == -1 || FifthValue < 0 || FifthValue > 0) {
+                console.log('The value is ' + FifthValue)
+            } else {
+                console.log('There is a null value' + FifthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+            browser
+            SixthValue = result5.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SixthValue == -1 || SixthValue < 0 || SixthValue > 0) {
+                console.log('The value is ' + SixthValue)
+            } else {
+                console.log('There is a null value' + SixthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+            browser
+            SeventhValue = result6.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SeventhValue == -1 || SeventhValue < 0 || SeventhValue > 0) {
+                console.log('The value is ' + SeventhValue)
+            } else {
+                console.log('There is a null value' + SeventhValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        
 }
 
 //Manual Impute with zero
@@ -382,7 +566,7 @@ exports.ImputeWithZero = (browser) => {
         .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
         .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList)
         .click(FlowEditTransformationsSelector.elements.StrategyList)
-        .setValue(FlowEditTransformationsSelector.elements.StrategyList,configrationReader.getZeroStrategy())
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList, configrationReader.getZeroStrategy())
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
         .pause(configrationReader.getPauseValue())
@@ -403,17 +587,113 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
         .pause(configrationReader.getPauseValue())
         .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
             browser
-            FirstValue=result.value
+            FirstValue = result.value
             browser.pause(configrationReader.getDelayValue())
         })
         .perform(function () {
-            if(FirstValue==0 || FirstValue<0 || FirstValue>0){
-            console.log('The value is ' + FirstValue)
+            if (FirstValue == 0 || FirstValue < 0 || FirstValue > 0) {
+                console.log('The value is ' + FirstValue)
+            } else {
+                console.log('There is a null value' + FirstValue)
             }
-            else{
-                console.log('Something is wrong' + FirstValue)
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+            browser
+            SecondValue = result1.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SecondValue == 0 || SecondValue < 0 || SecondValue > 0) {
+                console.log('The value is ' + SecondValue)
+            } else {
+                console.log('There is a null value' + SecondValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+            browser
+            ThirdValue = result2.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ThirdValue == 0 || ThirdValue < 0 || ThirdValue > 0) {
+                console.log('The value is ' + ThirdValue)
+            } else {
+                console.log('There is a null value' + ThirdValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+            browser
+            ForthValue = result3.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (ForthValue == 0 || ForthValue < 0 || ForthValue > 0) {
+                console.log('The value is ' + ForthValue)
+            } else {
+                console.log('There is a null value' + ForthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+            browser
+            FifthValue = result4.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (FifthValue == 0 || FifthValue < 0 || FifthValue > 0) {
+                console.log('The value is ' + FifthValue)
+            } else {
+                console.log('There is a null value' + FifthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+            browser
+            SixthValue = result5.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SixthValue == 0 || SixthValue < 0 || SixthValue > 0) {
+                console.log('The value is ' + SixthValue)
+            } else {
+                console.log('There is a null value' + SixthValue)
+            }
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+            browser
+            SeventhValue = result6.value
+            browser.pause(configrationReader.getDelayValue())
+        })
+        .perform(function () {
+            if (SeventhValue == 0 || SeventhValue < 0 || SeventhValue > 0) {
+                console.log('The value is ' + SeventhValue)
+            } else {
+                console.log('There is a null value' + SeventhValue)
             }
             browser.pause(configrationReader.getDelayValue())
         })
 
+}
+
+//Manual Impute with Most frequent
+exports.ImputeWithMostFrequent = (browser) => {
+    browser
+        .waitForElementVisible('body', configrationReader.getPeriod()) // wait till page loads
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsForImputation, 'The assertion failed because the Columns for Imputation Input was not displayed')
+        .setValue(FlowEditTransformationsSelector.elements.ColumnsForImputation, configrationReader.getFeatureForImputation())
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.FirstElementInManualImputationList)
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.StrategyList, 'The assertion failed because the Strategy List was not displayed')
+        .click(FlowEditTransformationsSelector.elements.StrategyList)
+        .setValue(FlowEditTransformationsSelector.elements.StrategyList, configrationReader.getMostFrequentStrategy())
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.SubmitTransformationButton, 'The assertion failed because the submit transformation button was not displayed')
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.TransformationButton)
 }

@@ -148,11 +148,19 @@ exports.getSqrtFunction = () => {
     return Sqrt;
 }
 
+exports.getFeature_DateSplit = () => {
+    var BirthDate = config.BirthDate;
+    return BirthDate;
+}
 exports.getAdditionFunction = () => {
     var addition = config.addition;
     return addition;
 }
 
+exports.getDateSplitFunction = () => {
+    var dateSplit = config.dateSplit;
+    return dateSplit;
+}
 //Manual Impute with -1
 exports.getNegativeStrategy = () => {
     var negativeStrategyValue = config.negativeStrategyValue;
@@ -171,8 +179,14 @@ exports.getFeatureForImputation = () => {
     return feature_Imputation;
 }
 
-//Get feature name for Imputation function
+//Manual Impute with Zero
 exports.getZeroStrategy = () => {
     var ZeroStrategyValue = config.ZeroStrategyValue;
     return ZeroStrategyValue;
+}
+
+//Manual Impute with Most Frequent
+exports.getMostFrequentStrategy = () => {
+    var MostFrequentStrategyValue = config.MostFrequentStrategyValue;
+    return MostFrequentStrategyValue;
 }
