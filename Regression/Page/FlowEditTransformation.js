@@ -324,7 +324,7 @@ exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
         //Third elemnt in the Row (Month)
         .getText(FlowEditTransformationsSelector.elements.ThirdElemntinFirstRow, function (result2) {
             browser
-        //this value is displayed in the table
+            //this value is displayed in the table
             MonthValue = result2.value;
         })
         .perform(function () {
@@ -552,7 +552,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        
+
 }
 
 //Manual Impute with zero
@@ -696,4 +696,102 @@ exports.ImputeWithMostFrequent = (browser) => {
         .click(FlowEditTransformationsSelector.elements.SubmitTransformationButton)
         .pause(configrationReader.getPauseValue())
         .click(FlowEditTransformationsSelector.elements.TransformationButton)
+}
+//count the most frequent values
+exports.CountValues = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        //.click(FlowsSelector.elements.DataSourcesButton)
+        //.assert.elementPresent(FlowsSelector.elements.PreviewData)
+        .getText(FlowEditTransformationsSelector.elements.Secondd, function (result) {
+            browser
+            FirstVal = result.value;
+            console.log('First element' + result.value)
+
+        }) //getText
+        .perform(function () {
+            if (FirstVal > 0 || FirstVal < 0) {
+                console.log('value is' + FirstVal)
+                count = count + 1
+                console.log('The count is' + count)
+
+            } else {
+                console.log('is null')
+            } //else
+        }) //perform
+
+        .perform(function () {
+            if (FirstVal > 0 || FirstVal < 0) {
+                // count=count+1
+                browser.elements('css selector', FlowEditTransformationsSelector.elements.TableRow, (results) => {
+                    for (let i = 0; i < results.value.length; i++) {
+                        console.log('the length is'+results.value.length)
+                        browser.elementIdText(results.value[i].ELEMENT, (result1) => {
+                            elem = results.value[i].ELEMENT;
+                            if (elem > 0 || elem < 0) {
+
+                                Secondval = result1.value;
+                                console.log('Second val in tabel is ' + Secondval)
+                            } else {
+                                console.log('is null')
+                            }
+
+                        })
+
+                    } //for loop
+                }); //elements
+            } else {
+                console.log('it is null value')
+            }
+
+        }) //perform
+
+}
+//Display Data after run transformation function (Impute with most frequent)
+exports.DisplayDataforTransformationFunction_ImputeWithMostFrequent = (browser) => {
+    browser
+        //The reason for this step is the issue in EYEON-127
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
+        .pause(configrationReader.getPauseValue())
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
+        .pause(configrationReader.getPauseValue())
+        .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
+        .pause(configrationReader.getPauseValue())
+        .getText(FlowEditTransformationsSelector.elements.Firstt, function (result) {
+            browser
+            FirstVal = result.value;
+            console.log('First element' + FirstVal)
+            let count=0;
+
+        }) //getText
+        
+        .perform(function () {
+            if (FirstVal > 0 || FirstVal < 0) {
+                  count=count+1
+                 console.log('The count is' + count)
+                 browser.elements('css selector', FlowEditTransformationsSelector.elements.TableRow, (results) => {
+                    for (let i = 0; i < results.value.length; i++) {
+                        console.log('the length is'+results.value.length)
+                        browser.elementIdText(results.value[i].ELEMENT, (result1) => {
+                            elem = result1.value;
+                            if (elem==count) {
+
+                              count=count+1;
+                                console.log('Second val in tabel is ' + count)
+                            } else {
+                                console.log('is null')
+                            }
+
+                        })
+
+                    } //for loop
+                }); //elements
+            } else {
+                console.log('it is null value')
+            }
+
+        }) //perform
+
 }

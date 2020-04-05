@@ -58,6 +58,36 @@ SecondElemntinFirstRow  : {
 ThirdElemntinFirstRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
 },
+ThirdElemntinSecondRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(2)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinThirdRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(3)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinForthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(4)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinFifthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(5)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinSixthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinSeventhRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(7)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinEightRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinSeventhRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinEighthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElemntinNinthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
 ForthElementinFirstRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(4)'
 },
@@ -145,6 +175,12 @@ FirstElemntinSixthRow : {
 },
 FirstElemntinSeventhRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(7)>.table-row-item:nth-child(1)'
+},
+Firstt : {
+  selector : '.table-body>.table-row:nth-child(1)'
+},
+Secondd : {
+  selector : '.table-body>.table-row:nth-child(2)'
 }
 
     }
