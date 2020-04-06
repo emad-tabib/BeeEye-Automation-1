@@ -49,22 +49,52 @@ ActiveTransformationFunction :{
 ColumnsPreviewDataTable  :{ 
   selector : '.custom-table'
 },
-FirstElemntinFirstRow : {
+FirstElementinFirstRow : {
   selector: '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(1)'
 },
-SecondElemntinFirstRow  : {
+SecondElementinFirstRow  : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(2)'
 },
-ThirdElemntinFirstRow : {
+ThirdElementinFirstRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElementinSecondRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(2)>.table-row-item:nth-child(3)'
+},
+ThirdElementinThirdRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(3)>.table-row-item:nth-child(3)'
+},
+ThirdElementinForthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(4)>.table-row-item:nth-child(3)'
+},
+ThirdElementinFifthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(5)>.table-row-item:nth-child(3)'
+},
+ThirdElementinSixthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(3)'
+},
+ThirdElementinSeventhRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(7)>.table-row-item:nth-child(3)'
+},
+ThirdElementinEightRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElementinSeventhRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElementinEighthRow : {
+  selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
+},
+ThirdElementinNinthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(3)'
 },
 ForthElementinFirstRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(1)>.table-row-item:nth-child(4)'
 },
-FirstElemntinSixthRow : {
+FirstElementinSixthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(1)'
 },
-SecondElemntinSixthRow  : {
+SecondElementinSixthRow  : {
   selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(2)'
 },
 TableRowItem : {
@@ -128,23 +158,29 @@ TableRow : {
 InputFeatureList_DateSplit : {
   selector : '#InputFeature_0 > div > div >.ui.fluid.search.selection.dropdown.build-in-select>input.search'
 },
-FirstElemntinSecondRow : {
+FirstElementinSecondRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(2)>.table-row-item:nth-child(1)'
 },
-FirstElemntinThirdRow : {
+FirstElementinThirdRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(3)>.table-row-item:nth-child(1)'
 },
-FirstElemntinForthRow : {
+FirstElementinForthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(4)>.table-row-item:nth-child(1)'
 },
-FirstElemntinFifthRow : {
+FirstElementinFifthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(5)>.table-row-item:nth-child(1)'
 },
-FirstElemntinSixthRow : {
+FirstElementinSixthRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(6)>.table-row-item:nth-child(1)'
 },
-FirstElemntinSeventhRow : {
+FirstElementinSeventhRow : {
   selector : '.custom-table>.table-body>.table-row:nth-child(7)>.table-row-item:nth-child(1)'
+},
+Firstt : {
+  selector : '.table-body>.table-row:nth-child(1)'
+},
+Secondd : {
+  selector : '.table-body>.table-row:nth-child(2)'
 }
 
     }

@@ -43,6 +43,7 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
         done();
     });
     
+    
         //Run Transformation phase and verify data is loaded.
         //Creating New Transformation
         //Add builting transformation 
@@ -101,6 +102,7 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply Abs function");
             browser.end();
         });
+        
         //sqrt  - run works fine
         it('Run Sqrt transformation function and verify if it works fine', function (browser) {
             setup.logTestDetails(this, "Try to Run Sqrt transformation function and verify if it works fine")
@@ -132,6 +134,7 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
             screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result value after you apply sqrt function ");
             browser.end();
         });
+        
         //Subtraction - run works fine
         it('Run Subtraction transformation function and verify if it works fine', function (browser) {
             setup.logTestDetails(this, "Try to Run Subtraction transformation function and verify if it works fine")
@@ -377,5 +380,39 @@ describe('Flow Edit - Transformations tab :Verify the Run Transformation , Creat
             browser.end();
         });
 
-    
+/*
+    //Add Manual Imputation with Most frequent
+    it('Manual Imputation With Most frequent', function (browser) {
+        setup.logTestDetails(this, "Try to Apply Manual Imputation with Most frequent")
+        Flows.CreateNewFlow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new Flow");
+        Flows.CheckBackButton(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the new flow Page after you create a new flow to verify that Flow name was displayed on the back button");
+        FlowEditDS.LastConfiguringStep(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the last confguring step for the selected flow");
+        FlowEditDS.SearchOnSpecificFlowName(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the last confguring step for the selected flow after you search on this flow");
+        Flows.UploadFileWithNullValues(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Upload File to the new flow");
+        Flows.SelectValidLabel(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you select a valid Label");
+        Flows.RunDataSources(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the data Source");
+       FlowEditTransformation.RunTransformation(browser);
+    //Take screenshot for the result by call takeScreenShot function
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you run the Transformation ");
+        FlowEditTransformation.CheckLogWindow(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Logs Window after you run the Transformation ");
+        //Create Imputation function
+        FlowEditTransformation.CreateTransformationFunction(browser);
+       screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you click on Add Transformation Button");
+        FlowEditTransformation.AddImputation(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot after you Select abs function from Built in List ");
+       FlowEditTransformation.ImputeWithMostFrequent(browser);
+        screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for The Manual Imputation with Most frequent");
+        FlowEditTransformation.DisplayDataforTransformationFunction_ImputeWithMostFrequent(browser);
+       screenShotUtils.takeScreenShot(this, browser, "Here is the screenshot for the Result after you apply The Manual Imputation with Most frequent");
+        browser.end();
+    });
+    */
 });
