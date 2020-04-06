@@ -657,11 +657,7 @@ exports.RunFlow = (browser) => {
     .assert.elementPresent(FlowsSelector.elements.FlowEditHeader, 'The assertion failed because Flow Edit Nav Header was not displayed after you create new flow')
     .pause(configrationReader.getPauseValue())
     .assert.elementPresent(FlowsSelector.elements.RunFlowButton, 'The assertion failed because Run Flow Button was not displayed in Flow Edit Nav Header after you create new flow')
-    .getAttribute(FlowsSelector.elements.RunFlowButton, 'title', function (result) {
-      browser
-        .assert.equal(result.value, '<strong>*Configure data sources<br>*Select a label for training<br>*Configure experiments<br></strong>', 'The assertion failed because the tool tip was not describe the actual status')
-        .pause(configrationReader.getPauseValue())
-    })
+    .assert.elementPresent(FlowsSelector.elements.RunFlowDisabled, 'The assertion failed because Run Flow Button was enabled in Flow Edit Nav Header after you create new flow')
     .click(FlowsSelector.elements.RunFlowButton, function (result) {
       browser
         //make sure that Tool Tip was displayed 
