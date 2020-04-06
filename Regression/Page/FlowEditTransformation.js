@@ -182,8 +182,8 @@ exports.DisplayDataforTransformationFunction_abs = (browser) => {
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
-        //First Elemnt in First Row 
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+        //First Element in First Row 
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFirstRow, function (result) {
             browser
             Valuebeforabs = result.value;
         })
@@ -194,12 +194,12 @@ exports.DisplayDataforTransformationFunction_abs = (browser) => {
             browser.pause(configrationReader.getDelayValue())
         })
         //Second Element in First Row 
-        .getText(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow, function (result1) {
+        .getText(FlowEditTransformationsSelector.elements.SecondElementinFirstRow, function (result1) {
             browser
             SecondValue = result1.value;
         })
         .perform(function () {
-            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow)
+            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElementinFirstRow)
             if (SecondValue == Valueafterabs) {
                 console.log('Abs function works as expected')
             } else {
@@ -209,7 +209,7 @@ exports.DisplayDataforTransformationFunction_abs = (browser) => {
         })
         //take any value in the table
         //First Element in Sixth Row 
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result2) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSixthRow, function (result2) {
             browser
             Valuebeforabs_2 = result2.value;
         })
@@ -220,12 +220,12 @@ exports.DisplayDataforTransformationFunction_abs = (browser) => {
             browser.pause(configrationReader.getDelayValue())
         })
         //First Element in Sixth Row
-        .getText(FlowEditTransformationsSelector.elements.SecondElemntinSixthRow, function (result3) {
+        .getText(FlowEditTransformationsSelector.elements.SecondElementinSixthRow, function (result3) {
             browser
             SecondValue = result3.value;
         })
         .perform(function () {
-            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow)
+            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElementinFirstRow)
             if (SecondValue == Valueafterabs_2) {
                 console.log('Abs function works as expected')
             } else {
@@ -248,8 +248,8 @@ exports.DisplayDataforTransformationFunction_sqrt = (browser) => {
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
-        //First Elemnt in First Row 
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+        //First Element in First Row 
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFirstRow, function (result) {
             browser
             Valuebeforsqrt = result.value;
         })
@@ -260,12 +260,12 @@ exports.DisplayDataforTransformationFunction_sqrt = (browser) => {
             browser.pause(configrationReader.getDelayValue())
         })
         //Second Element in First Row 
-        .getText(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow, function (result1) {
+        .getText(FlowEditTransformationsSelector.elements.SecondElementinFirstRow, function (result1) {
             browser
             SecondValue = result1.value;
         })
         .perform(function () {
-            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow)
+            browser.waitForElementVisible(FlowEditTransformationsSelector.elements.SecondElementinFirstRow)
             if (SecondValue == Valueaftersqrt) {
                 console.log('Sqrt function works as expected')
             } else {
@@ -288,8 +288,8 @@ exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
 
-        //First Elemnt in the Row (Birth Date)
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+        //First Element in the Row (Birth Date)
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFirstRow, function (result) {
             browser
             //This value displayed in the table
             WholeDate = result.value;
@@ -304,8 +304,8 @@ exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
             browser.pause(configrationReader.getDelayValue())
         })
 
-        //Second elemnt in the Row (Day)
-        .getText(FlowEditTransformationsSelector.elements.SecondElemntinFirstRow, function (result3) {
+        //Second Element in the Row (Day)
+        .getText(FlowEditTransformationsSelector.elements.SecondElementinFirstRow, function (result3) {
             browser
             //this value is displayed in the table
             DayValue = result3.value;
@@ -321,8 +321,8 @@ exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
 
             browser.pause(configrationReader.getDelayValue())
         })
-        //Third elemnt in the Row (Month)
-        .getText(FlowEditTransformationsSelector.elements.ThirdElemntinFirstRow, function (result2) {
+        //Third Element in the Row (Month)
+        .getText(FlowEditTransformationsSelector.elements.ThirdElementinFirstRow, function (result2) {
             browser
             //this value is displayed in the table
             MonthValue = result2.value;
@@ -339,7 +339,7 @@ exports.DisplayDataforTransformationFunction_DateSplit = (browser) => {
             browser.pause(configrationReader.getDelayValue())
         })
 
-        //Forth Elemnt in the Row (Year)
+        //Forth Element in the Row (Year)
         .getText(FlowEditTransformationsSelector.elements.ForthElementinFirstRow, function (result1) {
             browser
             //this value is displayed in the table
@@ -371,7 +371,7 @@ exports.DisplayDataforTransformationFunction = (browser) => {
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
-        .getText(FlowEditTransformationsSelector.elements.ThirdElemntinFirstRow, function (result) {
+        .getText(FlowEditTransformationsSelector.elements.ThirdElementinFirstRow, function (result) {
             browser
                 .assert.equal(result.value, '0', 'The assertion failed because the value was not equal zero after apply Subtract function on the same feature')
                 .pause(configrationReader.getDelayValue())
@@ -461,7 +461,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFirstRow, function (result) {
             browser
             FirstValue = result.value
             browser.pause(configrationReader.getDelayValue())
@@ -474,7 +474,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSecondRow, function (result1) {
             browser
             SecondValue = result1.value
             browser.pause(configrationReader.getDelayValue())
@@ -487,7 +487,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinThirdRow, function (result2) {
             browser
             ThirdValue = result2.value
             browser.pause(configrationReader.getDelayValue())
@@ -500,7 +500,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinForthRow, function (result3) {
             browser
             ForthValue = result3.value
             browser.pause(configrationReader.getDelayValue())
@@ -513,7 +513,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFifthRow, function (result4) {
             browser
             FifthValue = result4.value
             browser.pause(configrationReader.getDelayValue())
@@ -526,7 +526,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSixthRow, function (result5) {
             browser
             SixthValue = result5.value
             browser.pause(configrationReader.getDelayValue())
@@ -539,7 +539,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithNegative = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSeventhRow, function (result6) {
             browser
             SeventhValue = result6.value
             browser.pause(configrationReader.getDelayValue())
@@ -585,7 +585,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFirstRow, function (result) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFirstRow, function (result) {
             browser
             FirstValue = result.value
             browser.pause(configrationReader.getDelayValue())
@@ -598,7 +598,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSecondRow, function (result1) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSecondRow, function (result1) {
             browser
             SecondValue = result1.value
             browser.pause(configrationReader.getDelayValue())
@@ -611,7 +611,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinThirdRow, function (result2) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinThirdRow, function (result2) {
             browser
             ThirdValue = result2.value
             browser.pause(configrationReader.getDelayValue())
@@ -624,7 +624,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinForthRow, function (result3) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinForthRow, function (result3) {
             browser
             ForthValue = result3.value
             browser.pause(configrationReader.getDelayValue())
@@ -637,7 +637,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinFifthRow, function (result4) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinFifthRow, function (result4) {
             browser
             FifthValue = result4.value
             browser.pause(configrationReader.getDelayValue())
@@ -650,7 +650,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSixthRow, function (result5) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSixthRow, function (result5) {
             browser
             SixthValue = result5.value
             browser.pause(configrationReader.getDelayValue())
@@ -663,7 +663,7 @@ exports.DisplayDataforTransformationFunction_ImputeWithZero = (browser) => {
             }
             browser.pause(configrationReader.getDelayValue())
         })
-        .getText(FlowEditTransformationsSelector.elements.FirstElemntinSeventhRow, function (result6) {
+        .getText(FlowEditTransformationsSelector.elements.FirstElementinSeventhRow, function (result6) {
             browser
             SeventhValue = result6.value
             browser.pause(configrationReader.getDelayValue())
