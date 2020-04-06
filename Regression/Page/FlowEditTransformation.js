@@ -244,7 +244,7 @@ exports.DisplayDataforTransformationFunction_sqrt = (browser) => {
         .pause(configrationReader.getPauseValue())
         .click(FlowEditTransformationsSelector.elements.AddTransformationButton)
         .pause(configrationReader.getPauseValue())
-        .click(FlowEditTransformationsSelector.elements.SecondTransformationFunction)
+        .click(FlowEditTransformationsSelector.elements.ActiveTransformationFunction)
         .pause(configrationReader.getPauseValue())
         .assert.elementPresent(FlowEditTransformationsSelector.elements.ColumnsPreviewDataTable)
         .pause(configrationReader.getPauseValue())
@@ -748,6 +748,7 @@ exports.CountValues = (browser) => {
         }) //perform
 
 }
+
 //Display Data after run transformation function (Impute with most frequent)
 exports.DisplayDataforTransformationFunction_ImputeWithMostFrequent = (browser) => {
     browser
@@ -773,11 +774,10 @@ exports.DisplayDataforTransformationFunction_ImputeWithMostFrequent = (browser) 
                  console.log('The count is' + count)
                  browser.elements('css selector', FlowEditTransformationsSelector.elements.TableRow, (results) => {
                     for (let i = 0; i < results.value.length; i++) {
-                        console.log('the length is'+results.value.length)
+                        //console.log('the length is'+results.value.length)
                         browser.elementIdText(results.value[i].ELEMENT, (result1) => {
                             elem = result1.value;
                             if (elem==count) {
-
                               count=count+1;
                                 console.log('Second val in tabel is ' + count)
                             } else {
