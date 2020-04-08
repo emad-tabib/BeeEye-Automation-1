@@ -46,8 +46,10 @@
         "browserName": "chrome",
         "chromeOptions" : {
           "args" : [
-            "start-maximized",
-            "headless"
+            "window-size=1680,1050",
+            "headless",
+            "no-sandbox",
+            "disable-gpu"
           ]
         },
         "acceptSslCerts": true,
