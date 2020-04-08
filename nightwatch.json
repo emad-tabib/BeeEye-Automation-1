@@ -26,8 +26,11 @@
       "selenium_host"  : "localhost",
       "silent": true,
       "screenshots" : {
-        "enabled" : false,
-        "path" : ""
+        "enabled": true,
+        "on_failure": true,
+        "on_success": true,
+        "on_error": true,
+        "path": "./screenshots"
       },
       "desiredCapabilities": {
         "browserName": "firefox",
@@ -40,10 +43,17 @@
 
     "default" : {
       "desiredCapabilities": {
+        "browserName": "chrome",
         "chromeOptions" : {
-          "args" : ["start-maximized"]
+          "args" : [
+            "start-maximized",
+            "headless"
+          ]
         },
-        "browserName": "chrome"
+        "acceptSslCerts": true,
+        "acceptInsecureCerts": true,
+        "javascriptEnabled": true,
+        "elementScrollBehavior": 1
     }
   },
 
@@ -83,13 +93,14 @@
         "multiReport": true,
         "enableCode": true
       },
-      "timeout": 600000
+      "timeout": 50000
     }
   },
   "screenshots": {
   "enabled": true,
-  "path": "./reports",
   "on_failure": true,
-  "on_error": true
+  "on_success": true,
+  "on_error": true,
+  "path": "./screenshots"
   }
 }
