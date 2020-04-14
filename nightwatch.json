@@ -41,23 +41,46 @@
       }
     },
 
-    "default" : {
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "chromeOptions" : {
-          "args" : [
-            "window-size=1680,1050",
-            "headless",
-            "no-sandbox",
-            "disable-gpu"
-          ]
-        },
-        "acceptSslCerts": true,
-        "acceptInsecureCerts": true,
-        "javascriptEnabled": true,
-        "elementScrollBehavior": 1
+  "default" : {
+    "desiredCapabilities": {
+      "browserName": "chrome",
+      "chromeOptions" : {
+        "args" : [
+          "window-size=1680,1050",
+          "headless",
+          "disable-gpu"
+ 
+       ]
+      }
+  }
+},
+
+"chrome" : {
+  "desiredCapabilities": {
+    "browserName": "chrome",
+    "chromeOptions" : {
+      "args" : [
+        "start-maximized"
+      ]
     }
-  },
+ }
+},
+
+"chromeHeadless" : {
+  "desiredCapabilities": {
+    "browserName": "chrome",
+    "chromeOptions" : {
+      "args" : [
+        "window-size=1680,1050",
+        "headless",
+        "disable-gpu"
+      ]
+    },
+    "acceptSslCerts": true,
+    "acceptInsecureCerts": true,
+    "javascriptEnabled": true
+  }
+ },
 
   "mobile" : {
     "desiredCapabilities": {
